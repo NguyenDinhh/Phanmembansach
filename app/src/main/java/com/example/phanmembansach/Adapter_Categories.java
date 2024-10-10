@@ -10,14 +10,14 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class Adapter_Categories_books extends ArrayAdapter<Book> {
+public class Adapter_Categories extends ArrayAdapter<Category> {
     private Context context;
     private int resource;
-    private List<Book> arrBook;
+    private List<Category> arrCategories;
 
-    public Adapter_Categories_books(Context context, int resource, List<Book> arrBook) {
-        super(context, resource, arrBook);
-        this.arrBook = arrBook;
+    public Adapter_Categories(Context context, int resource, List<Category> arrCategories) {
+        super(context, resource, arrCategories);
+        this.arrCategories = arrCategories;
         this.resource = resource;
         this.context = context;
     }
@@ -28,14 +28,12 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
 
         // Nếu convertView là null, tạo mới View và ViewHolder
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.row_categories_books, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.row_categories, parent, false);
             viewHolder = new ViewHolder();
 
             viewHolder.tvname = convertView.findViewById(R.id.tvname);
-            viewHolder.tvauthor = convertView.findViewById(R.id.tvauthor);
-            viewHolder.tvprice = convertView.findViewById(R.id.tvprice);
+            viewHolder.tvdescribe = convertView.findViewById(R.id.tvdescribe);
             viewHolder.img = convertView.findViewById(R.id.img);
-            viewHolder.tvsold = convertView.findViewById(R.id.tvsold);
 
             convertView.setTag(viewHolder);  // Lưu lại ViewHolder cho lần tái sử dụng sau
         } else {
@@ -43,18 +41,15 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
         }
 
         // Lấy Book hiện tại từ arrBook
-        Book book = arrBook.get(position);
+        Category category = arrCategories.get(position);
 
-        if (book != null) {
+        if (category != null) {
             // Đảm bảo không bị null khi gán giá trị cho các TextView
-            viewHolder.tvname.setText(book.getName() != null ? book.getName() : "Unknown Title");
-            viewHolder.tvauthor.setText(book.getAuthor() != null ? book.getAuthor() : "Unknown Author");
-            viewHolder.tvprice.setText("$" + book.getPrice());
-            viewHolder.tvsold.setText("Đã bán: " + book.getSold()); // Thêm tiền tố "Sold: "
-
+            viewHolder.tvname.setText(category.getName() != null ? category.getName() : "Unknown Title");
+            viewHolder.tvdescribe.setText(category.getDescribe() != null ? category.getDescribe() : "Unknown Describe");
             // Đặt hình ảnh cho ImageView, thay vì dùng setBackgroundResource, dùng setImageResource
-            if (book.getImg() != null) {
-                int imageResId = context.getResources().getIdentifier(book.getImg(), "drawable", context.getPackageName());
+            if (category.getImg() != null) {
+                int imageResId = context.getResources().getIdentifier(category.getImg(), "drawable", context.getPackageName());
                 if (imageResId != 0) {  // Kiểm tra nếu resource ID hợp lệ
                     viewHolder.img.setImageResource(imageResId);  // Đặt hình ảnh
                 } else {
@@ -62,13 +57,12 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
                 }
             }
         }
-
         return convertView;
     }
 
     // ViewHolder class dùng để tối ưu hóa hiệu suất
     public class ViewHolder {
-        TextView tvname, tvauthor, tvprice, tvsold;
+        TextView tvname, tvdescribe;
         ImageView img;
     }
 }
