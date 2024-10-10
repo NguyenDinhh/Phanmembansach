@@ -10,17 +10,14 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-        <Button
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@color/white"
+            android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_back2"
-            android:isScrollContainer="false"
             android:paddingLeft="15dp"
-            app:iconSize="35dp">
-
-        </Button>
-
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"></TextView>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="240dp"
@@ -118,11 +115,5 @@
             android:text="     The Book of God by Walter Wangerin is a novelized retelling of the Bible, bringing its stories and characters to life in a vivid, engaging way. Wangerin weaves together key biblical events, from creation to the life of Jesus, offering a fresh perspective on familiar narratives. His storytelling blends historical context with rich emotional depth, making the Bible more accessible and immersive for readers. It’s an inspiring read for those seeking a deeper connection to the scriptures."
             android:textSize="16sp" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/rating"></ImageView>
     </LinearLayout>
 </ScrollView>
