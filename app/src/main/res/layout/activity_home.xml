@@ -67,6 +67,7 @@
                         app:layout_constraintStart_toStartOf="parent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_1"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -83,8 +84,8 @@
 
                                 <ImageView
                                     android:id="@+id/img1_Recommendation"
-                                    android:layout_width="150dp"
-                                    android:layout_height="232dp"
+                                    android:layout_width="147dp"
+                                    android:layout_height="241dp"
                                     android:layout_marginTop="0dp"
                                     android:scaleType="fitXY"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -139,6 +140,7 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="180dp"
+                            android:id="@+id/home_book_2"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@color/white">
@@ -207,6 +209,7 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="180dp"
+                            android:id="@+id/home_book_3"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@color/white">
@@ -274,6 +277,7 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="180dp"
+                            android:id="@+id/home_book_4"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@color/white">
@@ -341,6 +345,7 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="180dp"
+                            android:id="@+id/home_book_5"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@color/white">
@@ -411,6 +416,8 @@
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:id="@+id/see_more_recommendation"
+
                             android:background="@color/white">
 
                             <androidx.cardview.widget.CardView
@@ -487,6 +494,7 @@
                         app:layout_constraintStart_toStartOf="parent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_6"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -546,6 +554,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_7"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -605,6 +614,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_8"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -664,6 +674,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_9"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -723,6 +734,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_10"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -782,6 +794,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/see_more_categories"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -860,6 +873,7 @@
                         app:layout_constraintStart_toStartOf="parent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_author_1"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -919,6 +933,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_author_2"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -978,6 +993,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_author_3"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1037,6 +1053,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_author_4"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1096,6 +1113,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_author_5"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1155,6 +1173,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/see_more_author"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1233,6 +1252,7 @@
                         app:layout_constraintStart_toStartOf="parent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_11"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1299,6 +1319,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_12"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1367,6 +1388,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_13"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1434,6 +1456,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_14"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1501,6 +1524,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/home_book_15"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1569,6 +1593,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/see_more_fantasy"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
