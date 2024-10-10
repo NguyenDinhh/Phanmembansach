@@ -5,11 +5,11 @@ import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AboutusActivity extends AppCompatActivity {
+public class ContactusActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aboutus); // Layout cho PasswordActivity
+        setContentView(R.layout.activity_aboutus);
 
 
         ImageView buttonBack = findViewById(R.id.buttonBack);
@@ -18,7 +18,7 @@ public class AboutusActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Quay về MainActivity
+                finish();
             }
         });
     }

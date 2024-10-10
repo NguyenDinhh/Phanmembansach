@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Back Button -->
+
         <ImageView
             android:id="@+id/buttonBack"
             android:layout_width="wrap_content"
@@ -18,17 +18,17 @@
             android:src="@drawable/ic_back"
             android:contentDescription="@string/back_button" />
 
-        <!-- Avatar và tiêu đề Profile -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:text="Profile"
             android:textColor="#4559E4"
             android:textSize="35sp"
-            android:textStyle="bold"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp" />
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="110dp"
@@ -37,7 +37,7 @@
             android:src="@drawable/ic_profile"
             android:contentDescription="Avatar" />
 
-        <!-- Your name -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             android:padding="10dp"
             android:textSize="16sp" />
 
-        <!-- Email -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
             android:hint="Nhom1@gmail.com"
             android:textSize="16sp" />
 
-        <!-- Address -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
             android:hint="Việt Nam"
             android:textSize="16sp" />
 
-        <!-- Phone Number -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
             android:hint="0345678912"
             android:textSize="16sp" />
 
-        <!-- Gender Selection -->
+
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
 
             <RadioButton
                 android:id="@+id/radioMale"
-                android:layout_width="wrap_content"
+                android:layout_width="83dp"
                 android:layout_height="wrap_content"
                 android:buttonTint="#4371E8"
                 android:text="Male"
@@ -145,7 +145,7 @@
                 android:textSize="18sp" />
         </RadioGroup>
 
-        <!-- Update Button -->
+
         <Button
             android:id="@+id/buttonUpdate"
             android:layout_width="match_parent"
