@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">Phanmembansach</string>
+    <string name="app_name">Phan mem ban sach</string>
+    <string name="icon_desc">Biểu tượng</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_privacy">Privacy</string>
+    <string name="nav_manage_password">Manage your password</string>
+    <string name="nav_favourite">Your favourite</string>
+    <string name="nav_history">History</string>
+    <string name="nav_coming_soon">Coming soon</string>
+    <string name="nav_contact">Contact Us</string>
+    <string name="nav_about">About Us</string>
+    <string name="nav_logout">Log out</string>
+    <string name="show_password">Show password</string>
+    <string name="back_button">Quay lại</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
