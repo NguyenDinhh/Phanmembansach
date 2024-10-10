@@ -6,13 +6,24 @@ public class Category {
     private String describe;
     private Integer sold;
     private  String img;
+    private Integer id;
 
-    public Category(String name, Integer amount, String describe, Integer sold, String img) {
+
+    public Category(String name, Integer amount, String describe, Integer sold, String img, Integer id) {
         this.name = name;
         this.amount = amount;
         this.describe = describe;
         this.sold = sold;
         this.img = img;
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
