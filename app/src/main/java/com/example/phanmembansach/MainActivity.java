@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, PasswordActivity.class);
                         break;
                     case "Your favourite":
-
+                        intent = new Intent(MainActivity.this, YourfavouriteActivity.class);
                         break;
                     case "History":
 
