@@ -5,15 +5,14 @@ import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ProfileActivity extends AppCompatActivity {
+public class YourfavouriteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_yourfavourite);
 
 
         ImageView buttonBack = findViewById(R.id.buttonBack);
-
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
