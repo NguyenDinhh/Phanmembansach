@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
@@ -34,9 +35,8 @@
 
             <EditText
                 android:id="@+id/editTextText2"
-                android:layout_width="257dp"
+                android:layout_width="300dp"
                 android:layout_height="36dp"
-                android:layout_marginLeft="70dp"
                 android:layout_marginTop="35dp"
                 android:background="@drawable/search"
                 android:drawableStart="@drawable/ic_search"
@@ -45,7 +45,8 @@
                 android:gravity="center_vertical"
                 android:hint="Search here"
                 android:inputType="text"
-                android:padding="5dp" />
+                android:padding="5dp"
+                android:textSize="16sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -2467,49 +2468,50 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
                     android:text="See more books >>>"
                     android:textAlignment="center"
                     android:textColor="#4371E8"
-                    android:textSize="40sp"
+                    android:textSize="35sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
     <LinearLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:weightSum="4"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="#ECF0FD"
-        app:layout_constraintBottom_toBottomOf="parent" >
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="1dp"
+            android:padding="3dp"
             app:srcCompat="@drawable/ic_home"></ImageView>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="1dp"
+            android:padding="3dp"
             app:srcCompat="@drawable/ic_notifications"></ImageView>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="1dp"
+            android:padding="3dp"
             app:srcCompat="@drawable/ic_cart"></ImageView>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/ic_person"
-            android:layout_weight="1"></ImageView>
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_person"></ImageView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
