@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="240dp"
+        android:layout_height="200dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="15dp"
@@ -44,10 +44,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:layout_marginTop="20dp"
-                android:paddingTop="15dp"
+                android:paddingTop="10dp"
                 android:text="J. R. R. Tolkien"
                 android:textAlignment="center"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold"></TextView>
 
             <TextView
@@ -55,12 +55,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:text="Writer, Philologist"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/amount"
+                android:id="@+id/tvamount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

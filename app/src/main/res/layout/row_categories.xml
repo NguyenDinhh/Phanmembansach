@@ -7,11 +7,11 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="240dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/background_books"
         android:orientation="horizontal"
         android:weightSum="10">
@@ -53,7 +53,7 @@
                 android:id="@+id/tvdescribe"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="20dp"
                 android:text="     Fantasy books transport readers to imaginary worlds filled with magic, supernatural creatures, and epic adventures."
                 android:textStyle="bold" />
 
