@@ -12,6 +12,7 @@
         android:gravity="center_vertical"
         android:paddingBottom="16dp">
 
+
         <ImageView
             android:id="@+id/buttonBack"
             android:layout_width="wrap_content"
@@ -20,15 +21,17 @@
             android:contentDescription="@string/back_button"
             android:padding="8dp" />
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Your Favourite"
+            android:text="Contact Us"
             android:textColor="#4371E8"
             android:textSize="25sp"
             android:textStyle="bold" />
     </LinearLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,53 +43,87 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Hình ảnh cuốn sách -->
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:background=""
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
 
                 <ImageView
-                    android:id="@+id/book_image"
-                    android:layout_width="80dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/ic_book_placeholder" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_book"
+                    android:contentDescription="Book Store Logo" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="16dp">
-
-                    <TextView
-                        android:id="@+id/book_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sherlock Holmes"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/book_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$29.39"
-                        android:textSize="16sp"
-                        android:paddingTop="8dp" />
-                </LinearLayout>
-
-                <ImageButton
-                    android:id="@+id/remove_button"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_close"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Remove book" />
+                    android:layout_marginStart="16dp"
+                    android:text="Book Store"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
             </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nhom1 's product:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nguyễn Văn Thế Dinh\nLưu Hồng Nhung\nLê Đức Tuấn Anh"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#423D3D"
+                android:paddingBottom="16dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+84 345 678 912, +84 354 543 502."
+                android:textColor="#4371E8"
+                android:textSize="16sp"
+                android:autoLink="phone" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nhom1@gmail.com,\nSupport@nhom1bookshop.net,\nNhom1bookstore@gmail.com"
+                android:textColor="#4371E8"
+                android:textSize="16sp"
+                android:autoLink="email" />
         </LinearLayout>
     </ScrollView>
+
+
+
 </LinearLayout>
