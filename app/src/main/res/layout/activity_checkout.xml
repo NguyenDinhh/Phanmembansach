@@ -54,48 +54,53 @@
             android:textSize="35dp"
             android:textStyle="bold"/>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="#D7D7D7"
-            android:text="*****"
-            android:inputType="text"
-            android:padding="18dp"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:drawableLeft="@drawable/mb" <!-- Chèn hình ảnh vào bên trái -->/>
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="#D7D7D7"
-            android:text="*****"
-            android:inputType="text"
-            android:padding="18dp"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:drawableLeft="@drawable/momo"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="#D7D7D7"
+                android:text="*****"
+                android:inputType="text"
+                android:padding="18dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/mb" <!-- Chèn hình ảnh vào bên trái -->/>
 
-        <EditText
-            android:id="@+id/cod_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="#D7D7D7"
-            android:text="Cash on delivery"
-            android:inputType="text"
-            android:padding="18dp"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:drawableLeft="@drawable/cash"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="#D7D7D7"
+                android:text="*****"
+                android:inputType="text"
+                android:padding="18dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/momo"/>
+
+            <EditText
+                android:id="@+id/cod_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="#D7D7D7"
+                android:text="Cash on delivery"
+                android:inputType="text"
+                android:padding="18dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/cash"/>
+        </LinearLayout>
 
         <EditText
             android:id="@+id/total_input"
