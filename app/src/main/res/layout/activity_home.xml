@@ -34,7 +34,7 @@
                 android:textStyle="bold|italic" />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/txt_search"
                 android:layout_width="300dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="35dp"
@@ -2497,6 +2497,7 @@
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <TextView
+                    android:id="@+id/txt_see_more"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
@@ -2518,6 +2519,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
+            android:id="@+id/menu_home"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -2525,6 +2527,7 @@
             app:srcCompat="@drawable/ic_home"></ImageView>
 
         <ImageView
+            android:id="@+id/menu_notification"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -2532,6 +2535,7 @@
             app:srcCompat="@drawable/ic_notifications"></ImageView>
 
         <ImageView
+            android:id="@+id/menu_cart"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -2539,6 +2543,7 @@
             app:srcCompat="@drawable/ic_cart"></ImageView>
 
         <ImageView
+            android:id="@+id/menu_account"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"

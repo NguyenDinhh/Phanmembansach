@@ -10,34 +10,34 @@
     android:orientation="vertical"
     tools:context=".Categories_books">
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width="match_parent"
-       android:layout_height="40dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
 
-       <ImageView
-           android:id="@+id/img_back"
-           android:layout_width="50dp"
-           android:layout_height="40dp"
-           android:paddingLeft="10dp"
-           android:src="@drawable/ic_back"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent"></ImageView>
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
-       <TextView
-           android:id="@+id/txt_back"
-           android:layout_width="wrap_content"
-           android:layout_height="40dp"
-           android:gravity="center"
-           android:paddingRight="30dp"
-           android:text="Authors"
-           android:textAlignment="center"
-           android:textColor="#4371E8"
-           android:textSize="22sp"
-           android:textStyle="bold"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toEndOf="@+id/img_back"
-           app:layout_constraintTop_toTopOf="parent" />
-   </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txt_back"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingRight="50dp"
+            android:text="All Book"
+            android:textAlignment="center"
+            android:textColor="#4371E8"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_back"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -74,12 +74,11 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_search">
 
             <ListView
-                android:id="@+id/lvauthor"
+                android:id="@+id/lvcategories_book"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"></ListView>
         </LinearLayout>
-
         <LinearLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"

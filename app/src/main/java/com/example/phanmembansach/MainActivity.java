@@ -16,10 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         lvContact = findViewById(R.id.lvContact);
-
-
         ArrayList<Contact> arrContact = new ArrayList<>();
         arrContact.add(new Contact("Home"));
         arrContact.add(new Contact("Profile"));
@@ -31,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         arrContact.add(new Contact("Contact Us"));
         arrContact.add(new Contact("About Us"));
         arrContact.add(new Contact("Log out"));
-
 
         CustomAdapter customAdapter = new CustomAdapter(this, R.layout.row_listview, arrContact);
         lvContact.setAdapter(customAdapter);
@@ -63,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, YourfavouriteActivity.class);
                         break;
                     case "History":
-
                         break;
                     case "Coming soon":
 

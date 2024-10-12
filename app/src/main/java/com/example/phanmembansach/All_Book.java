@@ -17,26 +17,27 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
-public class Authors extends AppCompatActivity {
+public class All_Book extends AppCompatActivity {
     private ListView lv;
     private ImageView back;
     private ImageView menu_home;
     private ImageView menu_notification;
     private ImageView menu_cart;
     private ImageView menu_account;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       //EdgeToEdge.enable(this);   toàn màn hình
-        setContentView(R.layout.activity_authors);
+        setContentView(R.layout.activity_all_book);
+        lv = findViewById(R.id.lvcategories_book);
         menu_home = findViewById(R.id.menu_home);
         menu_notification = findViewById(R.id.menu_notification);
         menu_cart = findViewById(R.id.menu_cart);
-        menu_account= findViewById(R.id.menu_account);
+        menu_account = findViewById(R.id.menu_account);
         back = findViewById(R.id.img_back);
         EditText txt_search = findViewById(R.id.txt_search);
         txt_search.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_UP ) {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
                 if (event.getRawX() <= (txt_search.getLeft() + txt_search.getCompoundDrawables()[0].getBounds().width())) {
                     // Trong một phương thức như onClick
                     Toast.makeText(this, "You have just searched", Toast.LENGTH_SHORT).show();
@@ -48,51 +49,56 @@ public class Authors extends AppCompatActivity {
         menu_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Authors.this, Home.class));
+                startActivity(new Intent(All_Book.this, Home.class));
 
             }
         });
         menu_notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Authors.this, Notification.class));
+                startActivity(new Intent(All_Book.this, Notification.class));
             }
         });
         menu_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Authors.this, CartActivity.class));
+                startActivity(new Intent(All_Book.this, CartActivity.class));
             }
         });
         menu_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Authors.this, MainActivity.class));
+                startActivity(new Intent(All_Book.this, MainActivity.class));
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Authors.this, Home.class));
+                startActivity(new Intent(All_Book.this, Categories.class));
             }
         });
-        lv = findViewById(R.id.lvauthor);
-        ArrayList<Author> arrAuthor = new ArrayList<>();
-        Author author1= new Author("J. R. R. Tolkien","Writer, Philologist",10,"","j_r_r_tolkien");
-        Author author2= new Author("Andrzej Sapkowski","Writer, Philologist",10,"","andrzej_sapkowski");
-        Author author3= new Author("Stephen King","Writer, Philologist",10,"","stephen_king");
-        Author author4= new Author("Sir Arthur conan doyle","Writer, Philologist",10,"","sir_arthur_conan_doyle");
-        Author author5= new Author("J K Rowling","Writer, Philologist",10,"","j_k_rowling");
+        ArrayList<Book> arrBook = new ArrayList<>();
+        Book book1 = new Book("Chúa nhẫn 1", "", "J. R. R. Tolkien", 0, 15.00, 1000, 13, "chuanhan1");
+        Book book2 = new Book("Ash and steel: A soul stones story", "", "T.L. Branson", 0, 20.99, 440, 47, "fantasy_book_2");
+        Book book3 = new Book("As fire is to gold", "", "Mark McCabe", 0, 27.09, 80, 8, "fantasy_book_3");
+        Book book4 = new Book("The wicher", "", "T.L. Branson", 0, 20.99, 1000, 13, "fantasy_book_1");
+        Book book5 = new Book("Ash and steel: A soul stones story", "", "T.L. Branson", 0, 20.99, 1000, 13, "fantasy_book_4");
+        Book book6 = new Book("Hero", "", "T.L. Branson", 0, 20.99, 1000, 13, "fantasy_book_5");
+        Book book7 = new Book("Nguoi Hobbit", "", "T.L. Branson", 0, 20.99, 1000, 13, "chuanhan2");
+        Book book8 = new Book("Chua nhan 3", "", "T.L. Branson", 0, 20.99, 1000, 13, "chuanhan33");
 
-        arrAuthor.add(author1);
-        arrAuthor.add(author2);
-        arrAuthor.add(author3);
-        arrAuthor.add(author4);
-        arrAuthor.add(author5);
-        Adapter_Authors adapter = new Adapter_Authors(this,R.layout.row_authors, arrAuthor);
+        arrBook.add(book5);
+        arrBook.add(book6);
+        arrBook.add(book7);
+        arrBook.add(book8);
+        arrBook.add(book1);
+        arrBook.add(book2);
+        arrBook.add(book3);
+        arrBook.add(book4);
+        Adapter_Categories_books adapter = new Adapter_Categories_books(this, R.layout.row_categories_books, arrBook);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((parent, view, position, id) -> {
-            startActivity(new Intent(Authors.this, Detail_Author.class));
+            startActivity(new Intent(All_Book.this, Detail_book.class));
         });
     }
 }

@@ -3,7 +3,12 @@ package com.example.phanmembansach;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,11 +21,63 @@ import java.util.ArrayList;
 
 public class Categories_books extends AppCompatActivity {
     private ListView lv;
+    private ImageView back;
+    private ImageView menu_home;
+    private ImageView menu_notification;
+    private ImageView menu_cart;
+    private ImageView menu_account;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories_books);
         lv = findViewById(R.id.lvcategories_book);
+        menu_home = findViewById(R.id.menu_home);
+        menu_notification = findViewById(R.id.menu_notification);
+        menu_cart = findViewById(R.id.menu_cart);
+        menu_account= findViewById(R.id.menu_account);
+        back = findViewById(R.id.img_back);
+        EditText txt_search = findViewById(R.id.txt_search);
+        txt_search.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_UP ) {
+                if (event.getRawX() <= (txt_search.getLeft() + txt_search.getCompoundDrawables()[0].getBounds().width())) {
+                    // Trong một phương thức như onClick
+                    Toast.makeText(this, "You have just searched", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+            return false;
+        });
+        menu_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Categories_books.this, Home.class));
+
+            }
+        });
+        menu_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Categories_books.this, Notification.class));
+            }
+        });
+        menu_cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Categories_books.this, CartActivity.class));
+            }
+        });
+        menu_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Categories_books.this, MainActivity.class));
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Categories_books.this, Categories.class));
+            }
+        });
         ArrayList<Book> arrBook = new ArrayList<>();
         Book book1 = new Book("Chúa nhẫn 1","", "J. R. R. Tolkien", 0, 15.00, 1000, 13,"chuanhan1");
         Book book2 = new Book("Ash and steel: A soul stones story","", "T.L. Branson", 0, 20.99, 440, 47,"fantasy_book_2");
