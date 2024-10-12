@@ -31,20 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
         CustomAdapter customAdapter = new CustomAdapter(this, R.layout.row_listview, arrContact);
         lvContact.setAdapter(customAdapter);
-
-
         lvContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 String selectedContact = arrContact.get(position).getName();
-
                 Intent intent = null;
-
-
                 switch (selectedContact) {
                     case "Home":
-
+                        intent = new Intent(MainActivity.this, Home.class);
                         break;
                     case "Profile":
                         intent = new Intent(MainActivity.this, ProfileActivity.class);
@@ -59,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, YourfavouriteActivity.class);
                         break;
                     case "History":
+                        intent = new Intent(MainActivity.this,HistoryActivity.class);
                         break;
                     case "Coming soon":
-
+                        intent = new Intent(MainActivity.this, ComingsoonActivity.class);
                         break;
                     case "Contact Us":
                         intent = new Intent(MainActivity.this, ContactusActivity.class);
@@ -70,10 +65,9 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, AboutusActivity.class);
                         break;
                     case "Log out":
-
+                        intent = new Intent(MainActivity.this, LoginActivity.class);
                         break;
                 }
-
 
                 if (intent != null) {
                     startActivity(intent);
