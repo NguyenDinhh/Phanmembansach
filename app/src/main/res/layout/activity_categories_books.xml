@@ -10,28 +10,41 @@
     android:orientation="vertical"
     tools:context=".Categories_books">
 
-    <TextView
-        android:id="@+id/textView3"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:drawableStart="@drawable/ic_back"
-        android:gravity="center"
-        android:paddingLeft="15dp"
-        android:paddingRight="55dp"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="2"
-        android:text="Fantasy"
-        android:textColor="#4371E8"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_height="40dp">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_back"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingRight="50dp"
+            android:text="Fantasy"
+            android:textAlignment="center"
+            android:textColor="#4371E8"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_back"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal">
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/txt_search"
                 android:layout_width="300dp"
                 android:layout_height="36dp"
                 android:layout_alignParentStart="true"
@@ -58,7 +71,7 @@
                 android:layout_marginTop="80dp"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText2">
+                app:layout_constraintTop_toBottomOf="@+id/txt_search">
 
                 <ListView
                     android:id="@+id/lvcategories_book"
@@ -75,6 +88,7 @@
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <ImageView
+                    android:id="@+id/menu_home"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -82,6 +96,7 @@
                     app:srcCompat="@drawable/ic_home"></ImageView>
 
                 <ImageView
+                    android:id="@+id/menu_notification"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -89,6 +104,7 @@
                     app:srcCompat="@drawable/ic_notifications"></ImageView>
 
                 <ImageView
+                    android:id="@+id/menu_cart"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -96,6 +112,7 @@
                     app:srcCompat="@drawable/ic_cart"></ImageView>
 
                 <ImageView
+                    android:id="@+id/menu_account"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

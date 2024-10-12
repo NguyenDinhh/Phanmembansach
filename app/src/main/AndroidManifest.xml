@@ -13,8 +13,17 @@
         android:theme="@style/Theme.Phanmembansach"
         tools:targetApi="31">
         <activity
-            android:name=".Welcome"
+            android:name=".All_Book"
             android:exported="true" />
+        <activity
+            android:name=".Welcome"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ForgetpasswordActivity"
             android:exported="true" />
@@ -36,10 +45,6 @@
         <activity
             android:name=".Categories"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Categories_books"
@@ -73,6 +78,12 @@
             android:exported="true" />
         <activity
             android:name=".ComingsoonActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Notification"
             android:exported="true" />
     </application>
 

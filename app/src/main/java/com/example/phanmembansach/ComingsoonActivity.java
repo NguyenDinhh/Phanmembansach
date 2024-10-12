@@ -11,7 +11,7 @@ public class ComingsoonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comingsoon);
 
-        ImageView buttonBack = findViewById(R.id.buttonBack);
+        ImageView buttonBack = findViewById(R.id.img_back);
 
 
         buttonBack.setOnClickListener(new View.OnClickListener() {

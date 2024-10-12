@@ -54,7 +54,7 @@ public class CustomAdapter extends ArrayAdapter<com.example.phanmembansach.Conta
                 icon.setImageResource(R.drawable.ic_password);
                 break;
             case "Your favourite":
-                icon.setImageResource(R.drawable.ic_favourite);
+                icon.setImageResource(R.drawable.ic_favourite_2);
                 break;
             case "History":
                 icon.setImageResource(R.drawable.ic_history);
