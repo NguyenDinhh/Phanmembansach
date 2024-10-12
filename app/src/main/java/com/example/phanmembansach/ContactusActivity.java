@@ -9,7 +9,7 @@ public class ContactusActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aboutus);
+        setContentView(R.layout.activity_contactus);
 
 
         ImageView buttonBack = findViewById(R.id.img_back);
