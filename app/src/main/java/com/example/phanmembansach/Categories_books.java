@@ -75,7 +75,7 @@ public class Categories_books extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Categories_books.this, Categories.class));
+                finish();
             }
         });
         ArrayList<Book> arrBook = new ArrayList<>();
