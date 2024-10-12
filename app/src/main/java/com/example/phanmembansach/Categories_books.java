@@ -1,5 +1,6 @@
 package com.example.phanmembansach;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -38,5 +39,9 @@ public class Categories_books extends AppCompatActivity {
         arrBook.add(book7);
         arrBook.add(book8);
         Adapter_Categories_books adapter = new Adapter_Categories_books(this,R.layout.row_categories_books, arrBook);
-        lv.setAdapter(adapter);    }
+        lv.setAdapter(adapter);
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            startActivity(new Intent(Categories_books.this, Detail_book.class));
+        });
+    }
 }
