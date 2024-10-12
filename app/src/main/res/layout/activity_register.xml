@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="ECF0FD"
+    android:background="#ECF0FD"
     android:padding="16dp"
     tools:context=".RegisterActivity">
 
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
             android:text="Already have an account ? Log in"
-            android:textColorHint="4A489A"
+            android:textColorHint="#4A489A"
             android:textSize="18sp"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
