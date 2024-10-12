@@ -1,48 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:padding="16dp"
     tools:context=".CheckoutActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:id="@+id/img_exit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
             app:srcCompat="@drawable/dau_x" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="Check out"
             android:textColorHint="4371E8"
-            android:textSize="35dp"
-            android:textStyle="bold"/>
-        <EditText
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/apm_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#D7D7D7"
+            android:drawableStart="@drawable/ic_add"
+            android:gravity="center"
             android:hint="Add Payment Method"
             android:inputType="text"
             android:padding="18dp"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="20sp"
-            android:gravity="center"
             tools:ignore="DuplicateIds" />
 
         <TextView
@@ -51,82 +61,145 @@
             android:layout_marginTop="10dp"
             android:text="Payment method"
             android:textColorHint="4371E8"
-            android:textSize="35dp"
-            android:textStyle="bold"/>
+            android:textSize="26dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:weightSum="3">
 
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
                 android:background="@drawable/rounded_corner"
                 android:backgroundTint="#D7D7D7"
-                android:text="*****"
-                android:inputType="text"
-                android:padding="18dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:drawableLeft="@drawable/mb" <!-- Chèn hình ảnh vào bên trái -->/>
+                android:orientation="horizontal">
 
-            <EditText
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mb"></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:paddingLeft="25dp"
+                    android:text="*****"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
                 android:background="@drawable/rounded_corner"
                 android:backgroundTint="#D7D7D7"
-                android:text="*****"
-                android:inputType="text"
-                android:padding="18dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:drawableLeft="@drawable/momo"/>
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/cod_input"
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/momo"></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:paddingLeft="25dp"
+                    android:text="*****"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
                 android:background="@drawable/rounded_corner"
                 android:backgroundTint="#D7D7D7"
-                android:text="Cash on delivery"
-                android:inputType="text"
-                android:padding="18dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:drawableLeft="@drawable/cash"/>
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cash"></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:paddingLeft="25dp"
+                    android:text="Cash on delivery"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"></TextView>
+            </LinearLayout>
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/total_input"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#D7D7D7"
-            android:text="Total Payable"
-            android:inputType="text"
-            android:padding="18dp"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:gravity="clip_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:inputType="text"
+                android:padding="10dp"
+                android:password="false"
+                android:text="Total Payable"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:paddingRight="10dp"
+                android:text="$30.09"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/order_btn"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn"
             android:backgroundTint="#4371E8"
             android:text="Order now"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
