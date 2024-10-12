@@ -13,8 +13,6 @@ public class AboutusActivity extends AppCompatActivity {
 
 
         ImageView buttonBack = findViewById(R.id.buttonBack);
-
-
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

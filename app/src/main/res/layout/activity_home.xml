@@ -105,7 +105,6 @@
                                     android:id="@+id/txt1_Recommendation"
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:paddingLeft="11dp"
                                     android:text="Lập trình Java cơ bản"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
@@ -478,7 +477,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="460dp">
+                android:layout_height="460dp"
+                android:layout_marginTop="30dp">
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -857,7 +857,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="460dp">
+                android:layout_height="460dp"
+                android:layout_marginTop="30dp">
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -917,7 +918,8 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
                                     android:text="Writer, Philologist"
@@ -977,7 +979,8 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
                                     android:text="Writer"
@@ -1037,7 +1040,8 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
                                     android:text="Writer"
@@ -1097,7 +1101,8 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
                                     android:text="Writer, doctor"
@@ -1157,7 +1162,8 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
                                     android:text="Writer"
@@ -1236,7 +1242,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="460dp">
+                android:layout_height="460dp"
+                android:layout_marginTop="30dp">
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -1288,7 +1295,6 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:paddingLeft="11dp"
                                     android:text="The Witcher: The last wish"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
@@ -1656,7 +1662,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="460dp">
+                android:layout_height="460dp"
+                android:layout_marginTop="30dp">
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -1707,7 +1714,6 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:paddingLeft="11dp"
                                     android:text="Giao duc va quoc phong"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
@@ -2070,7 +2076,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="460dp">
+                android:layout_height="460dp"
+                android:layout_marginTop="30dp">
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -2121,7 +2128,6 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:paddingLeft="11dp"
                                     android:text="Drama comedy"
                                     android:textAlignment="center"
                                     android:textSize="16sp"

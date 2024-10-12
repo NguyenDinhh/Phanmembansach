@@ -1,5 +1,6 @@
 package com.example.phanmembansach;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -33,5 +34,8 @@ public class Authors extends AppCompatActivity {
         arrAuthor.add(author5);
         Adapter_Authors adapter = new Adapter_Authors(this,R.layout.row_authors, arrAuthor);
         lv.setAdapter(adapter);
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            startActivity(new Intent(Authors.this, Detail_Author.class));
+        });
     }
 }
