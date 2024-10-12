@@ -1,42 +1,51 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF">
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingBottom="16dp">
-
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
             android:src="@drawable/ic_back"
-            android:contentDescription="@string/back_button"
-            android:padding="8dp" />
-
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <TextView
+            android:id="@+id/txt_back"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingRight="60dp"
             android:text="Contact Us"
+            android:textAlignment="center"
             android:textColor="#4371E8"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_back"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:paddingLeft="15dp"
+        android:paddingTop="20dp"
+        android:paddingRight="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,8 +63,8 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_book"
-                    android:contentDescription="Book Store Logo" />
+                    android:contentDescription="Book Store Logo"
+                    android:src="@drawable/ic_book" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,59 +80,98 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="8dp"
                 android:text="Nhom1 's product:"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:paddingBottom="8dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
                 android:text="Nguyễn Văn Thế Dinh\nLưu Hồng Nhung\nLê Đức Tuấn Anh"
-                android:textSize="18sp"
-                android:textStyle="bold"
                 android:textColor="#423D3D"
-                android:paddingBottom="16dp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
                 android:text="Phone:"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:paddingBottom="8dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="phone"
                 android:text="+84 345 678 912, +84 354 543 502."
                 android:textColor="#4371E8"
-                android:textSize="16sp"
-                android:autoLink="phone" />
+                android:textSize="16sp" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="8dp"
                 android:text="Email:"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:paddingBottom="8dp"
-                android:layout_marginTop="16dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="email"
                 android:text="Nhom1@gmail.com,\nSupport@nhom1bookshop.net,\nNhom1bookstore@gmail.com"
                 android:textColor="#4371E8"
-                android:textSize="16sp"
-                android:autoLink="email" />
+                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ECF0FD"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <ImageView
+            android:id="@+id/menu_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_home"></ImageView>
 
+        <ImageView
+            android:id="@+id/menu_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_notifications"></ImageView>
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/menu_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_cart"></ImageView>
+
+        <ImageView
+            android:id="@+id/menu_account"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_person"></ImageView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
