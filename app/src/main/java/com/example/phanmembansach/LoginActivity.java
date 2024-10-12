@@ -18,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextView textViewForgotPassword;
     private  Button btn_login;
+    private  TextView txt_register;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         // Liên kết TextView với phần tử "Forgotten password?" trong layout
         textViewForgotPassword = findViewById(R.id.textview_forgot_password);
+        txt_register = findViewById(R.id.txt_register);
         textViewForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +40,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, Home.class));
+            }
+        });
+        txt_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }

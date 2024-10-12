@@ -1,38 +1,50 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingBottom="16dp">
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
             android:src="@drawable/ic_back"
-            android:contentDescription="@string/back_button"
-            android:padding="8dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <TextView
+            android:id="@+id/txt_back"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Your Favourite"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingRight="60dp"
+            android:text="Privacy"
+            android:textAlignment="center"
             android:textColor="#4371E8"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_back"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,11 +55,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:background="@drawable/background_books"
                 android:layout_marginBottom="8dp"
-                android:gravity="center_vertical">
+                android:background="@drawable/background_books"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/book_image_1"
@@ -74,16 +86,16 @@
                         android:id="@+id/book_price_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
                         android:text="$28.35"
-                        android:textSize="16sp"
-                        android:paddingTop="8dp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <ImageButton
                     android:id="@+id/remove_button_1"
-                    android:layout_marginBottom="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:layout_marginBottom="50dp"
                     android:background="?attr/selectableItemBackground"
                     android:contentDescription="Remove book"
                     android:src="@drawable/ic_close" />
@@ -93,11 +105,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:background="@drawable/background_books"
                 android:layout_marginBottom="8dp"
-                android:gravity="center_vertical">
+                android:background="@drawable/background_books"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/book_image_2"
@@ -124,16 +136,16 @@
                         android:id="@+id/book_price_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
                         android:text="$29.55"
-                        android:textSize="16sp"
-                        android:paddingTop="8dp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <ImageButton
                     android:id="@+id/remove_button_2"
-                    android:layout_marginBottom="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:layout_marginBottom="50dp"
                     android:background="?attr/selectableItemBackground"
                     android:contentDescription="Remove book"
                     android:src="@drawable/ic_close" />
@@ -141,5 +153,46 @@
 
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ECF0FD"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/menu_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_home"></ImageView>
+
+        <ImageView
+            android:id="@+id/menu_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_notifications"></ImageView>
+
+        <ImageView
+            android:id="@+id/menu_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_cart"></ImageView>
+
+        <ImageView
+            android:id="@+id/menu_account"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            app:srcCompat="@drawable/ic_person"></ImageView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
