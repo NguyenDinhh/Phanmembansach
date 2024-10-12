@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (selectedContact) {
                     case "Home":
-
+                        intent = new Intent(MainActivity.this,Home.class);
                         break;
                     case "Profile":
                         intent = new Intent(MainActivity.this, ProfileActivity.class);
@@ -63,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, YourfavouriteActivity.class);
                         break;
                     case "History":
-
+                        intent = new Intent(MainActivity.this, HistoryActivity.class);
                         break;
                     case "Coming soon":
-
+                        intent = new Intent(MainActivity.this, ComingsoonActivity.class);
                         break;
                     case "Contact Us":
                         intent = new Intent(MainActivity.this, ContactusActivity.class);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, AboutusActivity.class);
                         break;
                     case "Log out":
-
+                        intent = new Intent(MainActivity.this, LoginActivity.class);
                         break;
                 }
 

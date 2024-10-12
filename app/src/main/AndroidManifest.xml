@@ -66,6 +66,12 @@
         <activity
             android:name=".YourfavouriteActivity"
             android:exported="true" />
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ComingsoonActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
