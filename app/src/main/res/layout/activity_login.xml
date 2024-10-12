@@ -93,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
-            android:text="-or sign in wiht-"
+            android:text="-or sign in with-"
             android:textColorHint="#4A489A"
             android:textSize="18sp"
             android:gravity="center"
