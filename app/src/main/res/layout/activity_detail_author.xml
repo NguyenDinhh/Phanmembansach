@@ -19,8 +19,9 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txt_back"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:drawableStart="@drawable/ic_back2"
                 android:paddingLeft="15dp"
                 android:paddingTop="5dp"
@@ -113,6 +114,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/book1"
                         android:layout_width="180dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
@@ -159,6 +161,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/book2"
                         android:layout_width="180dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
@@ -205,6 +208,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/book3"
                         android:layout_width="180dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
@@ -251,6 +255,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/book4"
                         android:layout_width="180dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
@@ -297,6 +302,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/book5"
                         android:layout_width="180dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"

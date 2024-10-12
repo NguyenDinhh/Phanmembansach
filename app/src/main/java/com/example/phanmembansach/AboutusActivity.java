@@ -12,7 +12,7 @@ public class AboutusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_aboutus);
 
 
-        ImageView buttonBack = findViewById(R.id.buttonBack);
+        ImageView buttonBack = findViewById(R.id.img_back);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
