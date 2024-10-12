@@ -7,7 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
 import java.util.List;
 
 public class Adapter_Categories_books extends ArrayAdapter<Book> {
@@ -21,7 +32,6 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
         this.resource = resource;
         this.context = context;
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
@@ -36,6 +46,8 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
             viewHolder.tvprice = convertView.findViewById(R.id.tvprice);
             viewHolder.img = convertView.findViewById(R.id.img);
             viewHolder.tvsold = convertView.findViewById(R.id.tvsold);
+            viewHolder.img_favourite = convertView.findViewById(R.id.ic_favourite);
+            viewHolder.img_cart = convertView.findViewById(R.id.ic_cart);
 
             convertView.setTag(viewHolder);  // Lưu lại ViewHolder cho lần tái sử dụng sau
         } else {
@@ -63,12 +75,40 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
             }
         }
 
+        if (viewHolder.img_favourite !=null && viewHolder.img_cart !=null)
+        {
+            viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
+            viewHolder.img_favourite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if( (Integer) viewHolder.img_favourite.getTag() ==R.drawable.ic_favorite )
+                    {
+                        viewHolder.img_favourite.setImageResource(R.drawable.ic_favourite_2);
+                        viewHolder.img_favourite.setTag(R.drawable.ic_favourite_2);
+                    }
+                    else
+                    {
+                        viewHolder.img_favourite.setImageResource(R.drawable.ic_favorite);
+                        viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
+                    }
+
+                }
+            });
+            viewHolder.img_cart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, CartActivity.class));
+                }
+            });
+        }
+
+
         return convertView;
     }
 
     // ViewHolder class dùng để tối ưu hóa hiệu suất
     public class ViewHolder {
         TextView tvname, tvauthor, tvprice, tvsold;
-        ImageView img;
+        ImageView img,img_favourite,img_cart;
     }
 }
