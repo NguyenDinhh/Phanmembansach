@@ -1,22 +1,30 @@
 package com.example.phanmembansach;
 
-import android.content.Intent;  // Thêm import này
+import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    private ListView lvContact;
 
+public class Account_Fragment extends Fragment {
+    private ListView lvContact;
+    public Account_Fragment() {
+        // Required empty public constructor
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        lvContact = findViewById(R.id.lvContact);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View mView=  inflater.inflate(R.layout.account_fragment, container, false);
+        lvContact = mView.findViewById(R.id.lvContact);
         ArrayList<Contact> arrContact = new ArrayList<>();
         arrContact.add(new Contact("Home"));
         arrContact.add(new Contact("Profile"));
@@ -29,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         arrContact.add(new Contact("About Us"));
         arrContact.add(new Contact("Log out"));
 
-        CustomAdapter customAdapter = new CustomAdapter(this, R.layout.row_listview, arrContact);
+        CustomAdapter customAdapter = new CustomAdapter(getActivity(), R.layout.row_listview, arrContact);
         lvContact.setAdapter(customAdapter);
         lvContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -38,34 +46,34 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = null;
                 switch (selectedContact) {
                     case "Home":
-                        intent = new Intent(MainActivity.this, Home.class);
+                        intent = new Intent(getActivity(), Home.class);
                         break;
                     case "Profile":
-                        intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        intent = new Intent(getActivity(), ProfileActivity.class);
                         break;
                     case "Privacy":
-                        intent = new Intent(MainActivity.this, PrivacyActivity.class);
+                        intent = new Intent(getActivity(), PrivacyActivity.class);
                         break;
                     case "Manage your password":
-                        intent = new Intent(MainActivity.this, PasswordActivity.class);
+                        intent = new Intent(getActivity(), PasswordActivity.class);
                         break;
                     case "Your favourite":
-                        intent = new Intent(MainActivity.this, YourfavouriteActivity.class);
+                        intent = new Intent(getActivity(), YourfavouriteActivity.class);
                         break;
                     case "History":
-                        intent = new Intent(MainActivity.this,HistoryActivity.class);
+                        intent = new Intent(getActivity(),HistoryActivity.class);
                         break;
                     case "Coming soon":
-                        intent = new Intent(MainActivity.this, ComingsoonActivity.class);
+                        intent = new Intent(getActivity(), ComingsoonActivity.class);
                         break;
                     case "Contact Us":
-                        intent = new Intent(MainActivity.this, ContactusActivity.class);
+                        intent = new Intent(getActivity(), ContactusActivity.class);
                         break;
                     case "About Us":
-                        intent = new Intent(MainActivity.this, AboutusActivity.class);
+                        intent = new Intent(getActivity(), AboutusActivity.class);
                         break;
                     case "Log out":
-                        intent = new Intent(MainActivity.this, LoginActivity.class);
+                        intent = new Intent(getActivity(), LoginActivity.class);
                         break;
                 }
 
@@ -74,5 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        return  mView;
     }
 }

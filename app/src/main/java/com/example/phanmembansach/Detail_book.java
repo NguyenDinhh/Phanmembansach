@@ -34,7 +34,9 @@ public class Detail_book extends AppCompatActivity {
        img_cart.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               startActivity(new Intent(Detail_book.this, CartActivity.class));
+               Intent intent = new Intent(Detail_book.this, Home.class);
+               intent.putExtra("fragment_cart", 2); // Chuyển tới fragment tại vị trí 0
+               startActivity(intent);
            }
        });
        img_favourite.setOnClickListener(new View.OnClickListener() {

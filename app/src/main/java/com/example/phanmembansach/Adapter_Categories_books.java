@@ -97,7 +97,7 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
             viewHolder.img_cart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    context.startActivity(new Intent(context, CartActivity.class));
+                    context.startActivity(new Intent(context, Cart_fagment.class));
                 }
             });
         }

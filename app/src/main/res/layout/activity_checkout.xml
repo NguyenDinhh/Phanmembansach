@@ -33,7 +33,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="Check out"
-            android:textColorHint="4371E8"
+            android:textColor="#4371E8"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -52,15 +52,14 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:textSize="20sp"
-            tools:ignore="DuplicateIds" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Payment method"
-            android:textColorHint="4371E8"
+            android:textColor="#4371E8"
             android:textSize="26dp"
             android:textStyle="bold" />
 
@@ -176,11 +175,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:gravity="center_vertical"
                 android:inputType="text"
                 android:paddingRight="10dp"
                 android:text="$30.09"
-                android:textAlignment="viewEnd"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

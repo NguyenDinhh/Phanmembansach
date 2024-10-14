@@ -203,47 +203,5 @@
 
         </LinearLayout>
     </ScrollView>
-    <LinearLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#ECF0FD"
-        android:weightSum="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/menu_home"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            app:srcCompat="@drawable/ic_home"></ImageView>
-
-        <ImageView
-            android:id="@+id/menu_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            app:srcCompat="@drawable/ic_notifications"></ImageView>
-
-        <ImageView
-            android:id="@+id/menu_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            app:srcCompat="@drawable/ic_cart"></ImageView>
-
-        <ImageView
-            android:id="@+id/menu_account"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            app:srcCompat="@drawable/ic_person"></ImageView>
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
