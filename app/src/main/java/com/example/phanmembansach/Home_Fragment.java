@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -17,6 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import  com.example.phanmembansach.Home;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Home_Fragment extends Fragment {
     private TextView see_more;
@@ -25,8 +29,7 @@ public class Home_Fragment extends Fragment {
         // Required empty public constructor
     }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
          View mView=  inflater.inflate(R.layout.home_fragment, container, false);
         see_more = mView.findViewById(R.id.txt_see_more);
         EditText txt_search = mView.findViewById(R.id.txt_search);
@@ -93,6 +96,17 @@ public class Home_Fragment extends Fragment {
                 }
             });
         }
+        ViewPager2 viewPager2 = mView.findViewById(R.id.slideviewpager);
+
+        // Danh sách hình ảnh
+        List<Integer> images = new ArrayList<>();
+        images.add(R.drawable.slide_1);
+        images.add(R.drawable.slide_2);
+        images.add(R.drawable.slide_3);
+        images.add(R.drawable.slide_4);
+
+        Slide_Adapter a = new Slide_Adapter(requireActivity(), images);
+        viewPager2.setAdapter(a);
         return mView;
     }
 }

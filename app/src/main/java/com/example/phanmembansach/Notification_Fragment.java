@@ -1,5 +1,6 @@
 package com.example.phanmembansach;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -29,7 +30,7 @@ public class Notification_Fragment extends Fragment {
 
 
 
-        back.setOnClickListener(view -> getActivity().finish());
+        back.setOnClickListener(view -> ((Home) getActivity()).setCurrentPage(0));
         img_reload.setOnClickListener(view -> getActivity().recreate());
 
         img_menu.setOnClickListener(view -> {

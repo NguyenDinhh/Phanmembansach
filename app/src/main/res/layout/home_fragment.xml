@@ -47,17 +47,46 @@
                 android:inputType="text"
                 android:padding="5dp"
                 android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/background_books">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Super Sale"
+                    android:textAlignment="center"
+                    android:textColor="#4371E8"
+                    android:textSize="24dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/slideviewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="15dp"></androidx.viewpager2.widget.ViewPager2>
+            </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="460dp"
-                android:layout_marginTop="80dp">
+                android:layout_marginTop="15dp">
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <LinearLayout
                         android:layout_width="1080dp"
@@ -138,8 +167,8 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="180dp"
                             android:id="@+id/home_book_2"
+                            android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@color/white">
@@ -207,8 +236,8 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="180dp"
                             android:id="@+id/home_book_3"
+                            android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@color/white">
@@ -275,8 +304,8 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="180dp"
                             android:id="@+id/home_book_4"
+                            android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@color/white">
@@ -343,8 +372,8 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="180dp"
                             android:id="@+id/home_book_5"
+                            android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@color/white">
@@ -412,10 +441,10 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/see_more_recommendation"
                             android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:id="@+id/see_more_recommendation"
 
                             android:background="@color/white">
 

@@ -15,7 +15,9 @@ public class YourfavouriteActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(YourfavouriteActivity.this, Home.class);
+                intent.putExtra("fragment_cart", 3);
+                startActivity(intent);
             }
         });
     }

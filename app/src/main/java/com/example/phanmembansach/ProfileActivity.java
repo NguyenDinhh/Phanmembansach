@@ -16,14 +16,9 @@ public class ProfileActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-            }
-        });
-        back = findViewById(R.id.img_back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(ProfileActivity.this, Home.class);
+                intent.putExtra("fragment_cart", 3);
+                startActivity(intent);
             }
         });
     }

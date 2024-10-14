@@ -16,7 +16,9 @@ public class ComingsoonActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(ComingsoonActivity.this, Home.class);
+                intent.putExtra("fragment_cart", 3);
+                startActivity(intent);
             }
         });
     }

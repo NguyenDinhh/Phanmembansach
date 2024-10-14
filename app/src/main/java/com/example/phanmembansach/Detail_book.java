@@ -35,7 +35,7 @@ public class Detail_book extends AppCompatActivity {
            @Override
            public void onClick(View view) {
                Intent intent = new Intent(Detail_book.this, Home.class);
-               intent.putExtra("fragment_cart", 2); // Chuyển tới fragment tại vị trí 0
+               intent.putExtra("fragment_cart", 2);
                startActivity(intent);
            }
        });

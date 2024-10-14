@@ -1,5 +1,7 @@
 package com.example.phanmembansach;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -97,11 +99,12 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
             viewHolder.img_cart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    context.startActivity(new Intent(context, Cart_fagment.class));
+                    Intent intent = new Intent(view.getContext(), Home.class);
+                    intent.putExtra("fragment_cart", 2);
+                    view.getContext().startActivity(intent);
                 }
             });
         }
-
 
         return convertView;
     }
