@@ -40,12 +40,7 @@ public class All_Book_Fragment extends Fragment {
             }
             return false;
         });
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().finish();
-            }
-        });
+        back.setOnClickListener(view -> ((Home) getActivity()).setCurrentPage(0));
         ArrayList<Book> arrBook = new ArrayList<>();
         Book book1 = new Book("Chúa nhẫn 1", "", "J. R. R. Tolkien", 0, 15.00, 1000, 13, "chuanhan1",0.1);
         Book book2 = new Book("Ash and steel: A soul stones story", "", "T.L. Branson", 0, 20.99, 440, 47, "fantasy_book_2",0.2);

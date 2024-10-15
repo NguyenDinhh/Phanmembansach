@@ -1,6 +1,7 @@
 package com.example.phanmembansach;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ public class Detail_book extends AppCompatActivity {
     private TextView txt_back;
     private  ImageView img_favourite;
     private ImageView img_cart;
+    private  TextView txtoldprice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,9 @@ public class Detail_book extends AppCompatActivity {
         img_favourite.setImageResource(R.drawable.ic_favorite);
         img_favourite.setTag(R.drawable.ic_favorite);
        img_cart = findViewById(R.id.ic_cart);
+       txtoldprice = findViewById(R.id.tvoldprice);
+       txtoldprice.setPaintFlags(txtoldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+
        txt_back.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
