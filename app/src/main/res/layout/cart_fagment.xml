@@ -3,70 +3,75 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CartActivity">
+    android:layout_height="match_parent">
 
 
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        android:paddingBottom="16dp">
 
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_back"
-            android:contentDescription="Back Button" />
+            android:contentDescription="Back Button"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_back" />
 
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="Cart"
-            android:textSize="32sp"
             android:textColor="#4371E8"
-            android:textStyle="bold"
-            android:gravity="center" />
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
 
         <ImageView
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="40dp"
-            android:src="@drawable/cart"
-            android:contentDescription="Cart Icon" />
+            android:contentDescription="Cart Icon"
+            android:paddingRight="10dp"
+            android:src="@drawable/cart" />
     </LinearLayout>
 
 
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="460dp"
+        android:layout_below="@+id/header"
         android:padding="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/background_books"
             android:orientation="vertical">
 
 
             <LinearLayout
-                android:layout_marginTop="80dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="20dp"
-                android:gravity="center_vertical">
+                android:padding="20dp">
 
                 <ImageView
                     android:layout_width="130dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/education_book_4"
-                    android:contentDescription="Java Book" />
+                    android:contentDescription="Java Book"
+                    android:src="@drawable/education_book_4" />
 
 
                 <LinearLayout
@@ -127,9 +132,9 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_marginTop="50dp"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginTop="50dp"
                     android:contentDescription="Delete Icon"
                     android:src="@drawable/ic_delete" />
             </LinearLayout>
@@ -218,34 +223,314 @@
         </LinearLayout>
     </ScrollView>
 
+    <TextView
+        android:id="@+id/select_voucher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scroll"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/background_books"
+        android:drawableStart="@drawable/ic_voucher"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawablePadding="20dp"
+        android:gravity="center_vertical"
+        android:padding="15dp"
+        android:text="Use Voucher"
+        android:textSize="18sp"
+        android:textStyle="bold"></TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/select_voucher"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:layout_marginTop="480dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
             android:text="Total: $64.44"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:gravity="left" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_checkout"
             android:layout_width="250dp"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corner"
+            android:backgroundTint="#4371E8"
             android:text="Check out"
             android:textAllCaps="false"
-            android:backgroundTint="#4371E8"
             android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_vouchers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="65dp"
+        android:background="@drawable/background_related_offers"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_books"
+                android:drawableLeft="@drawable/ic_offer"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:text="Vouchers"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="500dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="15dp"
+                        android:paddingRight="15dp"
+                        android:text="Discount Code"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"></TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_books"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="130dp"
+                            android:layout_weight="4"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/img_discount_code"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingRight="10dp"
+                                android:text="$0.5 DISCOUNT CODE - ORDERS FROM $15"
+                                android:textSize="14sp"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:padding="5dp"
+                                android:text="Not applicable to foreign texts, manga, gift certificates, textbooks, computers and photocopy paper and some other"
+                                android:textSize="12sp"></TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="HSD: 31/10/2024"
+                                android:textColor="#4371E8"
+                                android:textSize="14sp"></TextView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_books"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="130dp"
+                            android:layout_weight="4"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/img_discount_code"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingRight="10dp"
+                                android:text="$0.5 DISCOUNT CODE - ORDERS FROM $15"
+                                android:textSize="14sp"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:padding="5dp"
+                                android:text="Not applicable to foreign texts, manga, gift certificates, textbooks, computers and photocopy paper and some other"
+                                android:textSize="12sp"></TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="HSD: 31/10/2024"
+                                android:textColor="#4371E8"
+                                android:textSize="14sp"></TextView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_books"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="130dp"
+                            android:layout_weight="4"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/img_discount_code"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingRight="10dp"
+                                android:text="$0.5 DISCOUNT CODE - ORDERS FROM $15"
+                                android:textSize="14sp"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:padding="5dp"
+                                android:text="Not applicable to foreign texts, manga, gift certificates, textbooks, computers and photocopy paper and some other"
+                                android:textSize="12sp"></TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="HSD: 31/10/2024"
+                                android:textColor="#4371E8"
+                                android:textSize="14sp"></TextView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_books"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="130dp"
+                            android:layout_weight="4"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/img_discount_code"></ImageView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingRight="10dp"
+                                android:text="$0.5 DISCOUNT CODE - ORDERS FROM $15"
+                                android:textSize="14sp"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:padding="5dp"
+                                android:text="Not applicable to foreign texts, manga, gift certificates, textbooks, computers and photocopy paper and some other"
+                                android:textSize="12sp"></TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:text="HSD: 31/10/2024"
+                                android:textColor="#4371E8"
+                                android:textSize="14sp"></TextView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/search"
+                android:text="Cancel"
+                android:textSize="16dp"
+                android:textStyle="bold">
+
+            </Button>
+        </LinearLayout>
+    </FrameLayout>
 
 </RelativeLayout>

@@ -39,9 +39,7 @@ public class Detail_book extends AppCompatActivity {
        img_cart.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent intent = new Intent(Detail_book.this, Home.class);
-               intent.putExtra("fragment_cart", 2);
-               startActivity(intent);
+               startActivity(new Intent(Detail_book.this, Order_Book.class));
            }
        });
        img_favourite.setOnClickListener(new View.OnClickListener() {

@@ -21,7 +21,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return  new Notification_Fragment();
             case 2:
-                return  new Cart_fagment();
+                return  new Cart_Fragment();
             case 3:
                 return  new Account_Fragment();
             case 4:

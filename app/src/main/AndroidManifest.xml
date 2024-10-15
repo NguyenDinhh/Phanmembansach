@@ -13,13 +13,16 @@
         android:theme="@style/Theme.Phanmembansach"
         tools:targetApi="31">
         <activity
+            android:name=".Successful_Order"
+            android:exported="false" />
+        <activity
             android:name=".Order_Book"
             android:exported="true" />
         <activity
             android:name=".CheckoutActivity"
             android:exported="true" />
         <activity
-            android:name=".All_Book"
+            android:name=".All_Book_Fragment"
             android:exported="true" />
         <activity
             android:name=".Welcome"
@@ -46,19 +49,7 @@
             android:name=".Detail_Author"
             android:exported="true" />
         <activity
-            android:name=".Authors"
-            android:exported="true" />
-        <activity
-            android:name=".Categories"
-            android:exported="true" />
-        <activity
-            android:name=".Categories_books"
-            android:exported="true" />
-        <activity
             android:name=".Home"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".ProfileActivity"
@@ -83,12 +74,6 @@
             android:exported="true" />
         <activity
             android:name=".ComingsoonActivity"
-            android:exported="true" />
-        <activity
-            android:name=".CartActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Notification"
             android:exported="true" />
     </application>
 
