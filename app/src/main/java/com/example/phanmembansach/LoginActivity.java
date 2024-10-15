@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Chuyển sang ForgetPasswordActivity
-                Intent intent = new Intent(LoginActivity.this, ForgetpasswordActivity.class);
+                Intent intent = new Intent(LoginActivity.this, Forgetpassword1.class);
                 startActivity(intent);
             }
         });

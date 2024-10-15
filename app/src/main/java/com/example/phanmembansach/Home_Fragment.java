@@ -76,8 +76,9 @@ public class Home_Fragment extends Fragment {
                 ((Home) getActivity()).setCurrentPage(7);
             }
         });
-        int[] idbooks = {R.id.home_book_1, R.id.home_book_2, R.id.home_book_3, R.id.home_book_4, R.id.home_book_5, R.id.home_book_6, R.id.home_book_7, R.id.home_book_8, R.id.home_book_9, R.id.home_book_10, R.id.home_book_11, R.id.home_book_12, R.id.home_book_13, R.id.home_book_14, R.id.home_book_15,};
+        int[] idbooks = {R.id.home_book_1, R.id.home_book_2, R.id.home_book_3, R.id.home_book_4, R.id.home_book_5,  R.id.home_book_11, R.id.home_book_12, R.id.home_book_13, R.id.home_book_14, R.id.home_book_15,};
         int[] idauthors = {R.id.home_author_1, R.id.home_author_2, R.id.home_author_3, R.id.home_author_4, R.id.home_author_5};
+        int[] idcategories = {R.id.home_book_6, R.id.home_book_7, R.id.home_book_8, R.id.home_book_9, R.id.home_book_10};
         for (int id : idbooks) {
             ConstraintLayout c = mView.findViewById(id);
             c.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +94,15 @@ public class Home_Fragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(getActivity(), Detail_Author.class));
+                }
+            });
+        }
+        for (int id : idcategories) {
+            ConstraintLayout c = mView.findViewById(id);
+            c.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ((Home) getActivity()).setCurrentPage(7);
                 }
             });
         }

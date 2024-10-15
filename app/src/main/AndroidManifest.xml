@@ -61,6 +61,12 @@
             android:name=".PrivacyActivity"
             android:exported="true" />
         <activity
+            android:name=".Forgetpassword1"
+            android:exported="true" />
+        <activity
+            android:name=".Forgetpassword2"
+            android:exported="true" />
+        <activity
             android:name=".AboutusActivity"
             android:exported="true" />
         <activity
