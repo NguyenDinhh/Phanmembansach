@@ -2,6 +2,7 @@ package com.example.phanmembansach;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
+import android.graphics.Paint;
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -50,7 +51,8 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
             viewHolder.tvsold = convertView.findViewById(R.id.tvsold);
             viewHolder.img_favourite = convertView.findViewById(R.id.ic_favourite);
             viewHolder.img_cart = convertView.findViewById(R.id.ic_cart);
-
+            viewHolder.tvoldprice = convertView.findViewById(R.id.tvoldprice);
+            viewHolder.tvsale = convertView.findViewById(R.id.tvsale);
             convertView.setTag(viewHolder);  // Lưu lại ViewHolder cho lần tái sử dụng sau
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -60,11 +62,13 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
         Book book = arrBook.get(position);
 
         if (book != null) {
-            // Đảm bảo không bị null khi gán giá trị cho các TextView
             viewHolder.tvname.setText(book.getName() != null ? book.getName() : "Unknown Title");
             viewHolder.tvauthor.setText(book.getAuthor() != null ? book.getAuthor() : "Unknown Author");
-            viewHolder.tvprice.setText("$" + book.getPrice());
-            viewHolder.tvsold.setText("Sold: " + book.getSold()); // Thêm tiền tố "Sold: "
+            viewHolder.tvprice.setText("$" + String.format("%.2f", (book.getPrice() - book.getPrice()*book.getSale()) ));
+            viewHolder.tvsold.setText("Sold: " + book.getSold());
+            viewHolder.tvoldprice.setText("$" + book.getPrice());
+            viewHolder.tvoldprice.setPaintFlags(viewHolder.tvoldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            viewHolder.tvsale.setText("-" + book.getSale()*100 + "%");
 
             // Đặt hình ảnh cho ImageView, thay vì dùng setBackgroundResource, dùng setImageResource
             if (book.getImg() != null) {
@@ -111,7 +115,7 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
 
     // ViewHolder class dùng để tối ưu hóa hiệu suất
     public class ViewHolder {
-        TextView tvname, tvauthor, tvprice, tvsold;
+        TextView tvname, tvauthor, tvprice, tvsold,tvoldprice,tvsale;
         ImageView img,img_favourite,img_cart;
     }
 }
