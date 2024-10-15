@@ -95,9 +95,8 @@
                     android:id="@+id/remove_button_1"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:background="@drawable/background_books"
                     android:layout_marginBottom="50dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Remove book"
                     android:src="@drawable/ic_close" />
             </LinearLayout>
 
@@ -146,7 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginBottom="50dp"
-                    android:background="?attr/selectableItemBackground"
+                    android:background="@drawable/background_books"
                     android:contentDescription="Remove book"
                     android:src="@drawable/ic_close" />
             </LinearLayout>
