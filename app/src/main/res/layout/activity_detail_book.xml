@@ -113,7 +113,7 @@
                     <ImageView
                         android:id="@+id/ic_favourite"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="10dp"
                         android:src="@drawable/ic_favorite" />
@@ -121,7 +121,7 @@
                     <ImageView
                         android:id="@+id/ic_cart"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="10dp"
                         android:src="@drawable/ic_shopping" />
@@ -194,7 +194,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
@@ -228,7 +228,7 @@
                 </LinearLayout>
 
                 <RatingBar
-                    android:layout_width="194dp"
+                    android:layout_width="160dp"
                     android:layout_height="40dp"
                     android:layout_gravity="right"
                     android:layout_marginStart="5dp"
@@ -246,16 +246,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/avt_dinh"
                     android:layout_marginEnd="10dp"
-                    android:contentDescription="Avatar" />
+                    android:contentDescription="Avatar"
+                    android:src="@drawable/avt_dinh" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -267,8 +267,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Nguyễn Văn Thế Dinh"
-                        android:textSize="13sp"
                         android:textColor="@color/black"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -280,7 +280,7 @@
 
 
                 <RatingBar
-                    android:layout_width="194dp"
+                    android:layout_width="160dp"
                     android:layout_height="40dp"
                     android:layout_gravity="right"
                     android:layout_marginStart="5dp"
@@ -294,24 +294,21 @@
                     android:stepSize="0.5" />
 
 
-
-
-
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/avt_anh"
                     android:layout_marginEnd="10dp"
-                    android:contentDescription="Avatar" />
+                    android:contentDescription="Avatar"
+                    android:src="@drawable/avt_anh" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -334,7 +331,7 @@
                 </LinearLayout>
 
                 <RatingBar
-                    android:layout_width="194dp"
+                    android:layout_width="160dp"
                     android:layout_height="40dp"
                     android:layout_gravity="right"
                     android:layout_marginStart="5dp"
@@ -346,7 +343,6 @@
                     android:scaleX="0.4"
                     android:scaleY="0.4"
                     android:stepSize="0.5" />
-
 
 
             </LinearLayout>

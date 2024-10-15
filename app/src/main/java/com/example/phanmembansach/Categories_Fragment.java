@@ -49,7 +49,7 @@ public class Categories_Fragment extends Fragment {
         Adapter_Categories adapter = new Adapter_Categories(getActivity(),R.layout.row_categories, arrCategories);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((parent, view, position, id) -> {
-            startActivity(new Intent(getActivity(), Categories_Fragment.class));
+            ((Home) getActivity()).setCurrentPage(7);
         });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
