@@ -57,12 +57,42 @@
                 android:text="J. R. R. Tolkien"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvprice"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="$15.00" />
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_marginRight="20dp"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/tvprice"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical"
+                    android:text="$15.00"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvoldprice"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="$15.00"
+                    android:textColor="#BFBCBC" />
+
+                <TextView
+                    android:id="@+id/tvsale"
+                    android:layout_width="0dp"
+                    android:padding="2dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/white"
+                    android:background="@drawable/background_sale"
+                    android:gravity="center_vertical"
+                    android:text="- 20%" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvsold"
@@ -82,7 +112,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="15dp"
+                    android:padding="10dp"
                     android:src="@drawable/ic_favorite"></ImageView>
 
                 <ImageView
@@ -90,7 +120,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="15dp"
+                    android:padding="10dp"
                     android:src="@drawable/ic_shopping"></ImageView>
 
             </LinearLayout>

@@ -13,16 +13,23 @@
         android:theme="@style/Theme.Phanmembansach"
         tools:targetApi="31">
         <activity
-            android:name=".CheckoutActivity"
-            android:exported="false" />
+            android:name=".Successful_Order"
+            android:exported="true" />
         <activity
-            android:name=".All_Book"
+            android:name=".Order_Book"
+            android:exported="true" />
+        <activity
+            android:name=".CheckoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".All_Book_Fragment"
             android:exported="true" />
         <activity
             android:name=".Welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -42,19 +49,7 @@
             android:name=".Detail_Author"
             android:exported="true" />
         <activity
-            android:name=".Authors"
-            android:exported="true" />
-        <activity
-            android:name=".Categories"
-            android:exported="true"></activity>
-        <activity
-            android:name=".Categories_books"
-            android:exported="true" />
-        <activity
             android:name=".Home"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".ProfileActivity"
@@ -64,6 +59,12 @@
             android:exported="true" />
         <activity
             android:name=".PrivacyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Forgetpassword1"
+            android:exported="true" />
+        <activity
+            android:name=".Forgetpassword2"
             android:exported="true" />
         <activity
             android:name=".AboutusActivity"
@@ -79,12 +80,6 @@
             android:exported="true" />
         <activity
             android:name=".ComingsoonActivity"
-            android:exported="true" />
-        <activity
-            android:name=".CartActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Notification"
             android:exported="true" />
     </application>
 

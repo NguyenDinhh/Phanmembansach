@@ -22,7 +22,9 @@ public class Detail_Author extends AppCompatActivity {
         txt_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(Detail_Author.this, Home.class);
+                intent.putExtra("fragment_cart", 5);
+                startActivity(intent);
             }
         });
         Integer [] books = {R.id.book1,R.id.book2,R.id.book3,R.id.book4,R.id.book5};

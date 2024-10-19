@@ -12,11 +12,12 @@ public class Book {
     private Integer amount;
     private Integer sold;
     private String img;
+    private  double sale;
 
     public Book(String name) {
     }
 
-    public Book(String name, String describe, String author, double start, double price, Integer amount, Integer sold,String img) {
+    public Book(String name, String describe, String author, double start, double price, Integer amount, Integer sold, String img, double sale) {
         this.name = name;
         this.describe = describe;
         this.author = author;
@@ -24,7 +25,8 @@ public class Book {
         this.price = price;
         this.amount = amount;
         this.sold = sold;
-        this.img =img;
+        this.img = img;
+        this.sale = sale;
     }
 
     public String getName() {
@@ -89,5 +91,13 @@ public class Book {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public double getSale() {
+        return sale;
+    }
+
+    public void setSale(double sale) {
+        this.sale = sale;
     }
 }

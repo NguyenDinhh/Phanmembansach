@@ -1,55 +1,70 @@
 package com.example.phanmembansach;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HistoryActivity extends AppCompatActivity {
     private ImageView back;
-    private ImageView menu_home;
-    private ImageView menu_notification;
-    private ImageView menu_cart;
-    private ImageView menu_account;
+    private TextView tvoldprice;
+    private TextView tvoldprice2;
+    private Button btn_buy_1;
+    private Button btn_buy_2;
+    LinearLayout a;
+    LinearLayout b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        menu_home = findViewById(R.id.menu_home);
-        menu_notification = findViewById(R.id.menu_notification);
-        menu_cart = findViewById(R.id.menu_cart);
-        menu_account= findViewById(R.id.menu_account);
         back = findViewById(R.id.img_back);
-        menu_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HistoryActivity.this, Home.class));
-
-            }
-        });
-        menu_notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HistoryActivity.this, Notification.class));
-            }
-        });
-        menu_cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HistoryActivity.this, CartActivity.class));
-            }
-        });
-        menu_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HistoryActivity.this, MainActivity.class));
-            }
-        });
+        tvoldprice = findViewById(R.id.tvoldprice);
+        tvoldprice2 = findViewById(R.id.tvoldprice2);
+        btn_buy_1 =findViewById(R.id.btn_buy_1);
+        btn_buy_2 = findViewById(R.id.btn_buy_2);
+        a = findViewById(R.id.a);
+        b = findViewById(R.id.b);
+        back = findViewById(R.id.img_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(HistoryActivity.this, Home.class);
+                intent.putExtra("fragment_cart", 3);
+                startActivity(intent);
+            }
+        });
+        btn_buy_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HistoryActivity.this, Home.class);
+                intent.putExtra("fragment_cart", 2);
+                startActivity(intent);
+            }
+        });
+        btn_buy_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HistoryActivity.this, Home.class);
+                intent.putExtra("fragment_cart", 2);
+                startActivity(intent);
+            }
+        });
+        a.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HistoryActivity.this, Detail_book.class));
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HistoryActivity.this, Detail_book.class));
             }
         });
     }

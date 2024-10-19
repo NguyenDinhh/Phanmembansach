@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".Categories_books">
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,7 +28,7 @@
             android:layout_height="40dp"
             android:gravity="center"
             android:paddingRight="50dp"
-            android:text="Tất cả sách"
+            android:text="Fantasy"
             android:textAlignment="center"
             android:textColor="#4371E8"
             android:textSize="22sp"
@@ -50,13 +49,13 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/search"
             android:drawableStart="@drawable/ic_search"
             android:drawableEnd="@drawable/ic_mic"
             android:ems="10"
             android:gravity="left"
-            android:hint="Tìm kiếm"
+            android:hint="Search here"
             android:inputType="text"
             android:padding="5dp"
             android:textSize="16sp"
@@ -77,47 +76,7 @@
                 android:id="@+id/lvcategories_book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"></ListView>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#ECF0FD"
-            android:weightSum="4"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <ImageView
-                android:id="@+id/menu_home"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="3dp"
-                app:srcCompat="@drawable/ic_home"></ImageView>
-
-            <ImageView
-                android:id="@+id/menu_notification"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="3dp"
-                app:srcCompat="@drawable/ic_notifications"></ImageView>
-
-            <ImageView
-                android:id="@+id/menu_cart"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="3dp"
-                app:srcCompat="@drawable/ic_cart"></ImageView>
-
-            <ImageView
-                android:id="@+id/menu_account"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="3dp"
-                app:srcCompat="@drawable/ic_person"></ImageView>
+                android:layout_marginBottom="10dp"></ListView>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

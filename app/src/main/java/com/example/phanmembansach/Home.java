@@ -3,6 +3,7 @@ package com.example.phanmembansach;
 import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -10,112 +11,91 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity {
-
-    private ImageView menu_home;
-    private ImageView menu_notification;
-    private ImageView menu_cart;
-    private ImageView menu_account;
-    private TextView see_more;
+    private BottomNavigationView bottomNavigationView;
+    private ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        ConstraintLayout sm_r = findViewById(R.id.see_more_recommendation);
-        ConstraintLayout sm_c = findViewById(R.id.see_more_categories);
-        ConstraintLayout sm_a = findViewById(R.id.see_more_author);
-        ConstraintLayout sm_f= findViewById(R.id.see_more_fantasy);
-        see_more = findViewById(R.id.txt_see_more);
-        menu_home = findViewById(R.id.menu_home);
-        menu_notification = findViewById(R.id.menu_notification);
-        menu_cart = findViewById(R.id.menu_cart);
-        menu_account= findViewById(R.id.menu_account);
-        EditText txt_search = findViewById(R.id.txt_search);
-        txt_search.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_UP ) {
-                if (event.getRawX() <= (txt_search.getLeft() + txt_search.getCompoundDrawables()[0].getBounds().width())) {
-                    startActivity(new Intent(Home.this, All_Book.class));
-                    Toast.makeText(this, "You have just searched", Toast.LENGTH_SHORT).show();
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        viewPager = findViewById(R.id.viewpager);
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position)
+                {
+                    case 0:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_home).setChecked(true);
+                        break;
+                    case 1:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_notification).setChecked(true);
+                        break;
+                    case 2:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_cart).setChecked(true);
+                        break;
+                    case 3:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_account).setChecked(true);
+                        break;
+
                 }
             }
-            return false;
-        });
-        see_more.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Home.this, All_Book.class));
+            public void onPageScrollStateChanged(int state) {
             }
         });
-        menu_home.setOnClickListener(new View.OnClickListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                recreate();
-            }
-        });
-        menu_notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Home.this, Notification.class));
-            }
-        });
-        menu_cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Home.this, CartActivity.class));
-            }
-        });
-        menu_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Home.this, MainActivity.class));
-            }
-        });
-        sm_f.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Home.this, Categories_books.class));
-            }
-        });
-        sm_c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Home.this, Categories.class));
-            }
-        });
-        sm_a.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Home.this, Authors.class));
-            }
-        });
-        sm_r.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Home.this, Categories_books.class));
-            }
-        });
-        int[] idbooks = {R.id.home_book_1, R.id.home_book_2, R.id.home_book_3, R.id.home_book_4, R.id.home_book_5, R.id.home_book_6, R.id.home_book_7, R.id.home_book_8, R.id.home_book_9, R.id.home_book_10, R.id.home_book_11, R.id.home_book_12, R.id.home_book_13, R.id.home_book_14, R.id.home_book_15,};
-        int[] idauthors = {R.id.home_author_1, R.id.home_author_2, R.id.home_author_3, R.id.home_author_4, R.id.home_author_5};
-        for (int id : idbooks) {
-            ConstraintLayout c = findViewById(id);
-            c.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                        startActivity(new Intent(Home.this, Detail_book.class));
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                if(item.getItemId() == R.id.menu_home)
+                {
+                    viewPager.setCurrentItem(0);
+                    return true;
                 }
-            });
-        }
-        for (int id : idauthors) {
-            ConstraintLayout c = findViewById(id);
-            c.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(Home.this, Detail_Author.class));
+                else  if(item.getItemId() == R.id.menu_notification)
+                {
+                    viewPager.setCurrentItem(1);
+                    return true;
                 }
-            });
-        }
+                else  if(item.getItemId() == R.id.menu_cart)
+                {
+                    viewPager.setCurrentItem(2);
+                    return true;
+                }
+                else  if(item.getItemId() == R.id.menu_account)
+                {
+                    viewPager.setCurrentItem(3);
+                    return true;
+                }
+                else
+                    return  false;
+            }
+        });
+        int position = getIntent().getIntExtra("fragment_cart", 0);
+        viewPager.setCurrentItem(position);
+    }
+
+    public void setCurrentPage(int i) {
+        viewPager.setCurrentItem(i);
     }
 }

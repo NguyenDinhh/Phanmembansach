@@ -1,13 +1,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <!-- Thanh tiêu đề với nút quay lại và tiêu đề "History" -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -41,9 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingLeft="10dp"
-        android:paddingTop="15dp"
-        android:paddingRight="10dp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -55,195 +53,224 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:id="@+id/a"
+                android:layout_width="wrap_content"
+                android:layout_height="240dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/background_books"
-                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:weightSum="10">
 
-                <ImageView
-                    android:id="@+id/book_image_1"
-                    android:layout_width="120dp"
-                    android:layout_height="160dp"
-                    android:src="@drawable/chuanhan1" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/chuanhan1"></ImageView>
+                </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:background="@drawable/background_books"
                     android:orientation="vertical"
-                    android:paddingStart="16dp">
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
 
                     <TextView
-                        android:id="@+id/book_title_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/tvname"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:paddingTop="15dp"
                         android:text="Chúa nhẫn 1"
-                        android:textSize="23sp"
-                        android:textStyle="bold" />
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/book_price_1"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tvauthor"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:text="$15.00"
-                        android:textSize="19sp" />
+                        android:layout_marginTop="10dp"
+                        android:text="J. R. R. Tolkien"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
                         android:orientation="horizontal">
 
-                        <View
-                            android:layout_width="30dp"
-                            android:layout_height="wrap_content" />
-
-                        <ImageButton
-                            android:id="@+id/favorite_button_1"
-                            android:layout_width="70dp"
-                            android:layout_height="55dp"
-                            android:background="?attr/selectableItemBackground"
-                            android:contentDescription="Add to favorite"
-                            android:src="@drawable/ic_favorite" />
-
-                        <View
-                            android:layout_width="30dp"
-                            android:layout_height="wrap_content" />
-
-
-                        <ImageButton
-                            android:id="@+id/cart_button_1"
-                            android:layout_width="69dp"
+                        <TextView
+                            android:id="@+id/tvprice"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:background="?attr/selectableItemBackground"
-                            android:contentDescription="Add to cart"
-                            android:src="@drawable/ic_shopping" />
+                            android:layout_weight="4"
+                            android:gravity="center_vertical"
+                            android:text="$15.00"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvoldprice"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:text="$15.00"
+                            android:textColor="#BFBCBC" />
+
+                        <TextView
+                            android:id="@+id/tvsale"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@drawable/background_sale"
+                            android:gravity="center_vertical"
+                            android:padding="2dp"
+                            android:text="- 20%"
+                            android:textColor="@color/white" />
                     </LinearLayout>
 
+                    <TextView
+                        android:id="@+id/tvsold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Buy: 1" />
+
+                    <Button
+                        android:id="@+id/btn_buy_1"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/btn"
+                        android:text="Buy again"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"></Button>
                 </LinearLayout>
             </LinearLayout>
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:id="@+id/b"
+                android:layout_width="wrap_content"
+                android:layout_height="240dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/background_books"
-                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:weightSum="10">
 
-                <ImageView
-                    android:id="@+id/book_image_2"
-                    android:layout_width="120dp"
-                    android:layout_height="160dp"
-                    android:src="@drawable/comedy_book_2" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/chuanhan2"></ImageView>
+                </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:background="@drawable/background_books"
                     android:orientation="vertical"
-                    android:paddingStart="16dp">
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
 
                     <TextView
-                        android:id="@+id/book_title_2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:paddingTop="15dp"
+                        android:text="Chúa nhẫn 2"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ash and Steel"
-                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"
+                        android:text="J. R. R. Tolkien"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/book_price_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
-                        android:text="$20.99"
-                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
                         android:orientation="horizontal">
 
-                        <View
-                            android:layout_width="30dp"
-                            android:layout_height="wrap_content" />
-
-                        <ImageButton
-                            android:id="@+id/favorite_button_2"
-                            android:layout_width="70dp"
-                            android:layout_height="55dp"
-                            android:background="?attr/selectableItemBackground"
-                            android:contentDescription="Add to favorite"
-                            android:src="@drawable/ic_favorite" />
-
-                        <View
-                            android:layout_width="30dp"
-                            android:layout_height="wrap_content" />
-
-
-                        <ImageButton
-                            android:id="@+id/cart_button_2"
-                            android:layout_width="69dp"
+                        <TextView
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:background="?attr/selectableItemBackground"
-                            android:contentDescription="Add to cart"
-                            android:src="@drawable/ic_shopping" />
+                            android:layout_weight="4"
+                            android:gravity="center_vertical"
+                            android:text="$17.00"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvoldprice2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:text="$23.00"
+                            android:textColor="#BFBCBC" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:background="@drawable/background_sale"
+                            android:gravity="center_vertical"
+                            android:padding="2dp"
+                            android:text="- 15%"
+                            android:textColor="@color/white" />
                     </LinearLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Buy: 3" />
+
+                    <Button
+                        android:id="@+id/btn_buy_2"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/btn"
+                        android:text="Buy again"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"></Button>
                 </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-    <LinearLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#ECF0FD"
-        android:weightSum="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/menu_home"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            app:srcCompat="@drawable/ic_home"></ImageView>
-
-        <ImageView
-            android:id="@+id/menu_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            app:srcCompat="@drawable/ic_notifications"></ImageView>
-
-        <ImageView
-            android:id="@+id/menu_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            app:srcCompat="@drawable/ic_cart"></ImageView>
-
-        <ImageView
-            android:id="@+id/menu_account"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            app:srcCompat="@drawable/ic_person"></ImageView>
-    </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

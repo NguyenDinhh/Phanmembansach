@@ -1,59 +1,30 @@
 package com.example.phanmembansach;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Categories extends AppCompatActivity {
-    private ListView lv;
-    private ImageView back;
-    private ImageView menu_home;
-    private ImageView menu_notification;
-    private ImageView menu_cart;
-    private ImageView menu_account;
+public class Categories_Fragment extends Fragment {
+    public Categories_Fragment() {
+        // Required empty public constructor
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categories2);
-        menu_home = findViewById(R.id.menu_home);
-        menu_notification = findViewById(R.id.menu_notification);
-        menu_cart = findViewById(R.id.menu_cart);
-        menu_account= findViewById(R.id.menu_account);
-        menu_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Categories.this, Home.class));
-            }
-        });
-        menu_notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Categories.this, Notification.class));
-            }
-        });
-        menu_cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Categories.this, CartActivity.class));
-            }
-        });
-        menu_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Categories.this, MainActivity.class));
-            }
-        });
-        back = findViewById(R.id.img_back);
-        lv = findViewById(R.id.lvcategories);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View mView = inflater.inflate(R.layout.categories_fragment, container, false);
+        ImageView back = mView.findViewById(R.id.img_back);
+       ListView  lv = mView.findViewById(R.id.lvcategories);
         ArrayList<Category> arrCategories = new ArrayList<>();
         Category category1 = new Category("Fantasy", 134, "     Fantasy books transport readers to imaginary worlds filled with magic, supernatural creatures, and epic adventures.", 89, "fantasy_book",1);
         Category category2 = new Category("Comedy", 134, "      Comedy books are designed to entertain and amuse readers with humorous plots, witty dialogue, and lighthearted situations.", 89, "comedy_book",2);
@@ -75,16 +46,17 @@ public class Categories extends AppCompatActivity {
         arrCategories.add(category8);
         arrCategories.add(category9);
         arrCategories.add(category10);
-        Adapter_Categories adapter = new Adapter_Categories(this,R.layout.row_categories, arrCategories);
+        Adapter_Categories adapter = new Adapter_Categories(getActivity(),R.layout.row_categories, arrCategories);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((parent, view, position, id) -> {
-            startActivity(new Intent(Categories.this, Categories_books.class));
+            ((Home) getActivity()).setCurrentPage(7);
         });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Categories.this, Home.class));
+                ((Home) getActivity()).setCurrentPage(0);
             }
         });
+        return  mView;
     }
 }
