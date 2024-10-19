@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:paddingRight="20dp"
-            android:text="Cart"
+            android:text="Giỏ hàng"
             android:textColor="#4371E8"
             android:textSize="32sp"
             android:textStyle="bold" />
@@ -240,7 +240,7 @@
         android:drawablePadding="20dp"
         android:gravity="center_vertical"
         android:padding="15dp"
-        android:text="Use Voucher"
+        android:text="Sử dụng Voucher"
         android:textSize="18sp"
         android:textStyle="bold"></TextView>
 
@@ -255,7 +255,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:text="Total: $64.44"
+            android:text="Tổng: $64.44"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -267,7 +267,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#4371E8"
-            android:text="Check out"
+            android:text="Kiểm tra"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -352,7 +352,7 @@
                                 android:paddingLeft="10dp"
                                 android:paddingTop="5dp"
                                 android:paddingRight="10dp"
-                                android:text="$0.5 DISCOUNT CODE - ORDERS FROM $15"
+                                android:text="Mã giảm $0.5 cho đơn từ $15"
                                 android:textSize="14sp"
                                 android:textStyle="bold"></TextView>
 
@@ -360,7 +360,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:padding="5dp"
-                                android:text="Not applicable to foreign texts, manga, gift certificates, textbooks, computers and photocopy paper and some other"
+                                android:text="Không áp dụng đối với văn bản nước ngoài, truyện tranh, phiếu quà tặng, sách giáo khoa, máy tính và giấy photocopy và một số loại khác."
                                 android:textSize="12sp"></TextView>
 
                             <TextView
@@ -401,7 +401,7 @@
                                 android:paddingLeft="10dp"
                                 android:paddingTop="5dp"
                                 android:paddingRight="10dp"
-                                android:text="$0.5 DISCOUNT CODE - ORDERS FROM $15"
+                                android:text="Mã giảm $0.5 cho đơn từ $15"
                                 android:textSize="14sp"
                                 android:textStyle="bold"></TextView>
 
@@ -409,7 +409,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:padding="5dp"
-                                android:text="Not applicable to foreign texts, manga, gift certificates, textbooks, computers and photocopy paper and some other"
+                                android:text="Không áp dụng đối với văn bản nước ngoài, truyện tranh, phiếu quà tặng, sách giáo khoa, máy tính và giấy photocopy và một số loại khác."
                                 android:textSize="12sp"></TextView>
 
                             <TextView
@@ -450,7 +450,7 @@
                                 android:paddingLeft="10dp"
                                 android:paddingTop="5dp"
                                 android:paddingRight="10dp"
-                                android:text="$0.5 DISCOUNT CODE - ORDERS FROM $15"
+                                android:text="Mã giảm $0.5 cho đơn từ $15"
                                 android:textSize="14sp"
                                 android:textStyle="bold"></TextView>
 
@@ -458,7 +458,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:padding="5dp"
-                                android:text="Not applicable to foreign texts, manga, gift certificates, textbooks, computers and photocopy paper and some other"
+                                android:text="Không áp dụng đối với văn bản nước ngoài, truyện tranh, phiếu quà tặng, sách giáo khoa, máy tính và giấy photocopy và một số loại khác."
                                 android:textSize="12sp"></TextView>
 
                             <TextView
@@ -499,7 +499,7 @@
                                 android:paddingLeft="10dp"
                                 android:paddingTop="5dp"
                                 android:paddingRight="10dp"
-                                android:text="$0.5 DISCOUNT CODE - ORDERS FROM $15"
+                                android:text="Mã giảm $0.5 cho đơn từ $15"
                                 android:textSize="14sp"
                                 android:textStyle="bold"></TextView>
 
@@ -507,7 +507,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:padding="5dp"
-                                android:text="Not applicable to foreign texts, manga, gift certificates, textbooks, computers and photocopy paper and some other"
+                                android:text="Không áp dụng đối với văn bản nước ngoài, truyện tranh, phiếu quà tặng, sách giáo khoa, máy tính và giấy photocopy và một số loại khác."
                                 android:textSize="12sp"></TextView>
 
                             <TextView

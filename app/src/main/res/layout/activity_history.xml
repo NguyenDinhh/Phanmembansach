@@ -27,7 +27,7 @@
             android:layout_height="40dp"
             android:gravity="center"
             android:paddingRight="60dp"
-            android:text="History"
+            android:text="Lịch sử"
             android:textAlignment="center"
             android:textColor="#4371E8"
             android:textSize="22sp"
@@ -147,7 +147,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Buy: 1" />
+                        android:text="Mua: 1" />
 
                     <Button
                         android:id="@+id/btn_buy_1"
@@ -156,7 +156,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/btn"
-                        android:text="Buy again"
+                        android:text="Mua lại"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="18sp"
@@ -254,7 +254,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Buy: 3" />
+                        android:text="Mua: 3" />
 
                     <Button
                         android:id="@+id/btn_buy_2"
@@ -263,7 +263,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/btn"
-                        android:text="Buy again"
+                        android:text="Mua lại"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="18sp"

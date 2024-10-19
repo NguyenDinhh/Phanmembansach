@@ -29,7 +29,7 @@
             android:layout_height="40dp"
             android:gravity="center"
             android:paddingRight="60dp"
-            android:text="Privacy"
+            android:text="Quyền riêng tư"
             android:textAlignment="center"
             android:textColor="#4371E8"
             android:textSize="22sp"
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="8dp"
-                android:text="Collection of Information"
+                android:text="Thu thập thông tin"
                 android:textColor="#5B5D8B"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -69,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
-                android:text="If you browse through this site without providing us with any personal information, we will gather and store some information about your visit, such as IP address, type of browser and operating system used, date and time you access our site, pages you visit, and if you linked to our website from another website, the address of that website. This information will not identify you personally and will not be linked back to you."
+                android:text="Nếu bạn duyệt qua trang web này mà không cung cấp cho chúng tôi bất kỳ thông tin cá nhân nào, chúng tôi sẽ thu thập và lưu trữ một số thông tin về lượt truy cập của bạn, chẳng hạn như địa chỉ IP, loại trình duyệt và hệ điều hành được sử dụng, ngày và giờ bạn truy cập trang web của chúng tôi, các trang bạn truy cập, và nếu bạn liên kết đến trang web của chúng tôi từ một trang web khác thì địa chỉ của trang web đó. Thông tin này sẽ không nhận dạng cá nhân bạn và sẽ không được liên kết lại với bạn."
                 android:textSize="16sp" />
 
 
@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="8dp"
-                android:text="Use and Sharing of Information"
+                android:text="Sử dụng và chia sẻ thông tin"
                 android:textColor="#5B5D8B"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
-                android:text="At no time will we sell your personally-identifiable data without your permission unless set forth in this Privacy Policy. The information we receive about you or from you may be used by us or shared by us with our corporate affiliates, dealers, agents, vendors and other third parties to help process your request; to comply with any law, regulation, audit or court order; to help improve our website or the products or services we offer; for research; to better understand our customers' needs; to develop new offerings; and to alert you to new products and services (of us or our business associates) in which you may be interested. We may also combine information you provide us with information about you that is available to us internally or from other sources in order to better serve you.\n\nWe do not share, sell, trade or rent your personal information to third parties for unknown reasons."
+                android:text="Chúng tôi sẽ không bao giờ bán dữ liệu nhận dạng cá nhân của bạn mà không có sự cho phép của bạn trừ khi được quy định trong Chính sách quyền riêng tư này. Thông tin chúng tôi nhận được về bạn hoặc từ bạn có thể được chúng tôi sử dụng hoặc chia sẻ với các chi nhánh công ty, đại lý, đại lý, nhà cung cấp và các bên thứ ba khác để giúp xử lý yêu cầu của bạn; để tuân thủ bất kỳ luật, quy định, lệnh kiểm toán hoặc lệnh của tòa án; để giúp cải thiện trang web của chúng tôi hoặc các sản phẩm hoặc dịch vụ chúng tôi cung cấp; cho nghiên cứu; để hiểu rõ hơn nhu cầu của khách hàng; để phát triển các dịch vụ mới; và thông báo cho bạn về các sản phẩm và dịch vụ mới (của chúng tôi hoặc đối tác kinh doanh của chúng tôi) mà bạn có thể quan tâm. Chúng tôi cũng có thể kết hợp thông tin bạn cung cấp cho chúng tôi với thông tin về bạn có sẵn trong nội bộ chúng tôi hoặc từ các nguồn khác để phục vụ bạn tốt hơn.\n\nChúng tôi không chia sẻ, bán, trao đổi hoặc cho thuê thông tin cá nhân của bạn cho bên thứ ba mà không xác định được lý do."
                 android:textSize="16sp" />
 
 
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
-                android:text="From time to time, we may place on your personal computer. are small identifiers sent from a web server and stored on your computer's hard drive, that help us to recognize you if you visit our website again. Also, our site uses cookies to track how you found our site. To protect your privacy we do not use cookies to store or transmit any personal information about you on the Internet. You have the ability to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. If you choose to decline cookies certain features of the site may not function properly or at all as a result."
+                android:text="Đôi khi, chúng tôi có thể đặt thông tin trên máy tính cá nhân của bạn. là những số nhận dạng nhỏ được gửi từ máy chủ web và được lưu trữ trên ổ cứng máy tính của bạn, giúp chúng tôi nhận ra bạn nếu bạn truy cập lại trang web của chúng tôi. Ngoài ra, trang web của chúng tôi sử dụng cookie để theo dõi cách bạn tìm thấy trang web của chúng tôi. Để bảo vệ quyền riêng tư của bạn, chúng tôi không sử dụng cookie để lưu trữ hoặc truyền bất kỳ thông tin cá nhân nào về bạn trên Internet. Bạn có khả năng chấp nhận hoặc từ chối cookie. Hầu hết các trình duyệt web tự động chấp nhận cookie nhưng bạn thường có thể sửa đổi cài đặt trình duyệt của mình để từ chối cookie nếu muốn. Nếu bạn chọn từ chối cookie, một số tính năng nhất định của trang web có thể không hoạt động bình thường hoặc thậm chí không hoạt động."
                 android:textSize="16sp" />
 
 
@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
-                android:text="Our website contains links to other sites. Such other sites may use information about your visit to this website. Our Privacy Policy does not apply to practices of such sites that we do not own or control or to people we do not employ. Therefore, we are not responsible for the privacy practices or the accuracy or the integrity of the content included on such other sites. We encourage you to read the individual privacy statements of such websites."
+                android:text="Trang web của chúng tôi chứa các liên kết đến các trang web khác. Các trang web khác có thể sử dụng thông tin về chuyến thăm của bạn tới trang web này. Chính sách quyền riêng tư của chúng tôi không áp dụng cho các hoạt động của các trang web mà chúng tôi không sở hữu hoặc kiểm soát hoặc cho những người chúng tôi không tuyển dụng. Do đó, chúng tôi không chịu trách nhiệm về các biện pháp bảo mật hoặc tính chính xác hoặc tính toàn vẹn của nội dung có trên các trang web khác đó. Chúng tôi khuyến khích bạn đọc các điều khoản về quyền riêng tư cá nhân của các trang web đó."
                 android:textSize="16sp" />
 
 
@@ -137,7 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
-                android:text="We safeguard your privacy using known security standards and procedures and comply with applicable privacy laws. Our websites combine industry-approved physical, electronic and procedural safeguards to ensure that your information is well protected through its life cycle in our infrastructure.\n\nSensitive data is hashed or encrypted when it is stored in our infrastructure. Sensitive data is decrypted, processed and immediately re-encrypted or discarded when no longer necessary. We host web services in audited data centers, with restricted access to the data processing servers. Controlled access, recorded and live-monitored video feeds, 24/7 staffed security and biometrics provided in such data centers ensure that we provide secure hosting."
+                android:text="Chúng tôi bảo vệ quyền riêng tư của bạn bằng cách sử dụng các tiêu chuẩn và quy trình bảo mật đã biết và tuân thủ luật riêng tư hiện hành. Các trang web của chúng tôi kết hợp các biện pháp bảo vệ vật lý, điện tử và thủ tục đã được ngành phê duyệt để đảm bảo rằng thông tin của bạn được bảo vệ tốt trong suốt vòng đời của thông tin đó trong cơ sở hạ tầng của chúng tôi.\n\nDữ liệu nhạy cảm được băm hoặc mã hóa khi được lưu trữ trong cơ sở hạ tầng của chúng tôi. Dữ liệu nhạy cảm được giải mã, xử lý và ngay lập tức mã hóa lại hoặc loại bỏ khi không còn cần thiết. Chúng tôi lưu trữ các dịch vụ web trong các trung tâm dữ liệu đã được kiểm tra, với quyền truy cập hạn chế vào các máy chủ xử lý dữ liệu. Quyền truy cập được kiểm soát, nguồn cấp dữ liệu video được ghi lại và giám sát trực tiếp, nhân viên bảo mật 24/7 và sinh trắc học được cung cấp trong các trung tâm dữ liệu đó đảm bảo rằng chúng tôi cung cấp dịch vụ lưu trữ an toàn."
                 android:textSize="16sp" />
 
         </LinearLayout>

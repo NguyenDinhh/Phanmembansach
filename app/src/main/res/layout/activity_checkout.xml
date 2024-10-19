@@ -32,7 +32,7 @@
             android:layout_marginTop="16sp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="Check out"
+            android:text="Kiểm tra"
             android:textColor="#4371E8"
             android:textSize="26sp"
             android:textStyle="bold" />
@@ -46,7 +46,7 @@
             android:backgroundTint="#D7D7D7"
             android:drawableStart="@drawable/ic_add"
             android:gravity="center"
-            android:hint="Add Payment Method"
+            android:hint="Thêm phương thức thanh toán"
             android:inputType="text"
             android:padding="18dp"
             android:textAlignment="center"
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Payment method"
+            android:text="Phương thức thanh toán"
             android:textColor="#4371E8"
             android:textSize="26dp"
             android:textStyle="bold" />
@@ -142,7 +142,7 @@
                     android:gravity="center_vertical"
                     android:inputType="text"
                     android:paddingLeft="25dp"
-                    android:text="Cash on delivery"
+                    android:text="Thanh toán khi nhận hàng"
                     android:textAlignment="gravity"
                     android:textColor="@color/black"
                     android:textSize="20sp"></TextView>
@@ -166,7 +166,7 @@
                 android:inputType="text"
                 android:padding="10dp"
                 android:password="false"
-                android:text="Total Payable"
+                android:text="Tổng thanh toán"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -185,13 +185,13 @@
 
         <Button
             android:id="@+id/btn_order"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:background="@drawable/btn"
             android:backgroundTint="#4371E8"
-            android:text="Order now"
+            android:text="Đặt hàng ngay bây giờ"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="24sp"

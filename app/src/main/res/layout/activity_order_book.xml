@@ -34,14 +34,14 @@
         android:drawableStart="@drawable/img_star"
         android:drawablePadding="10dp"
         android:padding="5dp"
-        android:text=" 4.47 (25,669 ratings)"></TextView>
+        android:text=" 4.47 (25,669 lượt đánh giá)"></TextView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:padding="5dp"
-        android:text="By (author)  Pham Van Trung"></TextView>
+        android:text="Bởi (tác giả) Phạm Văn Trung"></TextView>
 
     <ImageView
         android:layout_width="200dp"
@@ -91,13 +91,13 @@
 
     <Button
         android:id="@+id/btn_order"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:background="@drawable/btn"
         android:backgroundTint="#4371E8"
-        android:text="Order now"
+        android:text="Đặt hàng ngay bây giờ"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="24sp"

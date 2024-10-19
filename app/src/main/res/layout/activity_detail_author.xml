@@ -72,7 +72,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="30dp"
-                        android:text="Writer, Philologist"
+                        android:text="Nhà văn, nhà triết học"
                         android:textStyle="bold" />
 
                     <TextView
@@ -81,7 +81,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="15dp"
-                        android:text="Number of books: 5" />
+                        android:text="Số lượng sách: 5" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="J. R. R. Tolkien was an English author and scholar, famous for his fantasy masterpieces &quot;The Hobbit&quot; and &quot;The Lord of the Rings&quot; trilogy. He created the vast, detailed world of Middle-earth, filled with unique cultures, languages, and histories. Tolkien's work revolutionized modern fantasy literature, influencing countless authors and adaptations. His storytelling, blending mythology and adventure, remains beloved by readers worldwide, making him one of the most iconic figures in literary history."
+                android:text="J. R. R. Tolkien là một tác giả và học giả người Anh, nổi tiếng với bộ ba kiệt tác giả tưởng &quot;Người Hobbit&quot; và &quot;Chúa tể của những chiếc nhẫn&quot;. Ông đã tạo ra thế giới rộng lớn và chi tiết của Trung Địa, chứa đầy những nền văn hóa, ngôn ngữ và lịch sử độc đáo. Tác phẩm của Tolkien đã cách mạng hóa văn học giả tưởng hiện đại, ảnh hưởng đến vô số tác giả và tác phẩm chuyển thể. Cách kể chuyện pha trộn thần thoại và phiêu lưu của ông vẫn được độc giả trên toàn thế giới yêu thích, khiến ông trở thành một trong những nhân vật mang tính biểu tượng nhất trong lịch sử văn học."
                 android:textSize="14sp" />
 
             <TextView
@@ -98,7 +98,7 @@
                 android:layout_height="40dp"
                 android:paddingLeft="15dp"
                 android:paddingTop="15dp"
-                android:text="Books"
+                android:text="Sách"
                 android:textColor="#4B87F1"
                 android:textSize="22sp"
                 android:textStyle="bold"></TextView>

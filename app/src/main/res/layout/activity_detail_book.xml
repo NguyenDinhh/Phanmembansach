@@ -134,13 +134,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="The Book of God by Walter Wangerin is a novelized retelling of the Bible, bringing its stories and characters to life in a vivid, engaging way. Wangerin weaves together key biblical events, from creation to the life of Jesus, offering a fresh perspective on familiar narratives. His storytelling blends historical context with rich emotional depth, making the Bible more accessible and immersive for readers. It’s an inspiring read for those seeking a deeper connection to the scriptures."
+            android:text="&quot;Sách của Chúa&quot; của Walter Wangerin là một cuốn tiểu thuyết kể lại Kinh thánh, đưa những câu chuyện và nhân vật trong Kinh thánh vào cuộc sống một cách sống động và hấp dẫn. Wangerin đan xen các sự kiện quan trọng trong Kinh thánh, từ sự sáng tạo đến cuộc đời của Chúa Giê-su, mang đến một góc nhìn mới mẻ về những câu chuyện quen thuộc. Cách kể chuyện của ông kết hợp bối cảnh lịch sử với chiều sâu cảm xúc phong phú, làm cho Kinh Thánh trở nên dễ tiếp cận và hấp dẫn hơn đối với người đọc. Đây là một bài đọc đầy cảm hứng cho những ai đang tìm kiếm một mối liên hệ sâu sắc hơn với thánh thư."
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User Reviews"
+            android:text="Đánh giá của người dùng"
             android:textSize="22sp"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
@@ -177,7 +177,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="52 Reviews"
+                android:text="52 đánh giá"
                 android:textSize="16sp"
                 android:textColor="#666"
                 android:layout_marginLeft="16dp" />

@@ -33,7 +33,7 @@
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:text="Profile"
+                android:text="Hồ sơ"
                 android:textColor="#4559E4"
                 android:textSize="35sp"
                 android:textStyle="bold" />
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
-                android:text="Your name"
+                android:text="Tên của bạn"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -90,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address"
+                android:text="Địa chỉ"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -110,7 +110,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phone number"
+                android:text="Số điện thoại"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -138,7 +138,7 @@
                     android:layout_width="83dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="#4371E8"
-                    android:text="Male"
+                    android:text="Nam"
                     android:textColor="#010716"
                     android:textSize="18sp" />
 
@@ -148,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:buttonTint="#4371E8"
-                    android:text="Female"
+                    android:text="Nữ"
                     android:textColor="#01020D"
                     android:textSize="18sp" />
             </RadioGroup>
@@ -162,7 +162,7 @@
                 android:background="@drawable/btn"
                 android:backgroundTint="#4371E8"
                 android:padding="16dp"
-                android:text="Update"
+                android:text="Cập nhật"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />

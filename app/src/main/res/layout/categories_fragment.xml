@@ -28,7 +28,7 @@
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="2"
-        android:text="Categories"
+        android:text="Thể loại"
         android:textColor="#4371E8"
         android:textSize="22sp"
         android:textStyle="bold"

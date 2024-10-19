@@ -28,7 +28,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="15dp"
                 android:paddingLeft="11dp"
-                android:text="Hello Nhom1"
+                android:text="Xin chào nhóm 1"
                 android:textColor="#0A3FCB"
                 android:textSize="24sp"
                 android:textStyle="bold|italic" />
@@ -43,7 +43,7 @@
                 android:drawableEnd="@drawable/ic_mic"
                 android:ems="10"
                 android:gravity="center_vertical"
-                android:hint="Search here"
+                android:hint="Tìm kiếm"
                 android:inputType="text"
                 android:padding="5dp"
                 android:textSize="16sp" />
@@ -59,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Super Sale"
+                    android:text="Siêu Sale"
                     android:textAlignment="center"
                     android:textColor="#4371E8"
                     android:textSize="24dp"
@@ -154,7 +154,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -223,7 +223,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -360,7 +360,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="So dark"
+                                    android:text="Quá tối"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -428,7 +428,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="A boy who want to kill all monsters in the world."
+                                    android:text="Một cậu bé muốn tiêu diệt tất cả quái vật trên thế giới."
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -480,7 +480,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -495,7 +495,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Recommendation"
+                    android:text="Giới thiệu"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -560,7 +560,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="Adventure"
+                                    android:text="Phiêu lưu"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -570,14 +570,14 @@
                                     android:layout_height="70dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 6"
+                                    android:text="Số lượng sách: 6"
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -620,7 +620,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="Mystery"
+                                    android:text="Bí ẩn"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -630,14 +630,14 @@
                                     android:layout_height="70dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 120"
+                                    android:text="Số lượng sách: 120"
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -680,7 +680,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="Education"
+                                    android:text="Giáo dục"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -690,14 +690,14 @@
                                     android:layout_height="70dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 66"
+                                    android:text="Số lượng sách: 66"
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -740,7 +740,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="Cooking"
+                                    android:text="Nấu ăn"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -750,14 +750,14 @@
                                     android:layout_height="70dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 15"
+                                    android:text="Số lượng sách: 15"
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -800,7 +800,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="Fantasy"
+                                    android:text="Tưởng tượng"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -810,14 +810,14 @@
                                     android:layout_height="70dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 29 "
+                                    android:text="Số lượng sách: 29 "
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -861,7 +861,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -875,7 +875,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Categories"
+                    android:text="Thể loại"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -951,14 +951,14 @@
                                     android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Writer, Philologist"
+                                    android:text="Nhà văn, nhà triết học"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 16"
+                                    android:text="Số lượng sách: 16"
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1012,14 +1012,14 @@
                                     android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Writer"
+                                    android:text="Nhà văn"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 23"
+                                    android:text="Số lượng sách: 23"
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1073,14 +1073,14 @@
                                     android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Writer"
+                                    android:text="Nhà văn"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 5"
+                                    android:text="Số lượng sách: 5"
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1134,14 +1134,14 @@
                                     android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Writer, doctor"
+                                    android:text="Nhà văn, bác sĩ"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 15"
+                                    android:text="Số lượng sách: 15"
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1195,14 +1195,14 @@
                                     android:layout_marginTop="15dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Writer"
+                                    android:text="Nhà văn"
                                     android:textColor="#625F5F" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Number of book: 12 "
+                                    android:text="Số lượng sách: 12 "
                                     android:textColor="@color/black" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1246,7 +1246,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -1260,7 +1260,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Authors"
+                    android:text="Tác giả"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -1334,7 +1334,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="5dp"
-                                    android:text="Some one"
+                                    android:text="Người nào đó"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -1342,7 +1342,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này."
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -1410,7 +1410,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này."
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -1471,7 +1471,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="5dp"
-                                    android:text="Some one"
+                                    android:text="Người nào đó"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -1479,7 +1479,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="nice book"
+                                    android:text="Cuốn sách hay"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -1547,7 +1547,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="So dark"
+                                    android:text="Quá tối"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -1615,7 +1615,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="A boy who want to kill all monsters in the world."
+                                    android:text="Một cậu bé muốn tiêu diệt tất cả quái vật trên thế giới."
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -1666,7 +1666,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -1680,7 +1680,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Fantasy"
+                    android:text="Tưởng tượng"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -1743,7 +1743,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="Giao duc va quoc phong"
+                                    android:text="Giáo dục và quốc phòng"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -1753,7 +1753,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="5dp"
-                                    android:text="Bo giao duc Viet Nam"
+                                    android:text="Bộ giáo dục Việt Nam"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -1761,7 +1761,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Nang cao...."
+                                    android:text="Nâng cao...."
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -1810,7 +1810,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Lap trinh java can ban"
+                                    android:text="Lập trình java căn bản"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -1820,7 +1820,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="5dp"
-                                    android:text="Pham Van Trung"
+                                    android:text="Phạm Văn Trung"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -1828,7 +1828,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="No one can study without this book"
+                                    android:text="Không ai có thể học mà không có cuốn sách này."
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -1878,7 +1878,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Triet hoc Mac - Le-nin"
+                                    android:text="Triết học Mác - Lenin"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -1888,7 +1888,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="5dp"
-                                    android:text="Bo giao duc dao tao"
+                                    android:text="Bộ giáo dục và đào tạo"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -1896,7 +1896,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="nice book"
+                                    android:text="Cuốn sách hay"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -1945,7 +1945,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Lap trinh Python"
+                                    android:text="Lập trình Python"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -1955,7 +1955,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="5dp"
-                                    android:text="Ha Thi Thao"
+                                    android:text="Hà Thị Thảo"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -1963,7 +1963,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="help us to study Python so easy"
+                                    android:text="Giúp chúng tôi học Python thật dễ dàng"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -2012,7 +2012,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:paddingLeft="11dp"
-                                    android:text="lap trinh C/C++"
+                                    android:text="Lập trình C/C++"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -2022,7 +2022,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="5dp"
-                                    android:text="Hoang Van C"
+                                    android:text="Hoàng Văn C"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -2030,7 +2030,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Make study can be easy more"
+                                    android:text="Làm cho việc học có thể dễ dàng hơn"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -2080,7 +2080,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -2094,7 +2094,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Education"
+                    android:text="Giáo dục"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -2157,7 +2157,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="Drama comedy"
+                                    android:text="Chính kịch hài kịch"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -2175,7 +2175,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Funny"
+                                    android:text="Hài hước"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -2224,7 +2224,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Romance comedy"
+                                    android:text="Hài lãng mạn"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -2242,7 +2242,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Make me very happy"
+                                    android:text="Làm tôi rất hạnh phúc"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -2292,7 +2292,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:paddingLeft="11dp"
-                                    android:text="Comedy Kid"
+                                    android:text="Hài kịch nhí"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -2310,7 +2310,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="nice book"
+                                    android:text="Cuốn sách hay"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -2377,7 +2377,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Make me cry"
+                                    android:text="Làm tôi khóc"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -2426,7 +2426,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:paddingLeft="11dp"
-                                    android:text="lap trinh C/C++"
+                                    android:text="Lập trình C/C++"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -2436,7 +2436,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="5dp"
-                                    android:text="Hoang Van C"
+                                    android:text="Hoàng Văn C"
                                     android:textStyle="bold" />
 
                                 <TextView
@@ -2444,7 +2444,7 @@
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
                                     android:paddingTop="10dp"
-                                    android:text="Make study can be easy more"
+                                    android:text="Làm cho việc học có thể dễ dàng hơn"
                                     android:textColor="#625F5F" />
 
                                 <TextView
@@ -2494,7 +2494,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -2508,7 +2508,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Education"
+                    android:text="Giáo dục"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -2530,7 +2530,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
-                    android:text="See more books >>>"
+                    android:text="Xem thêm sách >>>"
                     android:textAlignment="center"
                     android:textColor="#4371E8"
                     android:textSize="35sp"

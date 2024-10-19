@@ -27,7 +27,7 @@
             android:layout_height="40dp"
             android:gravity="center"
             android:paddingRight="60dp"
-            android:text="Coming soon"
+            android:text="Sắp ra mắt"
             android:textAlignment="center"
             android:textColor="#4371E8"
             android:textSize="22sp"
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:text="Comedy book"
+                android:text="Sách hài"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:text="Chua nhan 3"
+                android:text="Chúa nhẫn 3"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />

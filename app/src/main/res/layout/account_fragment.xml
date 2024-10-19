@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:padding="25dp"
             android:drawableLeft="@drawable/ic_account"
-            android:text="Nhom1"
+            android:text="Nhóm 1"
             android:textColor="@android:color/white"
             android:textSize="35sp"
             android:gravity="center_vertical"
