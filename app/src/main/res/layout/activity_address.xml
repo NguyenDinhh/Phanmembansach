@@ -1,184 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddressActivity">
+    android:orientation="vertical">
 
-
+    <!-- Phần tiêu đề với nút Back -->
     <LinearLayout
-        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="16dp">
+        android:padding="16dp"
+        android:gravity="center_vertical">
 
-
+        <!-- Nút Back -->
         <ImageView
-            android:id="@+id/back"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="Back Button"
-            android:paddingLeft="10dp"
-            android:src="@drawable/ic_back" />
+            android:id="@+id/img_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back"
+            android:layout_marginEnd="16dp" />
 
-
+        <!-- Tiêu đề -->
         <TextView
-            android:layout_width="316dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:gravity="center"
-            android:paddingRight="20dp"
             android:text="Địa chỉ giao hàng"
-            android:textColor="#4371E8"
-            android:textSize="32sp"
+            android:textSize="19sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/scroll"
+    <!-- Danh sách địa chỉ giao hàng -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="460dp"
-        android:layout_below="@+id/header"
-        android:padding="8dp">
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/background_books"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <LinearLayout
-                    android:layout_width="176dp"
-                    android:layout_height="147dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Họ và tên: Trần Thị Vân"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Điện thoại: 0986598659"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Địa chỉ: Trung Kính, Cầu Giấy, Hà Nội"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="50dp"
-                    android:contentDescription="Delete Icon"
-                    android:src="@drawable/ic_delete" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/background_books"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <LinearLayout
-                    android:layout_width="176dp"
-                    android:layout_height="147dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Họ và tên: Nguyễn Vân Anh"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Điện thoại: 0978787878"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Địa chỉ: Chương Dương, Hoàn Kiếm, Hà Nội"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="50dp"
-                    android:contentDescription="Delete Icon"
-                    android:src="@drawable/ic_delete" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-
-    <LinearLayout
+    <!-- Nút thêm địa chỉ giao hàng -->
+    <Button
+        android:id="@+id/btn_add_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <Button
-            android:id="@+id/btn_checkout"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="#4371E8"
-            android:text="Thêm địa chỉ giao hàng"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+        android:text="Thêm địa chỉ giao hàng"
+        android:textAllCaps="false"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:background="@drawable/btn"
+        android:backgroundTint="#4371E8"
+        android:textColor="@android:color/white"/>
+</LinearLayout>
