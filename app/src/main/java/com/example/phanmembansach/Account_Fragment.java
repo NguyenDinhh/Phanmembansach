@@ -26,16 +26,17 @@ public class Account_Fragment extends Fragment {
         View mView=  inflater.inflate(R.layout.account_fragment, container, false);
         lvContact = mView.findViewById(R.id.lvContact);
         ArrayList<Contact> arrContact = new ArrayList<>();
-        arrContact.add(new Contact("Home"));
-        arrContact.add(new Contact("Profile"));
-        arrContact.add(new Contact("Privacy"));
-        arrContact.add(new Contact("Manage your password"));
-        arrContact.add(new Contact("Your favourite"));
-        arrContact.add(new Contact("History"));
-        arrContact.add(new Contact("Coming soon"));
-        arrContact.add(new Contact("Contact Us"));
-        arrContact.add(new Contact("About Us"));
-        arrContact.add(new Contact("Log out"));
+        arrContact.add(new Contact("Trang chủ"));
+        arrContact.add(new Contact("Hồ sơ"));
+        arrContact.add(new Contact("Quyền riên tư"));
+        arrContact.add(new Contact("Quản lý mật khẩu của bạn"));
+        arrContact.add(new Contact("Yêu thích"));
+        arrContact.add(new Contact("Địa chỉ nhận hàng"));
+        arrContact.add(new Contact("Lịch sử"));
+        arrContact.add(new Contact("Sắp ra mắt"));
+        arrContact.add(new Contact("Liên hệ với chúng tôi"));
+        arrContact.add(new Contact("Về phía chúng tôi"));
+        arrContact.add(new Contact("Đăng xuất"));
 
         CustomAdapter customAdapter = new CustomAdapter(getActivity(), R.layout.row_listview, arrContact);
         lvContact.setAdapter(customAdapter);
