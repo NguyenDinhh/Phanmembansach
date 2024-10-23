@@ -4,17 +4,17 @@
     <item
         android:id="@+id/menu_home"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="Trang chủ" />
     <item
         android:id="@+id/menu_notification"
         android:icon="@drawable/ic_notifications"
-        android:title="Notification" />
+        android:title="Thông báo" />
     <item
         android:id="@+id/menu_cart"
         android:icon="@drawable/ic_cart"
-        android:title="Cart" />
+        android:title="Giỏ hàng" />
     <item
         android:id="@+id/menu_account"
         android:icon="@drawable/ic_profile"
-        android:title="Account" />
+        android:title="Tài khoản" />
 </menu>
