@@ -31,7 +31,7 @@ public class Account_Fragment extends Fragment {
         arrContact.add(new Contact("Quyền riên tư"));
         arrContact.add(new Contact("Quản lý mật khẩu của bạn"));
         arrContact.add(new Contact("Yêu thích"));
-        arrContact.add(new Contact("Địa chỉ nhận hàng"));
+        arrContact.add(new Contact("Địa chỉ giao hàng"));
         arrContact.add(new Contact("Lịch sử"));
         arrContact.add(new Contact("Sắp ra mắt"));
         arrContact.add(new Contact("Liên hệ với chúng tôi"));
@@ -46,34 +46,37 @@ public class Account_Fragment extends Fragment {
                 String selectedContact = arrContact.get(position).getName();
                 Intent intent = null;
                 switch (selectedContact) {
-                    case "Home":
+                    case "Trang chủ":
                         intent = new Intent(getActivity(), Home.class);
                         break;
-                    case "Profile":
+                    case "Hồ sơ":
                         intent = new Intent(getActivity(), ProfileActivity.class);
                         break;
-                    case "Privacy":
+                    case "Quyền riên tư":
                         intent = new Intent(getActivity(), PrivacyActivity.class);
                         break;
-                    case "Manage your password":
+                    case "Quản lý mật khẩu của bạn":
                         intent = new Intent(getActivity(), PasswordActivity.class);
                         break;
-                    case "Your favourite":
+                    case "Yêu thích":
                         intent = new Intent(getActivity(), YourfavouriteActivity.class);
                         break;
-                    case "History":
+                    case "Địa chỉ giao hàng":
+                        intent = new Intent(getActivity(), AddressActivity.class);
+                        break;
+                    case "Lịch sử":
                         intent = new Intent(getActivity(),HistoryActivity.class);
                         break;
-                    case "Coming soon":
+                    case "Sắp ra mắt":
                         intent = new Intent(getActivity(), ComingsoonActivity.class);
                         break;
-                    case "Contact Us":
+                    case "Liên hệ với chúng tôi":
                         intent = new Intent(getActivity(), ContactusActivity.class);
                         break;
-                    case "About Us":
+                    case "Về phía chúng tôi":
                         intent = new Intent(getActivity(), AboutusActivity.class);
                         break;
-                    case "Log out":
+                    case "Đăng xuất":
                         intent = new Intent(getActivity(), LoginActivity.class);
                         break;
                 }
