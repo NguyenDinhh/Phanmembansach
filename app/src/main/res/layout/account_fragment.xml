@@ -12,31 +12,43 @@
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#0C46AD">
+        android:background="#0C46AD"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="25dp"
+            android:layout_weight="1"
             android:drawableLeft="@drawable/ic_account"
+            android:gravity="center_vertical"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:text="Nhóm 1"
             android:textColor="@android:color/white"
             android:textSize="35sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center_vertical"
-            android:textStyle="bold|italic"/>
+            android:paddingLeft="35dp"
+            android:paddingBottom="10dp"
+            android:text="Điểm thưởng: 12000 đ"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
     </LinearLayout>
+
     <ListView
         android:id="@+id/lvContact"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
         android:layout_weight="1"
         android:divider="#9EA0A2"
         android:dividerHeight="3dp" />
 
-    <!-- FrameLayout để chứa Fragment -->
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -27,15 +27,15 @@ public class Account_Fragment extends Fragment {
         lvContact = mView.findViewById(R.id.lvContact);
         ArrayList<Contact> arrContact = new ArrayList<>();
         arrContact.add(new Contact("Trang chủ"));
-        arrContact.add(new Contact("Hồ sơ"));
-        arrContact.add(new Contact("Quyền riên tư"));
-        arrContact.add(new Contact("Quản lý mật khẩu của bạn"));
+        arrContact.add(new Contact("Trang cá nhân"));
+        arrContact.add(new Contact("Kho voucher"));
+        arrContact.add(new Contact("Riêng tư"));
+        arrContact.add(new Contact("Thay đổi mật khẩu"));
         arrContact.add(new Contact("Yêu thích"));
-        arrContact.add(new Contact("Địa chỉ giao hàng"));
         arrContact.add(new Contact("Lịch sử"));
-        arrContact.add(new Contact("Sắp ra mắt"));
-        arrContact.add(new Contact("Liên hệ với chúng tôi"));
-        arrContact.add(new Contact("Về phía chúng tôi"));
+        arrContact.add(new Contact("Sách sắp tới"));
+        arrContact.add(new Contact("Liên hệ"));
+        arrContact.add(new Contact("Về chúng tôi"));
         arrContact.add(new Contact("Đăng xuất"));
 
         CustomAdapter customAdapter = new CustomAdapter(getActivity(), R.layout.row_listview, arrContact);
@@ -49,31 +49,31 @@ public class Account_Fragment extends Fragment {
                     case "Trang chủ":
                         intent = new Intent(getActivity(), Home.class);
                         break;
-                    case "Hồ sơ":
+                    case "Trang cá nhân":
                         intent = new Intent(getActivity(), ProfileActivity.class);
                         break;
-                    case "Quyền riên tư":
+                    case "Kho voucher":
+                        intent = new Intent(getActivity(), Vouchers.class);
+                        break;
+                    case "Riêng tư":
                         intent = new Intent(getActivity(), PrivacyActivity.class);
                         break;
-                    case "Quản lý mật khẩu của bạn":
+                    case "Thay đổi mật khẩu":
                         intent = new Intent(getActivity(), PasswordActivity.class);
                         break;
                     case "Yêu thích":
                         intent = new Intent(getActivity(), YourfavouriteActivity.class);
                         break;
-                    case "Địa chỉ giao hàng":
-                        intent = new Intent(getActivity(), AddressActivity.class);
-                        break;
                     case "Lịch sử":
                         intent = new Intent(getActivity(),HistoryActivity.class);
                         break;
-                    case "Sắp ra mắt":
+                    case "Sách sắp tới":
                         intent = new Intent(getActivity(), ComingsoonActivity.class);
                         break;
-                    case "Liên hệ với chúng tôi":
+                    case "Liên hệ":
                         intent = new Intent(getActivity(), ContactusActivity.class);
                         break;
-                    case "Về phía chúng tôi":
+                    case "Về chúng tôi":
                         intent = new Intent(getActivity(), AboutusActivity.class);
                         break;
                     case "Đăng xuất":

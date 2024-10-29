@@ -89,15 +89,25 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Nhận 100 điểm thưởng khi mua"
+        android:textAlignment="center"
+        android:textColor="#F44336"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btn_order"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/btn"
         android:backgroundTint="#4371E8"
-        android:text="Đặt hàng ngay bây giờ"
+        android:text="Đặt hàng"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="24sp"

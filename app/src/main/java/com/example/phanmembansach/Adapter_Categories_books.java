@@ -103,9 +103,7 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
             viewHolder.img_cart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), Home.class);
-                    intent.putExtra("fragment_cart", 2);
-                    view.getContext().startActivity(intent);
+                    Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                 }
             });
         }

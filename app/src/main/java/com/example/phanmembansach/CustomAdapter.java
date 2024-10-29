@@ -1,6 +1,7 @@
 package com.example.phanmembansach;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,37 +42,39 @@ public class CustomAdapter extends ArrayAdapter<com.example.phanmembansach.Conta
 
         // Thiết lập biểu tượng cho ImageView dựa trên tên
         switch (contact.getName()) {
-            case "Home":
+            case "Trang chủ":
                 icon.setImageResource(R.drawable.ic_home);
                 break;
-            case "Profile":
+            case "Trang cá nhân":
                 icon.setImageResource(R.drawable.ic_profile);
                 break;
-            case "Privacy":
+            case "Kho voucher":
+                icon.setImageResource(R.drawable.ic_voucher);
+                break;
+            case "Riêng tư":
                 icon.setImageResource(R.drawable.ic_privacy);
                 break;
-            case "Manage your password":
+            case "Thay đổi mật khẩu":
                 icon.setImageResource(R.drawable.ic_password);
                 break;
-            case "Your favourite":
+            case "Yêu thích":
                 icon.setImageResource(R.drawable.ic_favourite_2);
                 break;
-            case "History":
+            case "Lịch sử":
                 icon.setImageResource(R.drawable.ic_history);
                 break;
-            case "Coming soon":
-                icon.setImageResource(R.drawable.ic_comingsoon);
+            case "Sách sắp tới":
+                icon.setImageResource(R.drawable.ic_history);
                 break;
-            case "Contact Us":
+            case "Liên hệ":
                 icon.setImageResource(R.drawable.ic_contact);
                 break;
-            case "About Us":
+            case "Về chúng tôi":
                 icon.setImageResource(R.drawable.ic_infor);
                 break;
-            case "Log out":
+            case "Đăng xuất":
                 icon.setImageResource(R.drawable.ic_logout);
                 break;
-
         }
 
         return convertView;

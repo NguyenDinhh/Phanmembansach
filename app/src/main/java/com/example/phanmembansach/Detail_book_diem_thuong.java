@@ -12,28 +12,26 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class CheckoutActivity extends AppCompatActivity {
-
-    ImageView img_exit;
-    Button btn_order;
+public class Detail_book_diem_thuong extends AppCompatActivity {
+    Button btn_doi;
+    ImageView btn_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout);
-        img_exit = findViewById(R.id.img_exit);
-        btn_order = findViewById(R.id.btn_order);
-        img_exit.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_detail_book_diem_thuong);
+        btn_doi = findViewById(R.id.btn_doi);
+        btn_back = findViewById(R.id.back);
+        btn_doi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               finish();
+                startActivity(new Intent(Detail_book_diem_thuong.this, Successful_Order.class));
             }
         });
-        btn_order.setOnClickListener(new View.OnClickListener() {
+        btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CheckoutActivity.this, Successful_Order.class));
+                finish();
             }
         });
-
-}
+    }
 }

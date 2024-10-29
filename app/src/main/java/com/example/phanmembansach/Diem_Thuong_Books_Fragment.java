@@ -16,20 +16,21 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Categories_Books_Fragment extends Fragment {
-    public Categories_Books_Fragment() {
-        // Required empty public constructor
+public class Diem_Thuong_Books_Fragment extends Fragment {
+
+    public Diem_Thuong_Books_Fragment() {
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View mView = inflater.inflate(R.layout.categories__books_fragment, container, false);
+        View mView =  inflater.inflate(R.layout.diem__thuong__books_fragment, container, false);
         ListView lv = mView.findViewById(R.id.lvcategories_book);
         ImageView back = mView.findViewById(R.id.img_back);
         EditText txt_search = mView.findViewById(R.id.txt_search);
         txt_search.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_UP ) {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
                 if (event.getRawX() <= (txt_search.getLeft() + txt_search.getCompoundDrawables()[0].getBounds().width())) {
                     // Trong một phương thức như onClick
                     Toast.makeText(getContext(), "You have just searched", Toast.LENGTH_SHORT).show();
@@ -54,19 +55,17 @@ public class Categories_Books_Fragment extends Fragment {
         Book book7 = new Book("Nguoi Hobbit", "", "T.L. Branson", 0, 20.99, 1000, 13, "chuanhan2",0.24,18000);
         Book book8 = new Book("Chua nhan 3", "", "T.L. Branson", 0, 20.99, 1000, 13, "chuanhan33",0.05,24000);
 
-        arrBook.add(book1);
-        arrBook.add(book2);
-        arrBook.add(book3);
-        arrBook.add(book4);
         arrBook.add(book5);
         arrBook.add(book6);
         arrBook.add(book7);
         arrBook.add(book8);
-        Adapter_Categories_books adapter = new Adapter_Categories_books(getActivity(),R.layout.row_categories_books, arrBook);
+        arrBook.add(book1);
+        arrBook.add(book2);
+        arrBook.add(book3);
+        arrBook.add(book4);
+        Adapter_Diem_Thuong_Books adapter = new Adapter_Diem_Thuong_Books(getActivity(), R.layout.row_diemthuong, arrBook);
         lv.setAdapter(adapter);
-        lv.setOnItemClickListener((parent, view, position, id) -> {
-            startActivity(new Intent(getActivity(), Detail_book.class));
-        });
-       return  mView;
+
+        return  mView;
     }
 }

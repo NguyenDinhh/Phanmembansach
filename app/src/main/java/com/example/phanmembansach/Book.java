@@ -13,11 +13,13 @@ public class Book {
     private Integer sold;
     private String img;
     private  double sale;
+    private  Integer diemthuong;
 
-    public Book(String name) {
+    public Book() {
+
     }
 
-    public Book(String name, String describe, String author, double start, double price, Integer amount, Integer sold, String img, double sale) {
+    public Book(String name, String describe, String author, double start, double price, Integer amount, Integer sold, String img, double sale, Integer diemthuong) {
         this.name = name;
         this.describe = describe;
         this.author = author;
@@ -27,6 +29,7 @@ public class Book {
         this.sold = sold;
         this.img = img;
         this.sale = sale;
+        this.diemthuong = diemthuong;
     }
 
     public String getName() {
@@ -99,5 +102,14 @@ public class Book {
 
     public void setSale(double sale) {
         this.sale = sale;
+
+    }
+
+    public Integer getDiemthuong() {
+        return diemthuong;
+    }
+
+    public void setDiemthuong(Integer diemthuong) {
+        this.diemthuong = diemthuong;
     }
 }

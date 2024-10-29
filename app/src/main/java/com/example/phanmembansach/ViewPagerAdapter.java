@@ -32,6 +32,8 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 return  new Categories_Fragment();
             case 7:
                 return  new Categories_Books_Fragment();
+            case 8:
+                return  new Diem_Thuong_Books_Fragment();
             default:
                 return  new Home_Fragment();
         }
@@ -39,7 +41,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 8;
+        return 9;
     }
 }
 

@@ -3,20 +3,28 @@ package com.example.phanmembansach;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
+import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.widget.ViewPager2;
-
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import  com.example.phanmembansach.Home;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +38,99 @@ public class Home_Fragment extends Fragment {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-         View mView=  inflater.inflate(R.layout.home_fragment, container, false);
+        View mView = inflater.inflate(R.layout.home_fragment, container, false);
+
+        Toolbar toolbar = mView.findViewById(R.id.tool_bar);
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        if (activity != null) {
+            activity.setSupportActionBar(toolbar);
+            activity.invalidateOptionsMenu();
+        }
+        requireActivity().invalidateOptionsMenu();
+        requireActivity().addMenuProvider(new MenuProvider() {
+            @Override
+            public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+                menu.clear();
+                inflater.inflate(R.menu.menu_home, menu);
+            }
+
+            @Override
+            public boolean onMenuItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.menu_home_new_product)
+                {
+                    ((Home) getActivity()).setCurrentPage(8);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_bestseller)
+                {
+                    ((Home) getActivity()).setCurrentPage(4);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_1)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_2)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_3)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_4)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_5)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_6)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_7)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_8)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_9)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_categories_book_10)
+                {
+                    ((Home) getActivity()).setCurrentPage(7);
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_author_1)
+                {
+                    startActivity(new Intent(getActivity(),Detail_Author.class));
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_author_2)
+                {
+                    startActivity(new Intent(getActivity(),Detail_Author.class));
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_author_3)
+                {
+                    startActivity(new Intent(getActivity(),Detail_Author.class));
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_author_4)
+                {
+                    startActivity(new Intent(getActivity(),Detail_Author.class));
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_author_5)
+                {
+                    startActivity(new Intent(getActivity(),Detail_Author.class));
+                    return true;
+                }else if(item.getItemId()==R.id.menu_home_vouchers)
+                {
+                    return true;
+                }else
+                    return false;
+            }
+        }, getViewLifecycleOwner());
         see_more = mView.findViewById(R.id.txt_see_more);
         EditText txt_search = mView.findViewById(R.id.txt_search);
         ConstraintLayout sm_r = mView.findViewById(R.id.see_more_recommendation);
@@ -119,4 +219,4 @@ public class Home_Fragment extends Fragment {
         viewPager2.setAdapter(a);
         return mView;
     }
-}
+    }

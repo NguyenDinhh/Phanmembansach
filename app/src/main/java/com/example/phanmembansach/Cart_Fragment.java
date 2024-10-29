@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -30,10 +31,21 @@ public class Cart_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View mView = inflater.inflate(R.layout.cart_fagment, container, false);
         back = mView.findViewById(R.id.back);
-        btn_checkout = mView.findViewById(R.id.btn_checkout);
+        btn_checkout = mView.findViewById(R.id.btn_doi);
         btn_cancel = mView.findViewById(R.id.btn_cancel);
         select_voucher = mView.findViewById(R.id.select_voucher);
         frame_voucher  = mView.findViewById(R.id.frame_vouchers);
+        int vouchers[] = {R.id.voucher_1, R.id.voucher_2, R.id.voucher_3, R.id.voucher_4};
+        for (int voucher : vouchers) {
+            LinearLayout l = mView.findViewById(voucher);
+            l.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    frame_voucher.setVisibility(view.GONE);
+                }
+            });
+        }
+
         select_voucher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,7 +58,12 @@ public class Cart_Fragment extends Fragment {
                 frame_voucher.setVisibility(view.GONE);
             }
         });
-        back.setOnClickListener(view -> ((Home) getActivity()).setCurrentPage(0));
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().finish();
+            }
+        });
         btn_checkout.setOnClickListener(view -> startActivity(new Intent(getActivity(), CheckoutActivity.class)));
         return  mView;
     }
