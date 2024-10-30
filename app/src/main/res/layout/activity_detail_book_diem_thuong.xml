@@ -36,7 +36,7 @@
             android:paddingRight="20dp"
             android:text="Đổi điểm thưởng"
             android:textColor="#4371E8"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
 
@@ -110,35 +110,36 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Điểm thưởng: 12000"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
-
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
     <TextView
-        android:id="@+id/select_voucher"
+        android:id="@+id/select_address"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@+id/scroll"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/background_books"
-        android:drawableStart="@drawable/ic_voucher"
+        android:drawableStart="@drawable/ic_address"
         android:drawableEnd="@drawable/ic_right_arrow"
         android:drawablePadding="20dp"
         android:gravity="center_vertical"
-        android:padding="15dp"
-        android:text="Sử dụng Voucher"
-        android:textSize="18sp"
+        android:padding="5dp"
+        android:text="Chọn địa chỉ giao hàng"
+        android:textSize="16sp"
         android:textStyle="bold"></TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/select_voucher"
+        android:layout_below="@+id/select_address"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="15dp"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -146,8 +147,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:text="Tổng: $64.44"
-            android:textSize="24sp"
+            android:text="Tổng: 12000đ"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button

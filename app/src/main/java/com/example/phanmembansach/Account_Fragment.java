@@ -29,6 +29,7 @@ public class Account_Fragment extends Fragment {
         arrContact.add(new Contact("Trang chủ"));
         arrContact.add(new Contact("Trang cá nhân"));
         arrContact.add(new Contact("Kho voucher"));
+        arrContact.add(new Contact("Địa chỉ giao hàng"));
         arrContact.add(new Contact("Riêng tư"));
         arrContact.add(new Contact("Thay đổi mật khẩu"));
         arrContact.add(new Contact("Yêu thích"));
@@ -54,6 +55,9 @@ public class Account_Fragment extends Fragment {
                         break;
                     case "Kho voucher":
                         intent = new Intent(getActivity(), Vouchers.class);
+                        break;
+                    case "Địa chỉ giao hàng":
+                        intent = new Intent(getActivity(), AddressActivity.class);
                         break;
                     case "Riêng tư":
                         intent = new Intent(getActivity(), PrivacyActivity.class);

@@ -13,13 +13,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Cart_Fragment extends Fragment {
 
     private ImageView back;
     private Button btn_checkout;
-    private TextView select_voucher;
+    private TextView select_voucher,select_address;
     private  Button btn_cancel;
     private FrameLayout frame_voucher;
     public Cart_Fragment() {
@@ -34,6 +35,7 @@ public class Cart_Fragment extends Fragment {
         btn_checkout = mView.findViewById(R.id.btn_doi);
         btn_cancel = mView.findViewById(R.id.btn_cancel);
         select_voucher = mView.findViewById(R.id.select_voucher);
+        select_address = mView.findViewById(R.id.select_address);
         frame_voucher  = mView.findViewById(R.id.frame_vouchers);
         int vouchers[] = {R.id.voucher_1, R.id.voucher_2, R.id.voucher_3, R.id.voucher_4};
         for (int voucher : vouchers) {
@@ -42,6 +44,7 @@ public class Cart_Fragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     frame_voucher.setVisibility(view.GONE);
+                    Toast.makeText(getContext(), "Đã chọn voucher", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -50,6 +53,12 @@ public class Cart_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 frame_voucher.setVisibility(view.VISIBLE);
+            }
+        });
+        select_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),AddressActivity.class));
             }
         });
         btn_cancel.setOnClickListener(new View.OnClickListener() {

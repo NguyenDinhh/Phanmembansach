@@ -34,14 +34,16 @@
             android:paddingRight="10dp"
             android:text="Kiểm tra"
             android:textColor="#4371E8"
-            android:textSize="26sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/apm_input"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#D7D7D7"
             android:drawableStart="@drawable/ic_add"
@@ -50,29 +52,32 @@
             android:inputType="text"
             android:padding="18dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="#4371E8"
+            android:textColorHint="#4371E8"
             android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
             android:text="Phương thức thanh toán"
             android:textColor="#4371E8"
-            android:textSize="26dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="270dp"
             android:orientation="vertical"
             android:weightSum="3">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_corner"
@@ -82,6 +87,7 @@
                 <ImageView
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
+                    android:padding="15dp"
                     android:src="@drawable/mb"></ImageView>
 
                 <TextView
@@ -91,14 +97,16 @@
                     android:inputType="text"
                     android:paddingLeft="25dp"
                     android:text="*****"
-                    android:textColor="@color/black"
+                    android:textColor="#4371E8"
                     android:textSize="20sp"></TextView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_corner"
@@ -108,6 +116,7 @@
                 <ImageView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:src="@drawable/momo"></ImageView>
 
                 <TextView
@@ -117,14 +126,16 @@
                     android:inputType="text"
                     android:paddingLeft="25dp"
                     android:text="*****"
-                    android:textColor="@color/black"
+                    android:textColor="#4371E8"
                     android:textSize="20sp"></TextView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_corner"
@@ -134,6 +145,7 @@
                 <ImageView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:src="@drawable/cash"></ImageView>
 
                 <TextView
@@ -141,11 +153,11 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:inputType="text"
-                    android:paddingLeft="25dp"
+                    android:paddingLeft="10dp"
                     android:text="Thanh toán khi nhận hàng"
                     android:textAlignment="gravity"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"></TextView>
+                    android:textColor="#4371E8"
+                    android:textSize="18sp"></TextView>
             </LinearLayout>
         </LinearLayout>
 
@@ -167,7 +179,7 @@
                 android:padding="10dp"
                 android:password="false"
                 android:text="Tổng thanh toán"
-                android:textColor="@color/black"
+                android:textColor="#4371E8"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -175,6 +187,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
+                android:gravity="center"
                 android:inputType="text"
                 android:paddingRight="10dp"
                 android:text="$30.09"
@@ -191,7 +204,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/btn"
             android:backgroundTint="#4371E8"
-            android:text="Đặt hàng ngay bây giờ"
+            android:text="Đặt hàng"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="24sp"

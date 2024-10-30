@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,13 +26,18 @@ public class AddAddressActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("NAME", etName.getText().toString());
-                resultIntent.putExtra("PHONE", etPhone.getText().toString());
-                resultIntent.putExtra("ADDRESS", etAddress.getText().toString());
-                setResult(RESULT_OK, resultIntent);
+                String name = etName.getText().toString().trim();
+                String phone = etPhone.getText().toString().trim();
+                String address = etAddress.getText().toString().trim();
+
+                if (name.isEmpty() || phone.isEmpty() || address.isEmpty()) {
+                    // Hiển thị thông báo lỗi nếu thông tin không đủ
+                    Toast.makeText(AddAddressActivity.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 finish();
             }
         });
+
     }
 }

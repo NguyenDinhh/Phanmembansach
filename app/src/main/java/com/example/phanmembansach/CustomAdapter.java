@@ -51,6 +51,9 @@ public class CustomAdapter extends ArrayAdapter<com.example.phanmembansach.Conta
             case "Kho voucher":
                 icon.setImageResource(R.drawable.ic_voucher);
                 break;
+            case "Địa chỉ giao hàng":
+                icon.setImageResource(R.drawable.ic_home);
+                break;
             case "Riêng tư":
                 icon.setImageResource(R.drawable.ic_privacy);
                 break;
