@@ -28,7 +28,7 @@
             android:layout_height="40dp"
             android:gravity="center"
             android:paddingRight="50dp"
-            android:text="Tưởng tượng"
+            android:text="Kì ảo"
             android:textAlignment="center"
             android:textColor="#4371E8"
             android:textSize="22sp"

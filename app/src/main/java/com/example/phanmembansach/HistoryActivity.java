@@ -17,6 +17,8 @@ public class HistoryActivity extends AppCompatActivity {
     private TextView tvoldprice2;
     private Button btn_buy_1;
     private Button btn_buy_2;
+    private Button btn_danhgia1;
+    private Button btn_danhgia2;
     LinearLayout a;
     LinearLayout b;
     @Override
@@ -30,6 +32,8 @@ public class HistoryActivity extends AppCompatActivity {
         btn_buy_2 = findViewById(R.id.btn_buy_2);
         a = findViewById(R.id.a);
         b = findViewById(R.id.b);
+        btn_danhgia1 = findViewById(R.id.btn_danhgia1);
+        btn_danhgia2 = findViewById(R.id.btn_danhgia2);
         back = findViewById(R.id.img_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +69,18 @@ public class HistoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HistoryActivity.this, Detail_book.class));
+            }
+        });
+        btn_danhgia1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HistoryActivity.this, Danh_gia.class));
+            }
+        });
+        btn_danhgia2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HistoryActivity.this, Danh_gia.class));
             }
         });
     }

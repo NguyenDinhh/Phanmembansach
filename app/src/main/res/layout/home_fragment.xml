@@ -34,7 +34,7 @@
                 android:drawableEnd="@drawable/ic_mic"
                 android:ems="10"
                 android:gravity="center_vertical"
-                android:hint="Search here"
+                android:hint="Tìm kiếm"
                 android:inputType="text"
                 android:padding="5dp"
                 android:textSize="16sp" />
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Super Sale"
+                    android:text="Sự kiện siêu giảm giá"
                     android:textAlignment="center"
                     android:textColor="#4371E8"
                     android:textSize="24dp"
@@ -473,7 +473,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -488,7 +488,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Recommendation"
+                    android:text="Siêu giảm giá"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -854,7 +854,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -868,7 +868,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Categories"
+                    android:text="Thể loại"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -1239,7 +1239,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -1253,7 +1253,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Authors"
+                    android:text="Tác giả"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -1659,7 +1659,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -1673,7 +1673,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Fantasy"
+                    android:text="Kì ảo"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -2073,7 +2073,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -2087,7 +2087,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Education"
+                    android:text="Giáo dục"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -2487,7 +2487,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
-                                    android:text="See more >>>"
+                                    android:text="Xem thêm >>>"
                                     android:textAlignment="center"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -2501,7 +2501,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
-                    android:text="Education"
+                    android:text="Hài kịch"
                     android:textColor="#4371E8"
                     android:textIsSelectable="false"
                     android:textSize="20sp"
@@ -2523,7 +2523,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
-                    android:text="See more books >>>"
+                    android:text="Xem tất cả sách>>>"
                     android:textAlignment="center"
                     android:textColor="#4371E8"
                     android:textSize="35sp"

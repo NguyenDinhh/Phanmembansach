@@ -43,7 +43,7 @@
                 android:id="@+id/tvname"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:paddingTop="15dp"
+                android:paddingTop="5dp"
                 android:text="Chúa nhẫn 1"
                 android:textAlignment="center"
                 android:textSize="16sp"
