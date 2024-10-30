@@ -50,7 +50,7 @@
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="460dp"
+        android:layout_height="440dp"
         android:layout_below="@+id/header"
         android:padding="8dp">
 
@@ -230,7 +230,7 @@
     <TextView
         android:id="@+id/select_voucher"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@+id/scroll"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -239,15 +239,34 @@
         android:drawableEnd="@drawable/ic_right_arrow"
         android:drawablePadding="20dp"
         android:gravity="center_vertical"
-        android:padding="15dp"
+        android:padding="5dp"
         android:text="Sử dụng Voucher"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/select_address"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/select_voucher"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/background_books"
+        android:drawableStart="@drawable/ic_address"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawablePadding="20dp"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:text="Chọn địa chỉ giao hàng"
+        android:textSize="16sp"
+        android:textStyle="bold"></TextView>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/select_voucher"
+        android:layout_below="@+id/select_address"
         android:orientation="vertical"
         android:padding="16dp">
 

@@ -92,6 +92,10 @@
         <activity
             android:name=".ComingsoonActivity"
             android:exported="true" />
+        <activity
+            android:name=".AddressMainActivity"
+            android:exported="true" />
+        <activity android:name=".AddAddressActivity" />
     </application>
 
 </manifest>
