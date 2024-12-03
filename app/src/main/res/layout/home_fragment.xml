@@ -113,7 +113,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/education_book_4" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -124,7 +124,7 @@
                                 app:layout_constraintEnd_toEndOf="parent">
 
                                 <TextView
-                                    android:id="@+id/txt1_Recommendation"
+                                    android:id="@+id/ten"
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:text="Lập trình Java cơ bản"
@@ -142,7 +142,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/txt3_Recommendation"
+                                    android:id="@+id/mota"
                                     android:layout_width="match_parent"
                                     android:layout_height="55dp"
                                     android:paddingLeft="11dp"
@@ -151,7 +151,7 @@
                                     android:textColor="#625F5F" />
 
                                 <TextView
-                                    android:id="@+id/txt4_Recommendation"
+                                    android:id="@+id/daban"
                                     android:layout_width="match_parent"
                                     android:layout_height="25dp"
                                     android:paddingLeft="11dp"
@@ -253,7 +253,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/education_book_1" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -1723,7 +1723,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/education_book_1" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -1789,7 +1789,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/education_book_4" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -1857,7 +1857,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/education_book_2" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -1924,7 +1924,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/education_book_5" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -1991,7 +1991,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/education_book_3" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -2137,7 +2137,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/comedy_book_1" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -2203,7 +2203,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/comedy_book_2" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -2271,7 +2271,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/comedy_book_3" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -2338,7 +2338,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/education_book_2" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout
@@ -2405,7 +2405,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/comedy_book_2" />
+                                    app:srcCompat="@drawable/chuanhan1" />
                             </androidx.cardview.widget.CardView>
 
                             <LinearLayout

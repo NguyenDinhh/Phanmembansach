@@ -2,7 +2,6 @@ package com.example.phanmembansach;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -36,7 +34,7 @@ public class Adapter_Diem_Thuong_Books  extends ArrayAdapter<Book> {
 
             viewHolder.tvname = convertView.findViewById(R.id.tvname);
             viewHolder.tvauthor = convertView.findViewById(R.id.tvauthor);
-            viewHolder.tvprice = convertView.findViewById(R.id.tvprice);
+            viewHolder.tvprice = convertView.findViewById(R.id.gia);
             viewHolder.img = convertView.findViewById(R.id.img);
             viewHolder.tvsold = convertView.findViewById(R.id.tvsold);
             viewHolder.btn_doi = convertView.findViewById(R.id.btn_buy_2);
@@ -49,14 +47,14 @@ public class Adapter_Diem_Thuong_Books  extends ArrayAdapter<Book> {
         Book book = arrBook.get(position);
 
         if (book != null) {
-            viewHolder.tvname.setText(book.getName() != null ? book.getName() : "Unknown Title");
-            viewHolder.tvauthor.setText(book.getAuthor() != null ? book.getAuthor() : "Unknown Author");
-            viewHolder.tvprice.setText("Điểm thưởng: " + book.getDiemthuong());
-            viewHolder.tvsold.setText("Đã bán: " + book.getSold());
+            viewHolder.tvname.setText(book.getTen() != null ? book.getTen() : "Unknown Title");
+            viewHolder.tvauthor.setText(book.getTacgiaID().toString() != null ? book.getTacgiaID().toString() : "Unknown Author");
+            viewHolder.tvprice.setText("Điểm thưởng: " + book.getDiemThuong());
+            viewHolder.tvsold.setText("Đã bán: " + book.getDaBan());
 
             // Đặt hình ảnh cho ImageView, thay vì dùng setBackgroundResource, dùng setImageResource
-            if (book.getImg() != null) {
-                int imageResId = context.getResources().getIdentifier(book.getImg(), "drawable", context.getPackageName());
+            if (book.getAnh() != null) {
+                int imageResId = context.getResources().getIdentifier(book.getAnh(), "drawable", context.getPackageName());
                 if (imageResId != 0) {  // Kiểm tra nếu resource ID hợp lệ
                     viewHolder.img.setImageResource(imageResId);  // Đặt hình ảnh
                 } else {

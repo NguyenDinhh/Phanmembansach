@@ -1,7 +1,6 @@
 package com.example.phanmembansach;
 
 import android.content.Intent;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +25,7 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
         back = findViewById(R.id.img_back);
-        tvoldprice = findViewById(R.id.tvoldprice);
+        tvoldprice = findViewById(R.id.giacu);
         tvoldprice2 = findViewById(R.id.tvoldprice2);
         btn_buy_1 =findViewById(R.id.btn_buy_1);
         btn_buy_2 = findViewById(R.id.btn_buy_2);

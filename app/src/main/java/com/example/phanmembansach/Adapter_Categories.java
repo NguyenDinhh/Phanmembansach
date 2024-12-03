@@ -1,5 +1,7 @@
 package com.example.phanmembansach;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -26,6 +28,7 @@ public class Adapter_Categories extends ArrayAdapter<Category> {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
 
+
         // Nếu convertView là null, tạo mới View và ViewHolder
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.row_categories, parent, false);
@@ -40,16 +43,17 @@ public class Adapter_Categories extends ArrayAdapter<Category> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+
         // Lấy Book hiện tại từ arrBook
         Category category = arrCategories.get(position);
 
         if (category != null) {
             // Đảm bảo không bị null khi gán giá trị cho các TextView
-            viewHolder.tvname.setText(category.getName() != null ? category.getName() : "Unknown Title");
-            viewHolder.tvdescribe.setText(category.getDescribe() != null ? category.getDescribe() : "Unknown Describe");
+            viewHolder.tvname.setText(category.getTenTheLoai() != null ? category.getTenTheLoai() : "Unknown Title");
+            viewHolder.tvdescribe.setText(category.getMoTa() != null ? category.getMoTa() : "Unknown Describe");
             // Đặt hình ảnh cho ImageView, thay vì dùng setBackgroundResource, dùng setImageResource
-            if (category.getImg() != null) {
-                int imageResId = context.getResources().getIdentifier(category.getImg(), "drawable", context.getPackageName());
+            if (category.getAnh() != null) {
+                int imageResId = context.getResources().getIdentifier(category.getAnh(), "drawable", context.getPackageName());
                 if (imageResId != 0) {  // Kiểm tra nếu resource ID hợp lệ
                     viewHolder.img.setImageResource(imageResId);  // Đặt hình ảnh
                 } else {
@@ -57,6 +61,7 @@ public class Adapter_Categories extends ArrayAdapter<Category> {
                 }
             }
         }
+
         return convertView;
     }
 

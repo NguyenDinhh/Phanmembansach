@@ -1,57 +1,60 @@
 package com.example.phanmembansach;
 
 public class Author {
-    private  String name;
-    private  String job;
-    private  Integer amount;
-    private  String dedescribe;
-    private  String img;
+    private  String Ten;
+    private  String CongViec;
+    private  Integer TacGiaID;
+    private  String MoTa;
+    private  String Anh;
 
-    public Author(String name, String job, Integer amount, String dedescribe, String img) {
-        this.name = name;
-        this.job = job;
-        this.amount = amount;
-        this.dedescribe = dedescribe;
-        this.img = img;
+    public Author() {
     }
 
-    public String getName() {
-        return name;
+    public Author(String ten, String congViec, Integer tacGiaID, String moTa, String anh) {
+        Ten = ten;
+        CongViec = congViec;
+        TacGiaID = tacGiaID;
+        MoTa = moTa;
+        Anh = anh;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getTen() {
+        return Ten;
     }
 
-    public String getJob() {
-        return job;
+    public void setTen(String ten) {
+        Ten = ten;
     }
 
-    public void setJob(String job) {
-        this.job = job;
+    public String getCongViec() {
+        return CongViec;
     }
 
-    public Integer getAmount() {
-        return amount;
+    public void setCongViec(String congViec) {
+        CongViec = congViec;
     }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
+    public Integer getTacGiaID() {
+        return TacGiaID;
     }
 
-    public String getDedescribe() {
-        return dedescribe;
+    public void setTacGiaID(Integer tacGiaID) {
+        TacGiaID = tacGiaID;
     }
 
-    public void setDedescribe(String dedescribe) {
-        this.dedescribe = dedescribe;
+    public String getMoTa() {
+        return MoTa;
     }
 
-    public String getImg() {
-        return img;
+    public void setMoTa(String moTa) {
+        MoTa = moTa;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public String getAnh() {
+        return Anh;
+    }
+
+    public void setAnh(String anh) {
+        Anh = anh;
     }
 }

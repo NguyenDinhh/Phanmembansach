@@ -71,7 +71,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tvprice"
+                        android:id="@+id/gia"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -80,7 +80,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/tvoldprice"
+                        android:id="@+id/giacu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -89,7 +89,7 @@
                         android:textColor="#BFBCBC" />
 
                     <TextView
-                        android:id="@+id/tvsale"
+                        android:id="@+id/giamgia"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"

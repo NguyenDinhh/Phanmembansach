@@ -9,11 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Danh_gia extends AppCompatActivity {
     private TextView txt_back;
@@ -35,7 +31,7 @@ public class Danh_gia extends AppCompatActivity {
         img_favourite.setImageResource(R.drawable.ic_favorite);
         img_favourite.setTag(R.drawable.ic_favorite);
         img_cart = findViewById(R.id.ic_cart);
-        txtoldprice = findViewById(R.id.tvoldprice);
+        txtoldprice = findViewById(R.id.giacu);
         txtoldprice.setPaintFlags(txtoldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         txt_back = findViewById(R.id.txt_back);
         txt_back.setOnClickListener(new View.OnClickListener() {

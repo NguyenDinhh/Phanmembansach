@@ -54,6 +54,7 @@
             android:hint="Mật khẩu"
             android:inputType="text"
             android:padding="18dp"
+            android:password="true"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="16sp"

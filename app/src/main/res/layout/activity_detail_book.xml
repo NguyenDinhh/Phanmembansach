@@ -45,8 +45,7 @@
                 android:orientation="vertical"
                 android:paddingLeft="20dp"
                 android:paddingTop="15dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="20dp">
+                android:paddingRight="20dp">
 
                 <TextView
                     android:id="@+id/tvname"
@@ -71,7 +70,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tvprice"
+                        android:id="@+id/gia"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -80,7 +79,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/tvoldprice"
+                        android:id="@+id/giacu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -89,7 +88,7 @@
                         android:textColor="#BFBCBC" />
 
                     <TextView
-                        android:id="@+id/tvsale"
+                        android:id="@+id/giamgia"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -108,6 +107,13 @@
                     android:text="Đã bán: 12" />
 
                 <TextView
+                    android:id="@+id/tvsoluong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Đã bán: 12" />
+
+                <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -120,7 +126,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -144,6 +149,7 @@
 
 
         <TextView
+            android:id="@+id/tv_mota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"

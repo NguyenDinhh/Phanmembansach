@@ -1,68 +1,70 @@
 package com.example.phanmembansach;
 
 public class Category {
-    private  String name;
-    private  Integer amount;
-    private String describe;
-    private Integer sold;
-    private  String img;
-    private Integer id;
+    private  String TenTheLoai;
+    private  Integer TheLoaiID;
+    private String MoTa;
+    private Integer DaBan;
+    private  String Anh;
+    private Integer SoLuong;
 
-
-    public Category(String name, Integer amount, String describe, Integer sold, String img, Integer id) {
-        this.name = name;
-        this.amount = amount;
-        this.describe = describe;
-        this.sold = sold;
-        this.img = img;
-        this.id = id;
+    public Category() {
     }
 
-    public Integer getId() {
-        return id;
+    public Category(String tenTheLoai, Integer theLoaiID, String moTa, Integer daBan, String anh, Integer soLuong) {
+        TenTheLoai = tenTheLoai;
+        TheLoaiID = theLoaiID;
+        MoTa = moTa;
+        DaBan = daBan;
+        Anh = anh;
+        SoLuong = soLuong;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public String getTenTheLoai() {
+        return TenTheLoai;
     }
 
-    public String getName() {
-        return name;
+    public void setTenTheLoai(String tenTheLoai) {
+        TenTheLoai = tenTheLoai;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Integer getTheLoaiID() {
+        return TheLoaiID;
     }
 
-    public Integer getAmount() {
-        return amount;
+    public void setTheLoaiID(Integer theLoaiID) {
+        TheLoaiID = theLoaiID;
     }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
+    public String getMoTa() {
+        return MoTa;
     }
 
-    public String getDescribe() {
-        return describe;
+    public void setMoTa(String moTa) {
+        MoTa = moTa;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public Integer getDaBan() {
+        return DaBan;
     }
 
-    public Integer getSold() {
-        return sold;
+    public void setDaBan(Integer daBan) {
+        DaBan = daBan;
     }
 
-    public void setSold(Integer sold) {
-        this.sold = sold;
+    public String getAnh() {
+        return Anh;
     }
 
-    public String getImg() {
-        return img;
+    public void setAnh(String anh) {
+        Anh = anh;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public Integer getSoLuong() {
+        return SoLuong;
+    }
+
+    public void setSoLuong(Integer soLuong) {
+        SoLuong = soLuong;
     }
 }

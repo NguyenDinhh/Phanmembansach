@@ -53,13 +53,6 @@
             android:orientation="vertical">
 
 
-            <ImageView
-                android:id="@+id/book_image_1"
-                android:layout_width="250dp"
-                android:layout_height="350dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/comedy_book_3" />
-
             <TextView
                 android:id="@+id/book_title_1"
                 android:layout_width="wrap_content"
@@ -70,14 +63,6 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/book_image_2"
-                android:layout_width="250dp"
-                android:layout_height="350dp"
-                android:layout_marginTop="30dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/education_book_1" />
 
             <TextView
                 android:id="@+id/book_title_2"

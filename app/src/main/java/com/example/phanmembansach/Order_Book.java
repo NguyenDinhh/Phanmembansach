@@ -7,11 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Order_Book extends AppCompatActivity {
 
@@ -24,7 +20,7 @@ public class Order_Book extends AppCompatActivity {
         setContentView(R.layout.activity_order_book);
         txt_back = findViewById(R.id.txt_back);
         btn_order = findViewById(R.id.btn_order);
-        txt_oldprice = findViewById(R.id.tvoldprice);
+        txt_oldprice = findViewById(R.id.giacu);
         txt_oldprice.setPaintFlags(txt_oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         txt_back.setOnClickListener(new View.OnClickListener() {
             @Override

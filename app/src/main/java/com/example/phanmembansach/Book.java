@@ -4,112 +4,169 @@ import android.media.Image;
 import android.widget.ImageView;
 
 public class Book {
-    private String name;
-    private String describe;
-    private String author;
-    private double start;
-    private double price;
-    private Integer amount;
-    private Integer sold;
-    private String img;
-    private  double sale;
-    private  Integer diemthuong;
-
+    private Integer SachID;
+    private Integer NhaXuaBanID;
+    private String Ten;
+    private String Mota;
+    private Integer TacGiaID;
+    private Integer TheLoaiID;
+    private double Sao;
+    private double Gia;
+    private Integer SoLuong;
+    private Integer DaBan;
+    private String Anh;
+    private  double Sale;
+    private  Integer DiemThuong;
+    private String NgayKhoiBan;
+    private  String NgayXuatBan;
+    private  String TenTacGia;
     public Book() {
 
     }
 
-    public Book(String name, String describe, String author, double start, double price, Integer amount, Integer sold, String img, double sale, Integer diemthuong) {
-        this.name = name;
-        this.describe = describe;
-        this.author = author;
-        this.start = start;
-        this.price = price;
-        this.amount = amount;
-        this.sold = sold;
-        this.img = img;
-        this.sale = sale;
-        this.diemthuong = diemthuong;
+    public Book(Integer sachID, Integer nhaXuaBanID, String ten, String mota, Integer tacgiaID, Integer theLoaiID, double sao, double gia, Integer soLuong, Integer daBan, String anh, double sale, Integer diemThuong, String ngayKhoiBan, String ngayXuatBan) {
+        SachID = sachID;
+        NhaXuaBanID = nhaXuaBanID;
+        Ten = ten;
+        Mota = mota;
+        TacGiaID = tacgiaID;
+        TheLoaiID = theLoaiID;
+        Sao = sao;
+        Gia = gia;
+        SoLuong = soLuong;
+        DaBan = daBan;
+        Anh = anh;
+        Sale = sale;
+        DiemThuong = diemThuong;
+        NgayKhoiBan = ngayKhoiBan;
+        NgayXuatBan = ngayXuatBan;
     }
 
-    public String getName() {
-        return name;
+    public String getTenTacGia() {
+        return TenTacGia;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTenTacGia(String tenTacGia) {
+        TenTacGia = tenTacGia;
     }
 
-    public String getDescribe() {
-        return describe;
+    public Integer getSachID() {
+        return SachID;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setSachID(Integer sachID) {
+        SachID = sachID;
     }
 
-    public String getAuthor() {
-        return author;
+    public Integer getNhaXuaBanID() {
+        return NhaXuaBanID;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setNhaXuaBanID(Integer nhaXuaBanID) {
+        NhaXuaBanID = nhaXuaBanID;
     }
 
-    public double getStart() {
-        return start;
+    public String getTen() {
+        return Ten;
     }
 
-    public void setStart(double start) {
-        this.start = start;
+    public void setTen(String ten) {
+        Ten = ten;
     }
 
-    public double getPrice() {
-        return price;
+    public String getMota() {
+        return Mota;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setMota(String mota) {
+        Mota = mota;
     }
 
-    public Integer getAmount() {
-        return amount;
+    public Integer getTacgiaID() {
+        return TacGiaID;
     }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
+    public void setTacgiaID(Integer tacgiaID) {
+        TacGiaID = tacgiaID;
     }
 
-    public Integer getSold() {
-        return sold;
+    public Integer getTheLoaiID() {
+        return TheLoaiID;
     }
 
-    public void setSold(Integer sold) {
-        this.sold = sold;
+    public void setTheLoaiID(Integer theLoaiID) {
+        TheLoaiID = theLoaiID;
     }
 
-    public String getImg() {
-        return img;
+    public double getSao() {
+        return Sao;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setSao(double sao) {
+        Sao = sao;
+    }
+
+    public double getGia() {
+        return Gia;
+    }
+
+    public void setGia(double gia) {
+        Gia = gia;
+    }
+
+    public Integer getSoLuong() {
+        return SoLuong;
+    }
+
+    public void setSoLuong(Integer soLuong) {
+        SoLuong = soLuong;
+    }
+
+    public Integer getDaBan() {
+        return DaBan;
+    }
+
+    public void setDaBan(Integer daBan) {
+        DaBan = daBan;
+    }
+
+    public String getAnh() {
+        return Anh;
+    }
+
+    public void setAnh(String anh) {
+        Anh = anh;
     }
 
     public double getSale() {
-        return sale;
+        return Sale;
     }
 
     public void setSale(double sale) {
-        this.sale = sale;
-
+        Sale = sale;
     }
 
-    public Integer getDiemthuong() {
-        return diemthuong;
+    public Integer getDiemThuong() {
+        return DiemThuong;
     }
 
-    public void setDiemthuong(Integer diemthuong) {
-        this.diemthuong = diemthuong;
+    public void setDiemThuong(Integer diemThuong) {
+        DiemThuong = diemThuong;
+    }
+
+    public String getNgayKhoiBan() {
+        return NgayKhoiBan;
+    }
+
+    public void setNgayKhoiBan(String ngayKhoiBan) {
+        NgayKhoiBan = ngayKhoiBan;
+    }
+
+    public String getNgayXuatBan() {
+        return NgayXuatBan;
+    }
+
+    public void setNgayXuatBan(String ngayXuatBan) {
+        NgayXuatBan = ngayXuatBan;
     }
 }

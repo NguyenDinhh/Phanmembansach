@@ -3,6 +3,7 @@ package com.example.phanmembansach;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,11 +11,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Categories_Fragment extends Fragment {
+    DatabaseReference mdata;
+    Adapter_Categories adapter ;
     public Categories_Fragment() {
         // Required empty public constructor
     }
@@ -25,28 +35,27 @@ public class Categories_Fragment extends Fragment {
         View mView = inflater.inflate(R.layout.categories_fragment, container, false);
         ImageView back = mView.findViewById(R.id.img_back);
        ListView  lv = mView.findViewById(R.id.lvcategories);
+       mdata = FirebaseDatabase.getInstance().getReference();
         ArrayList<Category> arrCategories = new ArrayList<>();
-        Category category1 = new Category("Kì ảo", 134, "     Fantasy books transport readers to imaginary worlds filled with magic, supernatural creatures, and epic adventures.", 89, "fantasy_book",1);
-        Category category2 = new Category("Hài kịch", 134, "      Comedy books are designed to entertain and amuse readers with humorous plots, witty dialogue, and lighthearted situations.", 89, "comedy_book",2);
-        Category category3 = new Category("Nấu ăn", 134, "     “Discover delicious recipes and culinary techniques to elevate your home cooking. Would you like any more help with this?", 89, "cooking_book",3);
-        Category category4 = new Category("Bí ẩn", 134, "     Adventure books are thrilling tales that take readers on exciting journeys, often featuring daring heroes, exotic locations, and high-stakes challenges.", 89, "mystery_book",4);
-        Category category5 = new Category("Phiêu lưu", 134, "      Adventure books are thrilling tales that take readers on exciting journeys, often featuring daring heroes, exotic locations, and high-stakes challenges.", 89, "aventure_book",5);
-        Category category6 = new Category("Giáo dục", 134, "     Educational Books: These books provide knowledge and insights on various subjects, aiming to educate and inform readers.", 89, "education_book",6);
-        Category category7 = new Category("Lịch sử", 134, "     Fantasy books transport readers to imaginary worlds filled with magic, supernatural creatures, and epic adventures.", 89, "history_book",7);
-        Category category8 = new Category("Kinh dị", 134, "     Fantasy books transport readers to imaginary worlds filled with magic, supernatural creatures, and epic adventures.", 89, "honnor_book",8);
-        Category category9 = new Category("Lãng mạn", 134, "     Fantasy books transport readers to imaginary worlds filled with magic, supernatural creatures, and epic adventures.", 89, "romance_book",9);
-        Category category10 = new Category("Khoa học", 134, "     Fantasy books transport readers to imaginary worlds filled with magic, supernatural creatures, and epic adventures.", 89, "science_book",10);
-        arrCategories.add(category1);
-        arrCategories.add(category2);
-        arrCategories.add(category3);
-        arrCategories.add(category4);
-        arrCategories.add(category5);
-        arrCategories.add(category6);
-        arrCategories.add(category7);
-        arrCategories.add(category8);
-        arrCategories.add(category9);
-        arrCategories.add(category10);
-        Adapter_Categories adapter = new Adapter_Categories(getActivity(),R.layout.row_categories, arrCategories);
+       mdata.child("TheLoais").addValueEventListener(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot snapshot) {
+               for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                   try {
+                       Category theloai= dataSnapshot.getValue(Category.class);
+                       arrCategories.add(theloai);
+                   } catch (Exception e) {
+                       e.printStackTrace();
+                   }
+               }
+               adapter.notifyDataSetChanged();
+           }
+           @Override
+           public void onCancelled(@NonNull DatabaseError error)
+           {
+           }
+       });
+        adapter = new Adapter_Categories(getActivity(),R.layout.row_categories, arrCategories);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((parent, view, position, id) -> {
             ((Home) getActivity()).setCurrentPage(7);

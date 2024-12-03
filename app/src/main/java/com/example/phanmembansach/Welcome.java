@@ -12,11 +12,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Welcome extends AppCompatActivity {
 
     private Button btn_login;
     private  Button btn_register;
     private TextView txt_khach;
+    // Write a message to the database
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +29,7 @@ public class Welcome extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         btn_register = findViewById(R.id.btn_register);
         txt_khach =findViewById(R.id.txt_khach);
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,7 +45,9 @@ public class Welcome extends AppCompatActivity {
         txt_khach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Welcome.this, Home.class));
+                Intent intent = new Intent(Welcome.this, Home.class);
+                intent.putExtra("login","no_login");
+                startActivity(intent);
             }
         });
     }

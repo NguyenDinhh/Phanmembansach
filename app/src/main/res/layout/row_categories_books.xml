@@ -58,40 +58,44 @@
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="190dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal"
                 android:layout_marginRight="20dp"
-                android:layout_height="40dp">
+                android:orientation="horizontal"
+                android:padding="1dp">
 
                 <TextView
-                    android:id="@+id/tvprice"
+                    android:id="@+id/gia"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:gravity="center_vertical"
                     android:text="$15.00"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/tvoldprice"
+                    android:id="@+id/giacu"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
+                    android:layout_weight="4"
                     android:gravity="center_vertical"
                     android:text="$15.00"
-                    android:textColor="#BFBCBC" />
+                    android:textColor="#BFBCBC"
+                    android:textSize="13sp" />
 
                 <TextView
-                    android:id="@+id/tvsale"
+                    android:id="@+id/giamgia"
                     android:layout_width="0dp"
-                    android:padding="2dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
                     android:layout_weight="3"
-                    android:textColor="@color/white"
                     android:background="@drawable/background_sale"
                     android:gravity="center_vertical"
-                    android:text="- 20%" />
+                    android:padding="2dp"
+                    android:text="- 20%"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <TextView

@@ -22,7 +22,7 @@ public class YourfavouriteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yourfavourite);
-        tvoldprice = findViewById(R.id.tvoldprice);
+        tvoldprice = findViewById(R.id.giacu);
         tvoldprice2 =findViewById(R.id.tvoldprice2);
         tvoldprice.setPaintFlags(tvoldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         tvoldprice2.setPaintFlags(tvoldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
