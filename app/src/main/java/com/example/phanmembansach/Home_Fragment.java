@@ -164,13 +164,13 @@ public class Home_Fragment extends Fragment {
             if (event.getAction() == MotionEvent.ACTION_UP ) {
                 if (event.getRawX() <= (txt_search.getLeft() + txt_search.getCompoundDrawables()[0].getBounds().width())) {
                     Bundle bundle = new Bundle();
-                    bundle.putInt("TheLoaiID", 0);
+                    bundle.putString("timkiem", txt_search.getText().toString());
                     // Gọi phương thức setCurrentPage và truyền Bundle vào Home Activity
                     if (getContext() instanceof Home) {
                         Home homeActivity = (Home) getContext();
                         homeActivity.setCurrentPage(4, bundle);  // Chuyển đến All_Book_Fragment và truyền bundle
                     }
-                    Toast.makeText(getContext(), "You have just searched", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Bạn vừa tìm kiếm: " + txt_search.getText().toString(), Toast.LENGTH_SHORT).show();
                 }
             }
             return false;

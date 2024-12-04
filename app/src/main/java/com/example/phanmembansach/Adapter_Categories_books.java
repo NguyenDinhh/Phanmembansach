@@ -1,5 +1,7 @@
 package com.example.phanmembansach;
 
+import static android.app.PendingIntent.getActivity;
+
 import android.graphics.Paint;
 import android.widget.ArrayAdapter;
 import android.content.Context;
@@ -81,37 +83,46 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
                     context.startActivity(intent);
                 }
             });
-
-            // Thiết lập sự kiện cho icon yêu thích và giỏ hàng
-            if (viewHolder.img_favourite != null && viewHolder.img_cart != null) {
-                viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
-                viewHolder.img_favourite.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        // Đổi trạng thái yêu thích
-                        if ((Integer) viewHolder.img_favourite.getTag() == R.drawable.ic_favorite) {
-                            viewHolder.img_favourite.setImageResource(R.drawable.ic_favourite_2);
-                            viewHolder.img_favourite.setTag(R.drawable.ic_favourite_2);
-                        } else {
-                            viewHolder.img_favourite.setImageResource(R.drawable.ic_favorite);
-                            viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
+            App app = (App) context.getApplicationContext();
+                if (viewHolder.img_favourite != null && viewHolder.img_cart != null) {
+                    viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
+                    viewHolder.img_favourite.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(app.isLoggedIn()==false)
+                            {
+                                Toast.makeText(getContext(),"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            // Đổi trạng thái yêu thích
+                                if ((Integer) viewHolder.img_favourite.getTag() == R.drawable.ic_favorite) {
+                                    viewHolder.img_favourite.setImageResource(R.drawable.ic_favourite_2);
+                                    viewHolder.img_favourite.setTag(R.drawable.ic_favourite_2);
+                                } else {
+                                    viewHolder.img_favourite.setImageResource(R.drawable.ic_favorite);
+                                    viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
+                                }
                         }
-                    }
-                });
-
+                    });
                 viewHolder.img_cart.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
-                        // Lấy SachID của cuốn sách hiện tại
-                        Book book = arrBook.get(position);
-                        if (book != null) {
-                            Integer sachID = book.getSachID(); // Giả sử bạn có phương thức getSachID() trong lớp Book
+                        if(app.isLoggedIn()==false)
+                        {
+                            Toast.makeText(getContext(),"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                            // Lấy SachID của cuốn sách hiện tại
+                            Book book = arrBook.get(position);
+                            if (book != null) {
+                                Integer sachID = book.getSachID(); // Giả sử bạn có phương thức getSachID() trong lớp Book
 
-                            // Tạo Intent để chuyển đến Activity khác và truyền SachID
-                            Intent intent = new Intent(context, Cart_Fragment.class); // Thay BookDetailsActivity bằng class bạn muốn chuyển đến
-                            intent.putExtra("SachID", sachID);
-                            context.startActivity(intent); // Bắt đầu Activity mới
+                                // Tạo Intent để chuyển đến Activity khác và truyền SachID
+                                Intent intent = new Intent(context, Cart_Fragment.class); // Thay BookDetailsActivity bằng class bạn muốn chuyển đến
+                                intent.putExtra("SachID", sachID);
+                                context.startActivity(intent); // Bắt đầu Activity mới
+                            }
                         }
                     }
                 });

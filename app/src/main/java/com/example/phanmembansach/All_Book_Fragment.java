@@ -59,10 +59,12 @@ public class All_Book_Fragment extends Fragment {
                 arrBook.clear();
                 Bundle arguments = getArguments();
                 Integer theLoaiID = 0;
+                String timkiem = "null";
                 if (arguments != null)
                 {
                     theLoaiID = arguments.getInt("TheLoaiID",0);
                     txt.setText(arguments.getString("TenTheLoai","Tất cả sách"));
+                    timkiem = arguments.getString("timkiem","null");
                 }
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     try {
@@ -87,15 +89,23 @@ public class All_Book_Fragment extends Fragment {
                                 // Xử lý khi truy vấn bị lỗi
                             }
                         });
-                        if (theLoaiID != 0) {
-                            // Nếu có TheLoaiID, chỉ thêm sách thuộc thể loại này
-                            if (book.getTheLoaiID() == theLoaiID) {
+                        if(timkiem.equals("null")== false)
+                        {
+                            if (book.getTen().contains(timkiem))
+                            {
                                 arrBook.add(book);
                             }
                         }
-                        else {
-                            // Nếu không có TheLoaiID (hoặc là 0), thêm tất cả sách
-                            arrBook.add(book);
+                        else
+                            if (theLoaiID != 0)
+                            {
+                                // Nếu có TheLoaiID, chỉ thêm sách thuộc thể loại này
+                                if (book.getTheLoaiID() == theLoaiID)
+                                    arrBook.add(book);
+                            }
+                            else {
+                                // Nếu không có TheLoaiID (hoặc là 0), thêm tất cả sách
+                                arrBook.add(book);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -110,7 +120,6 @@ public class All_Book_Fragment extends Fragment {
                 // Xử lý khi truy vấn bị lỗi
             }
         });
-
         lv.setAdapter(adapter);
         txt_search.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_UP) {
@@ -167,10 +176,8 @@ public class All_Book_Fragment extends Fragment {
                                     e.printStackTrace();
                                 }
                             }
-
                             adapter.notifyDataSetChanged();  // Cập nhật adapter để hiển thị sách
                         }
-
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
                             // Xử lý khi truy vấn bị lỗi
@@ -181,6 +188,7 @@ public class All_Book_Fragment extends Fragment {
             }
             return false;
         });
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

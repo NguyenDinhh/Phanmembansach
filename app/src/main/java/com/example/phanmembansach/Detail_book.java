@@ -1,9 +1,13 @@
 package com.example.phanmembansach;
 
+import android.app.Activity;
+import android.content.ContentProvider;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +59,7 @@ public class Detail_book extends AppCompatActivity {
         daban = findViewById(R.id.tvsold);
         soluong = findViewById(R.id.tvsoluong);
         mota = findViewById(R.id.tv_mota);
+        App app = (App) getApplicationContext();
 
         // Lắng nghe sự kiện thay đổi dữ liệu từ Firebase
         mdata.child("Sachs").addValueEventListener(new ValueEventListener() {
@@ -111,16 +116,27 @@ public class Detail_book extends AppCompatActivity {
 
         txt_back.setOnClickListener(view -> finish());
 
-        img_cart.setOnClickListener(view -> startActivity(new Intent(Detail_book.this, Order_Book.class)));
-
-        img_favourite.setOnClickListener(view -> {
-            if ((Integer) img_favourite.getTag() == R.drawable.ic_favorite) {
-                img_favourite.setImageResource(R.drawable.ic_favourite_2);
-                img_favourite.setTag(R.drawable.ic_favourite_2);
-            } else {
-                img_favourite.setImageResource(R.drawable.ic_favorite);
-                img_favourite.setTag(R.drawable.ic_favorite);
+        img_cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(app.isLoggedIn()==false)
+                    Toast.makeText(Detail_book.this,"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
+                else
+                    startActivity(new Intent(Detail_book.this, Order_Book.class));
             }
         });
+        img_favourite.setOnClickListener(view -> {
+            if(app.isLoggedIn()==false)
+                Toast.makeText(Detail_book.this,"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
+            else
+                if ((Integer) img_favourite.getTag() == R.drawable.ic_favorite) {
+                    img_favourite.setImageResource(R.drawable.ic_favourite_2);
+                    img_favourite.setTag(R.drawable.ic_favourite_2);
+                } else {
+                    img_favourite.setImageResource(R.drawable.ic_favorite);
+                    img_favourite.setTag(R.drawable.ic_favorite);
+            }
+        });
+
     }
 }
