@@ -10,13 +10,16 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private String loginStatus; // Dữ liệu cần truyền vào các Fragment
-
+    private Bundle bundle;
     // Constructor nhận FragmentManager, behavior và loginStatus
     public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior, String loginStatus) {
         super(fm, behavior);
         this.loginStatus = loginStatus;
     }
-
+    // Phương thức để set Bundle (dữ liệu cần truyền vào Fragment)
+    public void setBundle(Bundle bundle) {
+        this.bundle = bundle;
+    }
     @Override
     public Fragment getItem(int position) {
         Fragment fragment = null;
@@ -54,10 +57,8 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 break;
         }
 
-        // Tạo Bundle và truyền dữ liệu vào Fragment
-        Bundle bundle = new Bundle();
-        bundle.putString("login_status", loginStatus); // Truyền loginStatus vào Bundle
-        if (fragment != null) {
+        // Truyền Bundle vào Fragment nếu có
+        if (fragment != null && bundle != null) {
             fragment.setArguments(bundle);  // Đặt Bundle vào Fragment
         }
 

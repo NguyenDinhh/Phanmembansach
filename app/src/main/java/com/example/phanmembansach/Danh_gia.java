@@ -33,7 +33,7 @@ public class Danh_gia extends AppCompatActivity {
         img_cart = findViewById(R.id.ic_cart);
         txtoldprice = findViewById(R.id.giacu);
         txtoldprice.setPaintFlags(txtoldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        txt_back = findViewById(R.id.txt_back);
+        txt_back = findViewById(R.id.txt_tieude);
         txt_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

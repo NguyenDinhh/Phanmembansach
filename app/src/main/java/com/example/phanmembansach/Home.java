@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -98,6 +99,19 @@ public class Home extends AppCompatActivity {
     }
 
     public void setCurrentPage(int i) {
+        // Chuyển đến trang trong ViewPager
         viewPager.setCurrentItem(i);
     }
+    public void setCurrentPage(int i, Bundle bundle) {
+        // Cập nhật bundle cho adapter
+        ViewPagerAdapter adapter = (ViewPagerAdapter) viewPager.getAdapter();
+        if (adapter != null) {
+            adapter.setBundle(bundle);  // Truyền bundle vào adapter
+        }
+
+        // Sau đó, chuyển đến trang i trong ViewPager
+        viewPager.setCurrentItem(i);
+    }
+
+
 }

@@ -2,7 +2,6 @@ package com.example.phanmembansach;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,14 +52,15 @@ public class Adapter_Home_Fragment_Authors extends RecyclerView.Adapter<Adapter_
                 }
 
                 // Thiết lập sự kiện click cho mỗi item
-            /*    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(context, All_Book_Fragment.class);
-                        intent.putExtra("key", currentPosition);  // Truyền vị trí qua Intent
+                        Intent intent = new Intent(context, Detail_Author.class);
+                        Author author1 = arrauthors.get(currentPosition);
+                        intent.putExtra("TacGiaID", author1.getTacGiaID());  // Truyền vị trí qua Intent
                         context.startActivity(intent);
                     }
-                });*/
+                });
             }
         }
     }
@@ -79,7 +79,7 @@ public class Adapter_Home_Fragment_Authors extends RecyclerView.Adapter<Adapter_
         public ViewHolder(View itemView) {
             super(itemView);
             ten = itemView.findViewById(R.id.ten);
-            mota = itemView.findViewById(R.id.mota);
+            mota = itemView.findViewById(R.id.a);
             img = itemView.findViewById(R.id.img);
             congviec = itemView.findViewById(R.id.congviec);
         }

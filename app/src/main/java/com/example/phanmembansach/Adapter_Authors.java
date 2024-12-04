@@ -31,21 +31,17 @@ public class Adapter_Authors extends ArrayAdapter<Author> {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.row_authors, parent, false);
             viewHolder = new ViewHolder();
-            viewHolder.tvname = convertView.findViewById(R.id.tvname);
-            viewHolder.tvjob = convertView.findViewById(R.id.tvjob);
-            viewHolder.tvamount = convertView.findViewById(R.id.tvamount);
+            viewHolder.tvname = convertView.findViewById(R.id.ten);
+            viewHolder.tvjob = convertView.findViewById(R.id.congviec);
+            viewHolder.tvamount = convertView.findViewById(R.id.a);
             viewHolder.img = convertView.findViewById(R.id.img);
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // Lấy SachID của cuốn sách hiện tại
-                    Author author = arrAuthor.get(position);
-                    if (author != null) {
-                        Integer AuthorID =author.getTacGiaID();
-                        Intent intent = new Intent(context, Detail_Author.class);
-                        intent.putExtra("TacGiaID", AuthorID);
-                        context.startActivity(intent);
-                    }
+                    Intent intent = new Intent(context, Detail_Author.class);
+                    Author author1 = arrAuthor.get(position);
+                    intent.putExtra("TacGiaID", author1.getTacGiaID());  // Truyền vị trí qua Intent
+                    context.startActivity(intent);
                 }
             });
             convertView.setTag(viewHolder);

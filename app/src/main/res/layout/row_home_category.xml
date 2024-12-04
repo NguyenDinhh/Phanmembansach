@@ -67,7 +67,7 @@
                 android:textColor="#625F5F" />
 
             <TextView
-                android:id="@+id/soluong"
+                android:id="@+id/a"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:paddingLeft="11dp"

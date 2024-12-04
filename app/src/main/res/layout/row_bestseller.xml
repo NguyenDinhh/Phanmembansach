@@ -40,7 +40,7 @@
             android:paddingRight="20dp">
 
             <TextView
-                android:id="@+id/tvname"
+                android:id="@+id/ten"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:paddingTop="15dp"

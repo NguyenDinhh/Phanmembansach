@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txt_back"
+            android:id="@+id/txt_tieude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_back2"
@@ -48,7 +48,7 @@
                 android:paddingRight="20dp">
 
                 <TextView
-                    android:id="@+id/tvname"
+                    android:id="@+id/ten"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Chúa nhẫn 1"

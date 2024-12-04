@@ -32,7 +32,7 @@ public class Adapter_Diem_Thuong_Books  extends ArrayAdapter<Book> {
             convertView = LayoutInflater.from(context).inflate(R.layout.row_diemthuong, parent, false);
             viewHolder = new ViewHolder();
 
-            viewHolder.tvname = convertView.findViewById(R.id.tvname);
+            viewHolder.tvname = convertView.findViewById(R.id.ten);
             viewHolder.tvauthor = convertView.findViewById(R.id.tvauthor);
             viewHolder.tvprice = convertView.findViewById(R.id.gia);
             viewHolder.img = convertView.findViewById(R.id.img);

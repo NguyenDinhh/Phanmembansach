@@ -61,15 +61,14 @@ public class Adapter_Home_Fragment_books extends RecyclerView.Adapter<Adapter_Ho
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(context, Detail_book.class);
-                        intent.putExtra("key", currentPosition);  // Truyền vị trí qua Intent
+                        Book book = arrBook.get(currentPosition);
+                        intent.putExtra("SachID", book.getSachID());  // Truyền vị trí qua Intent
                         context.startActivity(intent);
                     }
                 });
             }
         }
     }
-
-
     @Override
     public int getItemCount() {
         return arrBook.size();
@@ -86,7 +85,7 @@ public class Adapter_Home_Fragment_books extends RecyclerView.Adapter<Adapter_Ho
             tvprice = itemView.findViewById(R.id.gia);
             img = itemView.findViewById(R.id.img1_Recommendation);
             tvsold = itemView.findViewById(R.id.daban);
-            tvmota = itemView.findViewById(R.id.mota);
+            tvmota = itemView.findViewById(R.id.a);
             tvoldprice = itemView.findViewById(R.id.giacu);
             tvsale = itemView.findViewById(R.id.giamgia);
         }

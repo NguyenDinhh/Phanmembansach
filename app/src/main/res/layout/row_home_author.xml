@@ -65,7 +65,7 @@
                 android:textColor="#625F5F" />
 
             <TextView
-                android:id="@+id/mota"
+                android:id="@+id/a"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="5dp"

@@ -1,5 +1,7 @@
 package com.example.phanmembansach;
 
+import static android.app.PendingIntent.getActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -9,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.List;
 
@@ -23,18 +28,15 @@ public class Adapter_Categories extends ArrayAdapter<Category> {
         this.resource = resource;
         this.context = context;
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
-
-
         // Nếu convertView là null, tạo mới View và ViewHolder
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.row_categories, parent, false);
             viewHolder = new ViewHolder();
 
-            viewHolder.tvname = convertView.findViewById(R.id.tvname);
+            viewHolder.tvname = convertView.findViewById(R.id.ten);
             viewHolder.tvdescribe = convertView.findViewById(R.id.tvdescribe);
             viewHolder.img = convertView.findViewById(R.id.img);
 
@@ -42,8 +44,6 @@ public class Adapter_Categories extends ArrayAdapter<Category> {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
-
         // Lấy Book hiện tại từ arrBook
         Category category = arrCategories.get(position);
 
@@ -61,10 +61,26 @@ public class Adapter_Categories extends ArrayAdapter<Category> {
                 }
             }
         }
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Lấy dữ liệu từ danh mục
+                Category category = arrCategories.get(position);
+                Bundle bundle = new Bundle();
+                bundle.putInt("TheLoaiID", category.getTheLoaiID());
+                bundle.putString("TenTheLoai", category.getTenTheLoai());
+
+                // Gọi phương thức setCurrentPage và truyền Bundle vào Home Activity
+                if (context instanceof Home) {
+                    Home homeActivity = (Home) context;
+                    homeActivity.setCurrentPage(4, bundle);  // Chuyển đến All_Book_Fragment và truyền bundle
+                }
+            }
+        });
+
 
         return convertView;
     }
-
     // ViewHolder class dùng để tối ưu hóa hiệu suất
     public class ViewHolder {
         TextView tvname, tvdescribe;

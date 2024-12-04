@@ -6,11 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -20,7 +16,7 @@ public class CheckoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
-        img_exit = findViewById(R.id.img_exit);
+        img_exit = findViewById(R.id.img);
         btn_order = findViewById(R.id.btn_order);
         img_exit.setOnClickListener(new View.OnClickListener() {
             @Override

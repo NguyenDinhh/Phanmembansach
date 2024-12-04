@@ -43,6 +43,9 @@ public class Home_Fragment extends Fragment {
     RecyclerView recyclerView4;
     RecyclerView recyclerView5;
     RecyclerView recyclerView6;
+    private  TextView txt_sieugiamgia;
+    private  TextView txt_theloai;
+    private  TextView txt_tacgia;
     Adapter_Home_Fragment_books adapter;
     Adapter_Home_Fragment_Categories adapter2;
     Adapter_Home_Fragment_Authors adapter3;
@@ -160,7 +163,13 @@ public class Home_Fragment extends Fragment {
         txt_search.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_UP ) {
                 if (event.getRawX() <= (txt_search.getLeft() + txt_search.getCompoundDrawables()[0].getBounds().width())) {
-                    ((Home) getActivity()).setCurrentPage(4);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("TheLoaiID", 0);
+                    // Gọi phương thức setCurrentPage và truyền Bundle vào Home Activity
+                    if (getContext() instanceof Home) {
+                        Home homeActivity = (Home) getContext();
+                        homeActivity.setCurrentPage(4, bundle);  // Chuyển đến All_Book_Fragment và truyền bundle
+                    }
                     Toast.makeText(getContext(), "You have just searched", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -313,6 +322,27 @@ public class Home_Fragment extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 // Xử lý khi truy vấn bị lỗi
+            }
+        });
+        txt_sieugiamgia =mView.findViewById(R.id.txt_sieugiamgia);
+        txt_tacgia = mView.findViewById(R.id.txt_tacgia);
+        txt_theloai = mView.findViewById(R.id.txt_theloai);
+        txt_sieugiamgia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((Home) getActivity()).setCurrentPage(4);
+            }
+        });
+        txt_tacgia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((Home) getActivity()).setCurrentPage(5);
+            }
+        });
+        txt_theloai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((Home) getActivity()).setCurrentPage(6);
             }
         });
         return mView;

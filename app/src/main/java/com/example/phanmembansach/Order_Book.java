@@ -18,7 +18,7 @@ public class Order_Book extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_book);
-        txt_back = findViewById(R.id.txt_back);
+        txt_back = findViewById(R.id.txt_tieude);
         btn_order = findViewById(R.id.btn_order);
         txt_oldprice = findViewById(R.id.giacu);
         txt_oldprice.setPaintFlags(txt_oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);

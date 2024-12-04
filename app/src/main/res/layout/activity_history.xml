@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <TextView
-            android:id="@+id/txt_back"
+            android:id="@+id/txt_tieude"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:gravity="center"
@@ -88,7 +88,7 @@
                     android:paddingRight="20dp">
 
                     <TextView
-                        android:id="@+id/tvname"
+                        android:id="@+id/ten"
                         android:layout_width="match_parent"
                         android:layout_height="65dp"
                         android:paddingTop="15dp"

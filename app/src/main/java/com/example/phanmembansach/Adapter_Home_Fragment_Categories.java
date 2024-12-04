@@ -2,14 +2,17 @@ package com.example.phanmembansach;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -51,21 +54,26 @@ public class Adapter_Home_Fragment_Categories extends RecyclerView.Adapter<Adapt
                         holder.img.setImageResource(R.drawable.andrzej_sapkowski);  // Ảnh mặc định
                     }
                 }
-
-                // Thiết lập sự kiện click cho mỗi item
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(context, All_Book_Fragment.class);
-                        intent.putExtra("key", currentPosition);  // Truyền vị trí qua Intent
-                        context.startActivity(intent);
+                        Category category = arrcategories.get(currentPosition);
+
+                        // Tạo Bundle để truyền dữ liệu vào Fragment
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("TheLoaiID", category.getTheLoaiID());
+                        bundle.putString("TenTheLoai", category.getTenTheLoai());
+
+                        // Gọi phương thức setCurrentPage và truyền Bundle vào Home Activity
+                        if (context instanceof Home) {
+                            Home homeActivity = (Home) context;
+                            homeActivity.setCurrentPage(4, bundle);  // Chuyển đến All_Book_Fragment và truyền bundle
+                        }
                     }
                 });
             }
         }
     }
-
-
     @Override
     public int getItemCount() {
         return arrcategories.size();
@@ -81,7 +89,7 @@ public class Adapter_Home_Fragment_Categories extends RecyclerView.Adapter<Adapt
             ten = itemView.findViewById(R.id.ten);
             mota = itemView.findViewById(R.id.mota);
             img = itemView.findViewById(R.id.img);
-            soluong = itemView.findViewById(R.id.soluong);
+            soluong = itemView.findViewById(R.id.a);
         }
     }
 }
