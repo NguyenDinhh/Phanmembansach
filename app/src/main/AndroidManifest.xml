@@ -2,107 +2,110 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Khai báo ứng dụng của bạn -->
     <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo_book_shop"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_book_shop"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.Phanmembansach"
-        tools:targetApi="31">
-        <activity
-            android:name=".connection"
-            android:exported="true" />
-        <activity
-            android:name=".Danh_gia"
-            android:exported="true" />
-        <activity
-            android:name=".AddressActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Vouchers"
-            android:exported="true" />
-        <activity
-            android:name=".Detail_book_diem_thuong"
-            android:exported="true" />
-        <activity
-            android:name=".Bestseller"
-            android:exported="true" />
-        <activity
-            android:name=".Successful_Order"
-            android:exported="true" />
-        <activity
-            android:name=".Order_Book"
-            android:exported="true" />
-        <activity
-            android:name=".CheckoutActivity"
-            android:exported="true" />
-        <activity
-            android:name=".All_Book_Fragment"
-            android:exported="true" />
-        <activity
-            android:name=".Welcome"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        android:name=".App"  
+    android:allowBackup="true"
+    android:dataExtractionRules="@xml/data_extraction_rules"
+    android:fullBackupContent="@xml/backup_rules"
+    android:icon="@drawable/logo_book_shop"
+    android:label="@string/app_name"
+    android:roundIcon="@drawable/logo_book_shop"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.Phanmembansach"
+    tools:targetApi="31">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ForgetpasswordActivity"
-            android:exported="true" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="true" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Detail_book"
-            android:exported="true" />
-        <activity
-            android:name=".Detail_Author"
-            android:exported="true" />
-        <activity
-            android:name=".Home"
-            android:exported="true" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="true" />
-        <activity
-            android:name=".PasswordActivity"
-            android:exported="true" />
-        <activity
-            android:name=".PrivacyActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Forgetpassword1"
-            android:exported="true" />
-        <activity
-            android:name=".Forgetpassword2"
-            android:exported="true" />
-        <activity
-            android:name=".AboutusActivity"
-            android:exported="true" />
-        <activity
-            android:name=".YourfavouriteActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ContactusActivity"
-            android:exported="true" />
-        <activity
-            android:name=".HistoryActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ComingsoonActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AddressMainActivity"
-            android:exported="true" />
-        <activity android:name=".AddAddressActivity" />
-    </application>
+    <!-- Các activity của ứng dụng -->
+    <activity
+        android:name=".connection"
+        android:exported="true" />
+    <activity
+        android:name=".Danh_gia"
+        android:exported="true" />
+    <activity
+        android:name=".AddressActivity"
+        android:exported="true" />
+    <activity
+        android:name=".Vouchers"
+        android:exported="true" />
+    <activity
+        android:name=".Detail_book_diem_thuong"
+        android:exported="true" />
+    <activity
+        android:name=".Bestseller"
+        android:exported="true" />
+    <activity
+        android:name=".Successful_Order"
+        android:exported="true" />
+    <activity
+        android:name=".Order_Book"
+        android:exported="true" />
+    <activity
+        android:name=".CheckoutActivity"
+        android:exported="true" />
+    <activity
+        android:name=".All_Book_Fragment"
+        android:exported="true" />
+    <activity
+        android:name=".Welcome"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name=".ForgetpasswordActivity"
+        android:exported="true" />
+    <activity
+        android:name=".RegisterActivity"
+        android:exported="true" />
+    <activity
+        android:name=".LoginActivity"
+        android:exported="true" />
+    <activity
+        android:name=".Detail_book"
+        android:exported="true" />
+    <activity
+        android:name=".Detail_Author"
+        android:exported="true" />
+    <activity
+        android:name=".Home"
+        android:exported="true" />
+    <activity
+        android:name=".ProfileActivity"
+        android:exported="true" />
+    <activity
+        android:name=".PasswordActivity"
+        android:exported="true" />
+    <activity
+        android:name=".PrivacyActivity"
+        android:exported="true" />
+    <activity
+        android:name=".Forgetpassword1"
+        android:exported="true" />
+    <activity
+        android:name=".Forgetpassword2"
+        android:exported="true" />
+    <activity
+        android:name=".AboutusActivity"
+        android:exported="true" />
+    <activity
+        android:name=".YourfavouriteActivity"
+        android:exported="true" />
+    <activity
+        android:name=".ContactusActivity"
+        android:exported="true" />
+    <activity
+        android:name=".HistoryActivity"
+        android:exported="true" />
+    <activity
+        android:name=".ComingsoonActivity"
+        android:exported="true" />
+    <activity
+        android:name=".AddressMainActivity"
+        android:exported="true" />
+    <activity android:name=".AddAddressActivity" />
+</application>
 
-</manifest>
+    </manifest>

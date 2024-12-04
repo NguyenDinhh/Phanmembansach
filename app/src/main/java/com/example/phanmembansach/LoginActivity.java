@@ -89,7 +89,9 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             m=1;
                             Intent intent = new Intent(LoginActivity.this, Home.class);
-                            intent.putExtra("login",taiKhoan.getTenDangNhap());
+                            App app = (App) getApplicationContext();
+                            app.setLoggedIn(true);
+                            app.setUsername(taiKhoan.getTenDangNhap());
                             startActivity(intent);
                         }else
                         {

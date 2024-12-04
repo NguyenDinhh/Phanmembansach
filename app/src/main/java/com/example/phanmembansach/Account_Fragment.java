@@ -3,6 +3,7 @@ package com.example.phanmembansach;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,12 +11,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 
 public class Account_Fragment extends Fragment {
     private ListView lvContact;
+    private TextView ten;
+    private  TextView diemthuong;
+    private DatabaseReference mdata;
     public Account_Fragment() {
         // Required empty public constructor
     }
@@ -25,6 +36,58 @@ public class Account_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View mView=  inflater.inflate(R.layout.account_fragment, container, false);
         lvContact = mView.findViewById(R.id.lvContact);
+        ten = mView.findViewById(R.id.ten);
+        mdata = FirebaseDatabase.getInstance().getReference();
+        diemthuong = mView.findViewById(R.id.diemthuong);
+        App app = (App) getActivity().getApplicationContext();
+        if(app.isLoggedIn())
+        {
+            mdata.child("TaiKhoans").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot dataSnapshot: snapshot.getChildren())
+                    {
+                        try {
+                            TaiKhoan taiKhoan = dataSnapshot.getValue(TaiKhoan.class);
+                            if(taiKhoan.getTenDangNhap().equals(app.getUsername()))
+                            {
+                                mdata.child("KhachHangs").addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        for (DataSnapshot snapshot1 : snapshot.getChildren())
+                                        {
+                                            try
+                                            {
+                                                KhachHang khachHang = snapshot1.getValue(KhachHang.class);
+                                                if(khachHang.getKhachHangID()== taiKhoan.getKhachHangID())
+                                                {
+                                                    ten.setText(khachHang.getTen().toString());
+                                                    diemthuong.setText("Điểm thưởng: " + String.valueOf(khachHang.getDiemThuong()));
+                                                }
+                                            }catch (Exception e)
+                                            {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    }
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
         ArrayList<Contact> arrContact = new ArrayList<>();
         arrContact.add(new Contact("Trang chủ"));
         arrContact.add(new Contact("Trang cá nhân"));

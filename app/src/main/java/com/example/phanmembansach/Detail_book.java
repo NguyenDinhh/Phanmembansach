@@ -78,9 +78,9 @@ public class Detail_book extends AppCompatActivity {
                         if(book1.getSachID() == sachid) {
                             ten.setText(book1.getTen());
                             tentacgia.setText(book1.getTenTacGia());
-                            gia.setText(String.format("%.0f", (book1.getGia() - book1.getGia() * book1.getSale())) + " đ");
-                            giacu.setText(String.format("%.0f", book1.getGia()) + " đ");
-                            sale.setText("-" + book1.getSale() * 100 + "%");
+                            gia.setText(String.format("%.0f", (book1.getGia() - book1.getGia() * book1.getSale())) + "đ");
+                            giacu.setText(String.format("%.0f", book1.getGia()) + "đ");
+                            sale.setText("-" +String.format("%.0f", book1.getSale() * 100) + "%");
                             daban.setText("Đã bán: " + book1.getDaBan());
                             soluong.setText("Số lượng: " + book1.getSoLuong());
                             mota.setText(book1.getMota());

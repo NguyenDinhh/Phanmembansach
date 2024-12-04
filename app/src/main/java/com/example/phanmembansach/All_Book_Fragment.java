@@ -115,8 +115,67 @@ public class All_Book_Fragment extends Fragment {
         txt_search.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_UP) {
                 if (event.getRawX() <= (txt_search.getLeft() + txt_search.getCompoundDrawables()[0].getBounds().width())) {
-                    // Trong một phương thức như onClick
-                    Toast.makeText(getContext(), "You have just searched", Toast.LENGTH_SHORT).show();
+                    mdata.child("Sachs").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            arrBook.clear();
+                            Bundle arguments = getArguments();
+                            Integer theLoaiID = 0;
+                            if (arguments != null)
+                            {
+                                theLoaiID = arguments.getInt("TheLoaiID",0);
+                                txt.setText(arguments.getString("TenTheLoai","Tất cả sách"));
+                            }
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                try {
+                                    Book book = dataSnapshot.getValue(Book.class);
+                                    Integer tacgiaID = book.getTacgiaID();
+                                    mdata.child("TacGias").addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                                try
+                                                {
+                                                    Author tacgia = dataSnapshot.getValue(Author.class);
+                                                    if(tacgiaID==tacgia.getTacGiaID())
+                                                        book.setTenTacGia(tacgia.getTen());
+                                                } catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        }
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            // Xử lý khi truy vấn bị lỗi
+                                        }
+                                    });
+                                    if (theLoaiID != 0 ) {
+                                        // Nếu có TheLoaiID, chỉ thêm sách thuộc thể loại này
+                                        if (book.getTheLoaiID() == theLoaiID && book.getTen().contains(txt_search.getText().toString()))
+                                        {
+                                            arrBook.add(book);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (book.getTen().contains(txt_search.getText().toString()))
+                                        {
+                                            arrBook.add(book);
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            adapter.notifyDataSetChanged();  // Cập nhật adapter để hiển thị sách
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // Xử lý khi truy vấn bị lỗi
+                        }
+                    });
 
                 }
             }

@@ -178,7 +178,14 @@ public class Home_Fragment extends Fragment {
         see_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((Home) getActivity()).setCurrentPage(4);
+                Bundle bundle = new Bundle();
+                bundle.putInt("TheLoaiID", 0);
+                // Gọi phương thức setCurrentPage và truyền Bundle vào Home Activity
+                if (getContext() instanceof Home) {
+                    Home homeActivity = (Home) getContext();
+                    homeActivity.setCurrentPage(4, bundle);  // Chuyển đến All_Book_Fragment và truyền bundle
+                }
+                Toast.makeText(getContext(), "You have just searched", Toast.LENGTH_SHORT).show();
             }
         });
 

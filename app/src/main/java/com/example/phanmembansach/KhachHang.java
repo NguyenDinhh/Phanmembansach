@@ -6,7 +6,7 @@ public class KhachHang {
     private  String Email;
     private  String DienThoai;
     private  String DiaChi;
-    private  Integer DiemThuong;
+    private  Integer Diemthuong;
 
     public KhachHang() {
     }
@@ -17,7 +17,7 @@ public class KhachHang {
         Email = email;
         DienThoai = dienThoai;
         DiaChi = diaChi;
-        DiemThuong = diemThuong;
+        Diemthuong = diemThuong;
     }
 
     public Integer getKhachHangID() {
@@ -61,10 +61,10 @@ public class KhachHang {
     }
 
     public Integer getDiemThuong() {
-        return DiemThuong;
+        return Diemthuong;
     }
 
     public void setDiemThuong(Integer diemThuong) {
-        DiemThuong = diemThuong;
+        Diemthuong = diemThuong;
     }
 }

@@ -33,7 +33,6 @@ public class Detail_Author extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_author);
-        ArrayList<Author>  arrauthor = new ArrayList<>();
         ArrayList<Book> arrbook = new ArrayList<>();
         txt_back = findViewById(R.id.txt_tieude);
         ten = findViewById(R.id.ten);
@@ -48,27 +47,17 @@ public class Detail_Author extends AppCompatActivity {
         mdata = FirebaseDatabase.getInstance().getReference();
         mdata.child("TacGias").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                arrauthor.clear();
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                Integer tacgiaid = getIntent().getIntExtra("TacGiaID", 0);
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     try {
                         Author author = dataSnapshot.getValue(Author.class);
-                        if (author != null) {
-                            arrauthor.add(author);
-                        }
-                    } catch (Exception e) {
-                        Log.e("Firebase", "Error: " + e.getMessage());
-                    }
-                }
-
-                Integer tacgiaid = getIntent().getIntExtra("TacGiaID", 0);
-                if (tacgiaid != 0) {
-                    for (Author author : arrauthor) {
-                        if(author.getTacGiaID() == tacgiaid) {
+                        if (author.getTacGiaID() == tacgiaid)
+                        {
                             ten.setText(author.getTen());
                             congviec.setText(author.getCongViec());
                             mota.setText(author.getMoTa());
-
                             // Nếu có ảnh, hiển thị ảnh của sách
                             if (author.getAnh() != null) {
                                 int imageResId = getResources().getIdentifier(author.getAnh(), "drawable", getPackageName());
@@ -78,39 +67,35 @@ public class Detail_Author extends AppCompatActivity {
                                     img.setImageResource(R.drawable.andrzej_sapkowski);  // Mặc định nếu không tìm thấy ảnh
                                 }
                             }
+                            mdata.child("Sachs").addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    arrbook.clear();
+                                    for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                        try {
+                                            Book book = dataSnapshot.getValue(Book.class);
+                                            if (tacgiaid == book.getTacgiaID())
+                                            {
+                                                arrbook.add(book);
+                                            }
+                                        } catch (Exception e) {
+                                            Log.e("Firebase", "Error: " + e.getMessage());
+                                        }
+                                    }
+                                    adapter.notifyDataSetChanged();
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+                                    Log.e("Firebase", "Error loading data: " + error.getMessage());
+                                }
+                            });
                             break;
-                        }
-                    }
-                } else {
-                    // Xử lý trường hợp không có SachID (ví dụ: hiển thị thông báo lỗi)
-                    Toast.makeText(Detail_Author.this, "Không tìm thấy thông tin", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("Firebase", "Error loading data: " + error.getMessage());
-            }
-        });
-        mdata.child("Sachs").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                arrbook.clear();
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    try {
-                       Book book = dataSnapshot.getValue(Book.class);
-                        Integer tacgiaid = getIntent().getIntExtra("TacGiaID", 0);
-                        if (tacgiaid != book.getTacgiaID() && book!=null)
-                        {
-                            arrbook.add(book);
                         }
                     } catch (Exception e) {
                         Log.e("Firebase", "Error: " + e.getMessage());
                     }
                 }
-                adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("Firebase", "Error loading data: " + error.getMessage());

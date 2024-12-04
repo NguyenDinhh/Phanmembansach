@@ -46,7 +46,6 @@ public class Welcome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Welcome.this, Home.class);
-                intent.putExtra("login","no_login");
                 startActivity(intent);
             }
         });

@@ -55,9 +55,9 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
         if (book != null) {
             viewHolder.tvname.setText(book.getTen() != null ? book.getTen() : "Không rõ tác phẩm");
             viewHolder.tvauthor.setText(book.getTenTacGia() != null ? book.getTenTacGia() : "Không rõ tác giả");
-            viewHolder.tvprice.setText(String.format("%.0f", (book.getGia() - book.getGia() * book.getSale())) + " đ");
+            viewHolder.tvprice.setText(String.format("%.0f", (book.getGia() - book.getGia() * book.getSale())) + "đ");
             viewHolder.tvsold.setText("Đã bán: " + book.getDaBan());
-            viewHolder.tvoldprice.setText(String.format("%.0f", book.getGia()) + " đ");
+            viewHolder.tvoldprice.setText(String.format("%.0f", book.getGia()) + "đ");
             viewHolder.tvoldprice.setPaintFlags(viewHolder.tvoldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             viewHolder.tvsale.setText("-" + book.getSale() * 100 + "%");
 
