@@ -147,6 +147,7 @@ public class ProfileActivity extends AppCompatActivity {
                                             Toast.makeText(ProfileActivity.this , "Lỗi khi đọc dữ liệu: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                                         }
                                     });
+                                    Toast.makeText(ProfileActivity.this, "Cap nhat thanh cong",Toast.LENGTH_SHORT).show();
                                     break;
                                 }
                             }catch (Exception e)
