@@ -32,19 +32,19 @@ public class PasswordActivity extends AppCompatActivity {
         newp2 = findViewById(R.id.edtConfirmPassword);
         ok = findViewById(R.id.btnUpdatePassword);
         App app = (App) getApplicationContext();
-        ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mdata.child("TaiKhoans").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for(DataSnapshot dataSnapshot: snapshot.getChildren())
-                        {
-                            try
-                            {
-                                TaiKhoan taiKhoan = dataSnapshot.getValue(TaiKhoan.class);
-                                if(taiKhoan.getTenDangNhap().equals(app.getUsername()))
-                                {
+       ok.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               mdata.child("TaiKhoans").addValueEventListener(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+                       for(DataSnapshot dataSnapshot: snapshot.getChildren())
+                       {
+                           try
+                           {
+                               TaiKhoan taiKhoan = dataSnapshot.getValue(TaiKhoan.class);
+                               if(taiKhoan.getTenDangNhap().equals(app.getUsername()))
+                               {
                                     if(oldp.getText().toString().equals(taiKhoan.getMatKhau()))
                                     {
                                         if(newp.getText().toString().equals(newp2.getText().toString())==false)
@@ -70,21 +70,21 @@ public class PasswordActivity extends AppCompatActivity {
                                         recreate();
                                         break;
                                     }
-                                }
-                            }catch (Exception e)
-                            {
+                               }
+                           }catch (Exception e)
+                           {
 
-                            }
-                        }
-                    }
+                           }
+                       }
+                   }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                   @Override
+                   public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
-            }
-        });
+                   }
+               });
+           }
+       });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

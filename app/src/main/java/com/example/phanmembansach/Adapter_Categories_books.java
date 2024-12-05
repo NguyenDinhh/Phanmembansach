@@ -3,7 +3,6 @@ package com.example.phanmembansach;
 import static android.app.PendingIntent.getActivity;
 
 import android.graphics.Paint;
-import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -48,7 +47,7 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
 
             mdata = FirebaseDatabase.getInstance().getReference();
             viewHolder.tvname = convertView.findViewById(R.id.ten);
-            viewHolder.tvauthor = convertView.findViewById(R.id.tvauthor);
+            viewHolder.tvauthor = convertView.findViewById(R.id.tentacgia);
             viewHolder.tvprice = convertView.findViewById(R.id.gia);
             viewHolder.img = convertView.findViewById(R.id.img);
             viewHolder.tvsold = convertView.findViewById(R.id.tvsold);

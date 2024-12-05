@@ -1,8 +1,5 @@
 package com.example.phanmembansach;
 
-import android.app.Activity;
-import android.content.ContentProvider;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -52,7 +49,7 @@ public class Detail_book extends AppCompatActivity {
         txtoldprice.setPaintFlags(txtoldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         anh = findViewById(R.id.img);
         ten = findViewById(R.id.ten);
-        tentacgia = findViewById(R.id.tvauthor);
+        tentacgia = findViewById(R.id.tentacgia);
         gia = findViewById(R.id.gia);
         giacu = findViewById(R.id.giacu);
         sale = findViewById(R.id.giamgia);

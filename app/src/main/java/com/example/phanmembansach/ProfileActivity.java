@@ -34,6 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
         diachi   = findViewById(R.id.diachi);
         email = findViewById(R.id.email);
         sdt = findViewById(R.id.sdt);
+        ok =findViewById(R.id.ok);
         img = findViewById(R.id.img);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +138,7 @@ public class ProfileActivity extends AppCompatActivity {
                                                             })
                                                             .addOnFailureListener(e -> {
                                                             });
+                                                    Toast.makeText(ProfileActivity.this, "Cap nhat thanh cong",Toast.LENGTH_SHORT).show();
                                                     break;
                                                 }
                                             }

@@ -50,29 +50,29 @@ public class YourfavouriteActivity extends AppCompatActivity {
                         SachYeuThich sachYeuThich = dataSnapshot.getValue(SachYeuThich.class);
                         if (app.getUsername().equals(sachYeuThich.getTenDangNhap()))
                         {
-                            mdata.child("Sachs").addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    for(DataSnapshot dataSnapshot : snapshot.getChildren())
-                                    {
-                                        try {
-                                            Book book = dataSnapshot.getValue(Book.class);
-                                            if(book.getSachID()== sachYeuThich.getSachID())
-                                            {
+                          mdata.child("Sachs").addValueEventListener(new ValueEventListener() {
+                              @Override
+                              public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                  for(DataSnapshot dataSnapshot : snapshot.getChildren())
+                                  {
+                                      try {
+                                          Book book = dataSnapshot.getValue(Book.class);
+                                          if(book.getSachID()== sachYeuThich.getSachID())
+                                          {
 
-                                                arrbook.add(book);
-                                            }
-                                        }catch (Exception e)
-                                        {
-                                        }
-                                    }
-                                }
+                                              arrbook.add(book);
+                                          }
+                                      }catch (Exception e)
+                                      {
+                                      }
+                                  }
+                              }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
+                              @Override
+                              public void onCancelled(@NonNull DatabaseError error) {
 
-                                }
-                            });
+                              }
+                          });
                         }
 
                     }catch (Exception e)
