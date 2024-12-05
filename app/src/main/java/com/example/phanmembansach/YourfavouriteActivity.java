@@ -50,7 +50,6 @@ public class YourfavouriteActivity extends AppCompatActivity {
                         SachYeuThich sachYeuThich = dataSnapshot.getValue(SachYeuThich.class);
                         if (app.getUsername().equals(sachYeuThich.getTenDangNhap()))
                         {
-                            Toast.makeText(YourfavouriteActivity.this, "dfd",Toast.LENGTH_SHORT).show();
                             mdata.child("Sachs").addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {

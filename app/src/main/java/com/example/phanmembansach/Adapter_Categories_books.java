@@ -146,7 +146,7 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
                                         if(tontai == false)
                                         {
                                             Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
-                                            GioHang gioHang1 = new GioHang(app.getUsername(),book.getSachID(),book.getTen(),book.getAnh(), book.getSoLuong(), book.getGia(), 1,null);
+                                            GioHang gioHang1 = new GioHang(app.getUsername(),book.getSachID(),book.getTen(),book.getAnh(), book.getSoLuong(), book.getGia(), 1,0);
                                             mdata.child("GioHangs").push().setValue(gioHang1);
                                         }
                                     }

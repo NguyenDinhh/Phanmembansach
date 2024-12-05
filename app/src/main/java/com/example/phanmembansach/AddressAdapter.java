@@ -1,9 +1,11 @@
 package com.example.phanmembansach;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -104,6 +106,40 @@ public class AddressAdapter extends ArrayAdapter<Address> {
                     }
                 });
 
+            }
+        });
+        App app = (App) getContext().getApplicationContext();
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "Đã chọn địa chỉ này", Toast.LENGTH_SHORT).show();
+                mdata.child("GioHangs").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot dataSnapshot: snapshot.getChildren())
+                        {
+                            try{
+                                GioHang gioHang = dataSnapshot.getValue(GioHang.class);
+                                if(app.getUsername().equals(gioHang.getTenDangNhap()))
+                                {
+                                    mdata.child("GioHangs").child(dataSnapshot.getKey()).child("diaChiNhanHangID").setValue(arraddress.get(position).getDiaChiNhanHangID())
+                                            .addOnSuccessListener(aVoid -> {
+                                                Log.d("Firebase", "Cập nhật thành công!");
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                Log.e("Firebase", "Cập nhật thất bại", e);
+                                            });
+                                }
+                            }catch (Exception e)
+                            {
+                            }
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                });
+                ((Activity) context).finish();
             }
         });
         return convertView;

@@ -34,10 +34,31 @@ public class AddAddressActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mdata.child("DiaChiNhanHangs").addListenerForSingleValueEvent(new ValueEventListener() {
+                    Integer id=0;
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Address address = new Address(etName.getText().toString(),etPhone.getText().toString(), (int)snapshot.getChildrenCount()+1,etAddress.getText().toString(),app.getUsername());
-                        mdata.child("DiaChiNhanHangs").push().setValue(address);
+                        mdata.child("DiaChiNhanHangs").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for(DataSnapshot dataSnapshot: snapshot.getChildren())
+                                {
+                                    try {
+                                        Address address = dataSnapshot.getValue(Address.class);
+                                        if(id<address.getDiaChiNhanHangID())
+                                            id=address.getDiaChiNhanHangID();
+                                    }catch (Exception e)
+                                    {
+
+                                    }
+                                }
+                                Address address = new Address(etName.getText().toString(),etPhone.getText().toString(), id+1,etAddress.getText().toString(),app.getUsername());
+                                mdata.child("DiaChiNhanHangs").push().setValue(address);
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -45,8 +66,6 @@ public class AddAddressActivity extends AppCompatActivity {
 
                     }
                 });
-
-                    Toast.makeText(AddAddressActivity.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
