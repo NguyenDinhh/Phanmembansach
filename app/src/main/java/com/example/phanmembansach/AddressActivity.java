@@ -2,17 +2,28 @@ package com.example.phanmembansach;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class AddressActivity extends AppCompatActivity {
 
-    private RecyclerView lv;
+    private DatabaseReference mdata;
+    private ListView lv;
     private ImageView back;
     private Button btnAdd;
     private AddressAdapter adapter;
@@ -22,19 +33,41 @@ public class AddressActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
-
+        mdata = FirebaseDatabase.getInstance().getReference();
         back = findViewById(R.id.img_back);
-        btnAdd = findViewById(R.id.btn_add_address);
-        lv = findViewById(R.id.recyclerView);
-
-        // Set up RecyclerView
-        lv.setLayoutManager(new LinearLayoutManager(this));
+        btnAdd = findViewById(R.id.ok);
+        lv = findViewById(R.id.lv);
+        App app = (App) getApplicationContext();
         arrAddress = new ArrayList<>();
-        populateAddressList();
 
-        adapter = new AddressAdapter(arrAddress);
+        adapter = new AddressAdapter(this,R.layout.item_address, arrAddress);
         lv.setAdapter(adapter);
 
+        mdata.child("DiaChiNhanHangs").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                arrAddress.clear();
+                for(DataSnapshot dataSnapshot: snapshot.getChildren())
+                {
+                    try {
+                        Address address = dataSnapshot.getValue(Address.class);
+                        if(address.getTenDangNhap().equals(app.getUsername()))
+                        {
+                            arrAddress.add(address);
+                        }
+                    }catch (Exception e)
+                    {
+
+                    }
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         // Back button functionality
         back.setOnClickListener(view -> finish());
 
@@ -44,11 +77,4 @@ public class AddressActivity extends AppCompatActivity {
         );
     }
 
-    private void populateAddressList() {
-        // Sample addresses
-        arrAddress.add(new Address("Nguyễn Văn Thế Dinh", "0123456789", "02 Thanh Sơn Thanh Bình Hải Châu Đà Nẵng"));
-        arrAddress.add(new Address("Lưu Hồng Nhung", "0123456789", "134 Trần Cao Vân  Hải Châu Đà Nẵng"));
-        arrAddress.add(new Address("Lê Đức Tuấn Anh", "0123456789", "12 Quang Trung Hải Châu Đà Nẵng"));
-        arrAddress.add(new Address("Nguyễn Văn Thế Dinh", "0123456789", "02 Thanh Sơn Thanh Bình Hải Châu Đà Nẵng"));
-    }
 }

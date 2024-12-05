@@ -133,7 +133,7 @@ public class ProfileActivity extends AppCompatActivity {
                                                             })
                                                             .addOnFailureListener(e -> {
                                                             });
-                                                    mdata.child("KhachHangs").child(key).child("DienThoai").setValue(ten.getText().toString())
+                                                    mdata.child("KhachHangs").child(key).child("DienThoai").setValue(sdt.getText().toString())
                                                             .addOnSuccessListener(aVoid -> {
                                                             })
                                                             .addOnFailureListener(e -> {

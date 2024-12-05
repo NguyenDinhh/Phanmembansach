@@ -1,39 +1,60 @@
 package com.example.phanmembansach;
 
 public class Address {
-    private String name;
-    private String phone;
-    private String address;
+    private String Ten;
+    private String DienThoai;
+    private Integer DiaChiNhanHangID;
+    private String DiaChi;
+    private String TenDangNhap;
 
-    // Constructor
-    public Address(String name, String phone, String address) {
-        this.name = name;
-        this.phone = phone;
-        this.address = address;
+    public Address() {
     }
 
-    // Getter và Setter
-    public String getName() {
-        return name;
+    public Address(String ten, String dienThoai, Integer diaChiNhanHangID, String diaChi, String tenDangNhap) {
+        Ten = ten;
+        DienThoai = dienThoai;
+        DiaChiNhanHangID = diaChiNhanHangID;
+        DiaChi = diaChi;
+        TenDangNhap = tenDangNhap;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getTen() {
+        return Ten;
     }
 
-    public String getPhone() {
-        return phone;
+    public void setTen(String ten) {
+        Ten = ten;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public String getDienThoai() {
+        return DienThoai;
     }
 
-    public String getAddress() {
-        return address;
+    public void setDienThoai(String dienThoai) {
+        DienThoai = dienThoai;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public Integer getDiaChiNhanHangID() {
+        return DiaChiNhanHangID;
+    }
+
+    public void setDiaChiNhanHangID(Integer diaChiNhanHangID) {
+        DiaChiNhanHangID = diaChiNhanHangID;
+    }
+
+    public String getDiaChi() {
+        return DiaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        DiaChi = diaChi;
+    }
+
+    public String getTenDangNhap() {
+        return TenDangNhap;
+    }
+
+    public void setTenDangNhap(String tenDangNhap) {
+        TenDangNhap = tenDangNhap;
     }
 }

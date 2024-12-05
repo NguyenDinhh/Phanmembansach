@@ -36,18 +36,21 @@
     </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <ListView
+        android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="510dp"
+        android:padding="10dp">
+
+    </ListView>
 
 
     <Button
-        android:id="@+id/btn_add_address"
+        android:id="@+id/ok"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/btn"
