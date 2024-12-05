@@ -98,10 +98,11 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/tongtien"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:text="Tổng: $64.44"
+            android:text="Tổng tiền:"
             android:textSize="20sp"
             android:textStyle="bold" />
 

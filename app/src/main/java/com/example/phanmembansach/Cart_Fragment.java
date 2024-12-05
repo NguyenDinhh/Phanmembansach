@@ -33,7 +33,7 @@ public class Cart_Fragment extends Fragment {
 
     private ImageView back;
     private Button btn_checkout;
-    private TextView select_voucher,select_address;
+    private TextView select_voucher,select_address,tongtien;
     private  Button btn_cancel;
     private FrameLayout frame_voucher;
     private DatabaseReference mdata;
@@ -54,6 +54,7 @@ public class Cart_Fragment extends Fragment {
         select_voucher = mView.findViewById(R.id.select_voucher);
         select_address = mView.findViewById(R.id.select_address);
         frame_voucher = mView.findViewById(R.id.frame_vouchers);
+        tongtien = mView.findViewById(R.id.tongtien);
         App app = (App) getActivity().getApplicationContext();
         ArrayList<GioHang> arrgiohang = new ArrayList<>();
         Adapter_Cart_Item adapterCartItem = new Adapter_Cart_Item(getActivity(), R.layout.row_cart_item, arrgiohang);
@@ -99,24 +100,30 @@ public class Cart_Fragment extends Fragment {
         mdata.child("GioHangs").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Double tien=0.0;
                 arrgiohang.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren())
                 {
                     try {
                         GioHang gioHang = dataSnapshot.getValue(GioHang.class);
-                     //   if(gioHang.getTenDangNhap().equals(app.getUsername()))
+                        if(gioHang.getTenDangNhap().equals(app.getUsername()))
+                        {
+                            tien = tien+gioHang.getSoLuongMua()*gioHang.getGia();
                             arrgiohang.add(gioHang);
+                        }
                     } catch (Exception e) {
 
                     }
                 }
                 adapterCartItem.notifyDataSetChanged();
+                tongtien.setText("Tổng tiền: "+String.format("%.0f",tien)+" VND");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+
         return mView;
     }
 }

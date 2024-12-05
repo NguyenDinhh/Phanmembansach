@@ -1,7 +1,7 @@
 package com.example.phanmembansach;
 
 import android.content.Context;
-import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,7 +43,7 @@ public class Adapter_Cart_Item extends ArrayAdapter<GioHang> {
             viewHolder = new ViewHolder();
             viewHolder.ten = convertView.findViewById(R.id.ten);
             viewHolder.gia = convertView.findViewById(R.id.gia);
-            viewHolder.soluongmua = convertView.findViewById(R.id.soluong);
+            viewHolder.soluongmua = convertView.findViewById(R.id.soluongmua);
             viewHolder.img = convertView.findViewById(R.id.img);
             viewHolder.cong = convertView.findViewById(R.id.cong);
             viewHolder.tru = convertView.findViewById(R.id.tru);
@@ -53,15 +52,13 @@ public class Adapter_Cart_Item extends ArrayAdapter<GioHang> {
         } else {
             viewHolder = (Adapter_Cart_Item.ViewHolder) convertView.getTag();
         }
-
         // Lấy Book hiện tại từ arrBook
         GioHang gioHang = arrgiohang.get(position);
-
         if (gioHang != null) {
             // Đảm bảo không bị null khi gán giá trị cho các TextView
-            viewHolder.ten.setText(gioHang.getTen() != null ? gioHang.getTen() : "Unknown Title");
+            viewHolder.ten.setText(gioHang.getTen() != null ? gioHang.getTen(): "Unknown Title");
             viewHolder.gia.setText(String.valueOf(gioHang.getGia()) != null ? "Giá: "+String.format("%.0f",gioHang.getGia())+ " VND" : "Unknown");
-            viewHolder.soluongmua.setText(String.valueOf(gioHang.getSoLuongMua()) != null ? String.valueOf(gioHang.getSoLuongMua()) : "Unknown");
+            viewHolder.soluongmua.setText(gioHang.getSoLuongMua() != null ? String.valueOf(gioHang.getSoLuongMua()) : "Unknown");
             // Đặt hình ảnh cho ImageView, thay vì dùng setBackgroundResource, dùng setImageResource
             if (gioHang.getAnh() != null) {
                 int imageResId = context.getResources().getIdentifier(gioHang.getAnh(), "drawable", context.getPackageName());
@@ -72,12 +69,41 @@ public class Adapter_Cart_Item extends ArrayAdapter<GioHang> {
                 }
             }
         }
+
         viewHolder.tru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Integer soluong = Integer.valueOf(viewHolder.soluongmua.getText().toString());
                 if(soluong>0)
-                    viewHolder.soluongmua.setText(String.valueOf(soluong-1));
+                {
+                    DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
+                    mData.child("GioHangs").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot gioHangSnapshot : snapshot.getChildren()) {
+                                GioHang gioHang = gioHangSnapshot.getValue(GioHang.class);
+                                if (gioHang != null && gioHang.getSachID().equals(arrgiohang.get(position).getSachID()) &&
+                                        gioHang.getTenDangNhap().equals(arrgiohang.get(position).getTenDangNhap())) {
+                                    String key = gioHangSnapshot.getKey();
+                                    viewHolder.soluongmua.setText(String.valueOf(soluong-1));
+                                    mData.child("GioHangs").child(key).child("soLuongMua").setValue(soluong-1)
+                                            .addOnSuccessListener(aVoid -> {
+                                                Log.d("Firebase", "Cập nhật thành công!");
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                Log.e("Firebase", "Cập nhật thất bại", e);
+                                            });
+                                    break;
+                                }
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // Lỗi khi đọc dữ liệu từ Firebase
+                            Toast.makeText(getContext(), "Lỗi khi đọc dữ liệu: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
                 else
                     Toast.makeText(context, "Số lượng sách phải lớn hơn 0",Toast.LENGTH_SHORT).show();
             }
@@ -87,7 +113,35 @@ public class Adapter_Cart_Item extends ArrayAdapter<GioHang> {
             public void onClick(View view) {
                 Integer soluong = Integer.valueOf(viewHolder.soluongmua.getText().toString());
                 if(soluong<arrgiohang.get(position).getSoLuong())
-                    viewHolder.soluongmua.setText(String.valueOf(soluong+1));
+                {
+                    DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
+                    mData.child("GioHangs").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot gioHangSnapshot : snapshot.getChildren()) {
+                                GioHang gioHang = gioHangSnapshot.getValue(GioHang.class);
+                                if (gioHang != null && gioHang.getSachID().equals(arrgiohang.get(position).getSachID()) &&
+                                        gioHang.getTenDangNhap().equals(arrgiohang.get(position).getTenDangNhap())) {
+                                    String key = gioHangSnapshot.getKey();
+                                    viewHolder.soluongmua.setText(String.valueOf(soluong+1));
+                                    mData.child("GioHangs").child(key).child("soLuongMua").setValue(soluong+1)
+                                            .addOnSuccessListener(aVoid -> {
+                                                Log.d("Firebase", "Cập nhật thành công!");
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                Log.e("Firebase", "Cập nhật thất bại", e);
+                                            });
+                                    break;
+                                }
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // Lỗi khi đọc dữ liệu từ Firebase
+                            Toast.makeText(getContext(), "Lỗi khi đọc dữ liệu: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
                 else
                     Toast.makeText(context, "Số lượng sách đã tối đa",Toast.LENGTH_SHORT).show();
             }
@@ -96,8 +150,6 @@ public class Adapter_Cart_Item extends ArrayAdapter<GioHang> {
             @Override
             public void onClick(View view) {
                 DatabaseReference mData = FirebaseDatabase.getInstance().getReference("GioHangs");
-
-                // Sử dụng addListenerForSingleValueEvent để chỉ nhận một lần dữ liệu
                 mData.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -128,11 +180,9 @@ public class Adapter_Cart_Item extends ArrayAdapter<GioHang> {
                         Toast.makeText(getContext(), "Lỗi khi đọc dữ liệu: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
             }
         });
-
-
-
         return convertView;
     }
 

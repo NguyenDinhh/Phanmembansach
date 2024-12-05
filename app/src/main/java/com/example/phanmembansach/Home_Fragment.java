@@ -90,69 +90,6 @@ public class Home_Fragment extends Fragment {
                 {
                     ((Home) getActivity()).setCurrentPage(4);
                     return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_1)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_2)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_3)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_4)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_5)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_6)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_7)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_8)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_9)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_categories_book_10)
-                {
-                    ((Home) getActivity()).setCurrentPage(7);
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_author_1)
-                {
-                    startActivity(new Intent(getActivity(),Detail_Author.class));
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_author_2)
-                {
-                    startActivity(new Intent(getActivity(),Detail_Author.class));
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_author_3)
-                {
-                    startActivity(new Intent(getActivity(),Detail_Author.class));
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_author_4)
-                {
-                    startActivity(new Intent(getActivity(),Detail_Author.class));
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_author_5)
-                {
-                    startActivity(new Intent(getActivity(),Detail_Author.class));
-                    return true;
-                }else if(item.getItemId()==R.id.menu_home_vouchers)
-                {
-                    return true;
                 }else
                     return false;
             }

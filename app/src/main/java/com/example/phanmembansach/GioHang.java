@@ -12,21 +12,13 @@ public class GioHang {
     public GioHang() {
     }
 
-    public GioHang(String tenDangNhap, Integer sachID, String anh, Integer soLuong, Double gia,String ten,Integer soLuongMua) {
+    public GioHang(String tenDangNhap, Integer sachID, String ten, String anh, Integer soLuong, Double gia, Integer soLuongMua) {
         TenDangNhap = tenDangNhap;
         SachID = sachID;
+        Ten = ten;
         Anh = anh;
         SoLuong = soLuong;
-        Gia= gia;
-        Ten = ten;
-        SoLuongMua = soLuongMua;
-    }
-
-    public Integer getSoLuongMua() {
-        return SoLuongMua;
-    }
-
-    public void setSoLuongMua(Integer soLuongMua) {
+        Gia = gia;
         SoLuongMua = soLuongMua;
     }
 
@@ -44,6 +36,14 @@ public class GioHang {
 
     public void setSachID(Integer sachID) {
         SachID = sachID;
+    }
+
+    public String getTen() {
+        return Ten;
+    }
+
+    public void setTen(String ten) {
+        Ten = ten;
     }
 
     public String getAnh() {
@@ -67,14 +67,14 @@ public class GioHang {
     }
 
     public void setGia(Double gia) {
-        Gia= gia;
+        Gia = gia;
     }
 
-    public String getTen() {
-        return Ten;
+    public Integer getSoLuongMua() {
+        return SoLuongMua;
     }
 
-    public void setTen(String ten) {
-        Ten = ten;
+    public void setSoLuongMua(Integer soLuongMua) {
+        SoLuongMua = soLuongMua;
     }
 }

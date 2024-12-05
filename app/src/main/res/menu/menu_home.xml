@@ -9,63 +9,9 @@
         android:title="Siêu khuyến mãi" />
     <item
         android:id="@+id/menu_home_categories_book"
-        android:title="Danh mục sách" >
-        <menu>
-            <item
-                android:id="@+id/menu_home_categories_book_1"
-                android:title="Giả tưởng" />
-            <item
-                android:id="@+id/menu_home_categories_book_2"
-                android:title="Hài kịch" />
-            <item
-                android:id="@+id/menu_home_categories_book_3"
-                android:title="Nấu ăn" />
-            <item
-                android:id="@+id/menu_home_categories_book_4"
-                android:title="Bí ẩn" />
-            <item
-                android:id="@+id/menu_home_categories_book_5"
-                android:title="Phiêu lưu" />
-            <item
-                android:id="@+id/menu_home_categories_book_6"
-                android:title="Giáo dục" />
-            <item
-                android:id="@+id/menu_home_categories_book_7"
-                android:title="Lịch sử" />
-            <item
-                android:id="@+id/menu_home_categories_book_8"
-                android:title="Kinh dị" />
-            <item
-                android:id="@+id/menu_home_categories_book_9"
-                android:title="Lãng mạn" />
-            <item
-                android:id="@+id/menu_home_categories_book_10"
-                android:title="Khoa học" />
-        </menu>
-    </item>
+        android:title="Danh mục sách" />
     <item
         android:id="@+id/menu_home_authors"
-        android:title="Danh mục tác giả" >
-        <menu>
-            <item
-                android:id="@+id/menu_home_author_1"
-                android:title="J. R. R. Tolkien"/>
-            <item
-                android:id="@+id/menu_home_author_2"
-                android:title="Andrzej Sapkowski" />
-            <item
-                android:id="@+id/menu_home_author_3"
-                android:title="Stephen King" />
-            <item
-                android:id="@+id/menu_home_author_4"
-                android:title="Sir Arthur conan doyle" />
-            <item
-                android:id="@+id/menu_home_author_5"
-                android:title="J K Rowling" />
-        </menu>
-    </item>
-    <item
-        android:id="@+id/menu_home_vouchers"
-        android:title="Mã giảm giá" />
+        android:title="Danh mục tác giả" />
 
 </menu>
