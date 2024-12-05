@@ -44,6 +44,58 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
         App app = (App) getApplicationContext();
+        mdata.child("TaiKhoans").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren())
+                {
+                    try
+                    {
+                        TaiKhoan taiKhoan = dataSnapshot.getValue(TaiKhoan.class);
+                        if(app.getUsername().equals(taiKhoan.getTenDangNhap()))
+                        {
+                            mdata.child("KhachHangs").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                        KhachHang khachHang= dataSnapshot.getValue(KhachHang.class);
+                                        if (khachHang.getKhachHangID().equals(taiKhoan.getKhachHangID()))
+                                        {
+                                            ten.setText(khachHang.getTen());
+                                            email.setText(khachHang.getEmail());
+                                            diachi.setText(khachHang.getDiaChi());
+                                            sdt.setText(khachHang.getDienThoai());
+                                            if (taiKhoan.getAnh() != null) {
+                                                int imageResId = getResources().getIdentifier(taiKhoan.getAnh(), "drawable",getPackageName());
+                                                if (imageResId != 0) {
+                                                    img.setImageResource(imageResId);
+                                                } else {
+                                                    img.setImageResource(R.drawable.andrzej_sapkowski);  // Ảnh mặc định
+                                                }
+                                            }
+                                            break;
+                                        }
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+                                    // Lỗi khi đọc dữ liệu từ Firebase
+                                    Toast.makeText(ProfileActivity.this , "Lỗi khi đọc dữ liệu: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            break;
+                        }
+                    }catch (Exception e)
+                    {
+
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
