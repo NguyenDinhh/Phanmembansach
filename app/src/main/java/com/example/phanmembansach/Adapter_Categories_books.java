@@ -126,11 +126,11 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
                             Book book = arrBook.get(position);
                             if (book != null)
                             {
-                                mdata.child("GioHangs").addValueEventListener(new ValueEventListener()
+                                mdata.child("GioHangs").addListenerForSingleValueEvent(new ValueEventListener()
                                 {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        Integer kiemtra=0;
+                                        Boolean tontai= false;
                                         for (DataSnapshot dataSnapshot : snapshot.getChildren())
                                         {
                                             try {
@@ -138,15 +138,13 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
                                                 if(gioHang.getTenDangNhap().equals(app.getUsername()) && gioHang.getSachID()==book.getSachID())
                                                 {
                                                     Toast.makeText(context,"Sach da co trong gio hang",Toast.LENGTH_SHORT).show();
-                                                    kiemtra=1;
+                                                    tontai =true;
                                                     break;
                                                 }
-                                                else
-                                                    kiemtra=2;
                                             } catch (Exception e) {
                                             }
                                         }
-                                        if(kiemtra==2)
+                                        if(tontai == false)
                                         {
                                             Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                                             GioHang gioHang1 = new GioHang(app.getUsername(),book.getSachID(),book.getAnh(), book.getSoLuong(), book.getGia(),book.getTen(), 1);
