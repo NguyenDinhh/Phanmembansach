@@ -1,19 +1,32 @@
 package com.example.phanmembansach;
 
+import android.app.Application;
 import android.content.Intent;
+import android.media.ExifInterface;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 public class Cart_Fragment extends Fragment {
@@ -23,6 +36,8 @@ public class Cart_Fragment extends Fragment {
     private TextView select_voucher,select_address;
     private  Button btn_cancel;
     private FrameLayout frame_voucher;
+    private DatabaseReference mdata;
+    private ListView lv;
     public Cart_Fragment() {
         // Required empty public constructor
     }
@@ -32,11 +47,17 @@ public class Cart_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View mView = inflater.inflate(R.layout.cart_fagment, container, false);
         back = mView.findViewById(R.id.back);
+        lv = mView.findViewById(R.id.lv);
         btn_checkout = mView.findViewById(R.id.btn_doi);
+        mdata = FirebaseDatabase.getInstance().getReference();
         btn_cancel = mView.findViewById(R.id.btn_cancel);
         select_voucher = mView.findViewById(R.id.select_voucher);
         select_address = mView.findViewById(R.id.select_address);
-        frame_voucher  = mView.findViewById(R.id.frame_vouchers);
+        frame_voucher = mView.findViewById(R.id.frame_vouchers);
+        App app = (App) getActivity().getApplicationContext();
+        ArrayList<GioHang> arrgiohang = new ArrayList<>();
+        Adapter_Cart_Item adapterCartItem = new Adapter_Cart_Item(getActivity(), R.layout.row_cart_item, arrgiohang);
+        lv.setAdapter(adapterCartItem);
         int vouchers[] = {R.id.voucher_1, R.id.voucher_2, R.id.voucher_3, R.id.voucher_4};
         for (int voucher : vouchers) {
             LinearLayout l = mView.findViewById(voucher);
@@ -58,7 +79,7 @@ public class Cart_Fragment extends Fragment {
         select_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),AddressActivity.class));
+                startActivity(new Intent(getActivity(), AddressActivity.class));
             }
         });
         btn_cancel.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +95,28 @@ public class Cart_Fragment extends Fragment {
             }
         });
         btn_checkout.setOnClickListener(view -> startActivity(new Intent(getActivity(), CheckoutActivity.class)));
-        return  mView;
+
+        mdata.child("GioHangs").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                arrgiohang.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren())
+                {
+                    try {
+                        GioHang gioHang = dataSnapshot.getValue(GioHang.class);
+                     //   if(gioHang.getTenDangNhap().equals(app.getUsername()))
+                            arrgiohang.add(gioHang);
+                    } catch (Exception e) {
+
+                    }
+                }
+                adapterCartItem.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        return mView;
     }
 }

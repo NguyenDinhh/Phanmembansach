@@ -122,7 +122,13 @@ public class Detail_book extends AppCompatActivity {
                 if(app.isLoggedIn()==false)
                     Toast.makeText(Detail_book.this,"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
                 else
+                {
+                 //   Integer sachid = getIntent().getIntExtra("SachID", 0);
+                  //      GioHang gioHang = new GioHang(app.getUsername(),sachid);
+                      //  mdata.child("GioHangs").push().setValue(gioHang);
                     startActivity(new Intent(Detail_book.this, Order_Book.class));
+                }
+
             }
         });
         img_favourite.setOnClickListener(view -> {

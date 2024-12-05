@@ -3,6 +3,7 @@ package com.example.phanmembansach;
 import static android.app.PendingIntent.getActivity;
 
 import android.graphics.Paint;
+import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,12 +14,21 @@ import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.List;
 
 public class Adapter_Categories_books extends ArrayAdapter<Book> {
     private Context context;
     private int resource;
     private List<Book> arrBook;
+    private DatabaseReference mdata;
 
     public Adapter_Categories_books(Context context, int resource, List<Book> arrBook) {
         super(context, resource, arrBook);
@@ -36,6 +46,7 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
             convertView = LayoutInflater.from(context).inflate(R.layout.row_categories_books, parent, false);
             viewHolder = new ViewHolder();
 
+            mdata = FirebaseDatabase.getInstance().getReference();
             viewHolder.tvname = convertView.findViewById(R.id.ten);
             viewHolder.tvauthor = convertView.findViewById(R.id.tvauthor);
             viewHolder.tvprice = convertView.findViewById(R.id.gia);
@@ -112,16 +123,41 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
                             Toast.makeText(getContext(),"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
-                            // Lấy SachID của cuốn sách hiện tại
                             Book book = arrBook.get(position);
-                            if (book != null) {
-                                Integer sachID = book.getSachID(); // Giả sử bạn có phương thức getSachID() trong lớp Book
+                            if (book != null)
+                            {
+                                mdata.child("GioHangs").addValueEventListener(new ValueEventListener()
+                                {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        Integer kiemtra=0;
+                                        for (DataSnapshot dataSnapshot : snapshot.getChildren())
+                                        {
+                                            try {
+                                                GioHang gioHang = dataSnapshot.getValue(GioHang.class);
+                                                if(gioHang.getTenDangNhap().equals(app.getUsername()) && gioHang.getSachID()==book.getSachID())
+                                                {
+                                                    Toast.makeText(context,"Sach da co trong gio hang",Toast.LENGTH_SHORT).show();
+                                                    kiemtra=1;
+                                                    break;
+                                                }
+                                                else
+                                                    kiemtra=2;
+                                            } catch (Exception e) {
+                                            }
+                                        }
+                                        if(kiemtra==2)
+                                        {
+                                            Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                                            GioHang gioHang1 = new GioHang(app.getUsername(),book.getSachID(),book.getAnh(), book.getSoLuong(), book.getGia(),book.getTen(), 1);
+                                            mdata.child("GioHangs").push().setValue(gioHang1);
+                                        }
+                                    }
 
-                                // Tạo Intent để chuyển đến Activity khác và truyền SachID
-                                Intent intent = new Intent(context, Cart_Fragment.class); // Thay BookDetailsActivity bằng class bạn muốn chuyển đến
-                                intent.putExtra("SachID", sachID);
-                                context.startActivity(intent); // Bắt đầu Activity mới
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+                                    }
+                                });
                             }
                         }
                     }

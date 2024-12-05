@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <LinearLayout
@@ -47,193 +48,20 @@
             android:src="@drawable/cart" />
     </LinearLayout>
 
-
-    <ScrollView
-        android:id="@+id/scroll"
+    <ListView
+        android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="440dp"
-        android:layout_below="@+id/header"
-        android:padding="8dp">
+        android:layout_height="400dp"
+        android:layout_margin="10dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/background_books"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="150dp"
-                    android:contentDescription="Java Book"
-                    android:src="@drawable/andrzej_sapkowski" />
-
-
-                <LinearLayout
-                    android:layout_width="176dp"
-                    android:layout_height="147dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lập trình Java căn bản"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold" />
-
-                    <!-- Quantity Controls -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:background="#CECBCB"
-                            android:text="-"
-                            android:textSize="25sp" />
-
-                        <TextView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:background="#E9E4E4"
-                            android:gravity="center"
-                            android:text="1"
-                            android:textSize="20sp" />
-
-                        <Button
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:background="#CECBCB"
-                            android:text="+"
-                            android:textSize="25sp" />
-                    </LinearLayout>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="20dp"
-                        android:text="$29.39"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="50dp"
-                    android:contentDescription="Delete Icon"
-                    android:src="@drawable/ic_delete" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/background_books"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-
-                <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="150dp"
-                    android:contentDescription="Witcher Book"
-                    android:src="@drawable/fantasy_book_1" />
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="20dp">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="The Witcher: The Last Wish"
-                        android:textColor="@color/black"
-                        android:textSize="19sp"
-                        android:textStyle="bold" />
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:background="#CECBCB"
-                            android:text="-"
-                            android:textSize="25sp" />
-
-                        <TextView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:background="#E9E4E4"
-                            android:gravity="center"
-                            android:text="1"
-                            android:textSize="20sp" />
-
-                        <Button
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:background="#CECBCB"
-                            android:text="+"
-                            android:textSize="25sp" />
-                    </LinearLayout>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="20dp"
-                        android:text="$35.05"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="50dp"
-                    android:contentDescription="Delete Icon"
-                    android:src="@drawable/ic_delete" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+    </ListView>
 
     <TextView
         android:id="@+id/select_voucher"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@+id/scroll"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/background_books"
         android:drawableStart="@drawable/ic_voucher"
@@ -249,7 +77,6 @@
         android:id="@+id/select_address"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@+id/select_voucher"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
@@ -267,7 +94,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/select_address"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -562,4 +388,4 @@
         </LinearLayout>
     </FrameLayout>
 
-</RelativeLayout>
+</LinearLayout>
