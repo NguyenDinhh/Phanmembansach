@@ -38,7 +38,7 @@ public class YourfavouriteActivity extends AppCompatActivity {
         adapterCategoriesBooks = new Adapter_Categories_books(this,R.layout.row_categories_books,arrbook);
         lv.setAdapter(adapterCategoriesBooks);
 
-        mdata.child("SachYeuThichs").addValueEventListener(new ValueEventListener() {
+        mdata.child("SachYeuThichs").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot)
             {
@@ -65,21 +65,17 @@ public class YourfavouriteActivity extends AppCompatActivity {
                                         {
                                         }
                                     }
+                                    adapterCategoriesBooks.notifyDataSetChanged();
                                 }
-
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError error) {
-
                                 }
                             });
                         }
-
                     }catch (Exception e)
                     {
-
                     }
                 }
-                adapterCategoriesBooks.notifyDataSetChanged();
             }
 
             @Override

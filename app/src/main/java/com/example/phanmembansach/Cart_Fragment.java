@@ -95,7 +95,34 @@ public class Cart_Fragment extends Fragment {
                 getActivity().finish();
             }
         });
-        btn_checkout.setOnClickListener(view -> startActivity(new Intent(getActivity(), CheckoutActivity.class)));
+        btn_checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), CheckoutActivity.class);
+                intent.putExtra("tien",tongtien.getText().toString());
+                mdata.child("GioHangs").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren())
+                        {
+                            try {
+                                if( dataSnapshot.getValue(GioHang.class).getDiaChiNhanHangID()==0)
+                                    Toast.makeText(getContext(),"Vui long chon dia chi nhan hang",Toast.LENGTH_SHORT).show();
+                                else
+                                    getContext().startActivity(intent);
+                                break;
+                            } catch (Exception e) {
+
+                            }
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
 
         mdata.child("GioHangs").addValueEventListener(new ValueEventListener() {
             @Override
@@ -116,7 +143,7 @@ public class Cart_Fragment extends Fragment {
                     }
                 }
                 adapterCartItem.notifyDataSetChanged();
-                tongtien.setText("Tổng tiền: "+String.format("%.0f",tien)+" VND");
+                tongtien.setText(String.format("%.0f",tien)+" VND");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

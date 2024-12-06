@@ -9,8 +9,6 @@ public class Chi_Tiet_Don_Hang {
     private  double Gia;
     private  Integer SoLuong;
     private  Integer SachID;
-    private String  Anh;
-    private String Ten;
 
     public Chi_Tiet_Don_Hang() {
     }
@@ -21,22 +19,6 @@ public class Chi_Tiet_Don_Hang {
         Gia = gia;
         SoLuong = soLuong;
         SachID = sachID;
-    }
-
-    public String getAnh() {
-        return Anh;
-    }
-
-    public void setAnh(String anh) {
-        Anh = anh;
-    }
-
-    public String getTen() {
-        return Ten;
-    }
-
-    public void setTen(String ten) {
-        Ten = ten;
     }
 
     public Integer getChiTietDonHangID() {
