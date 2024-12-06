@@ -1,0 +1,365 @@
+﻿@model WEBBANSACH.Models.Sach
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lí sách</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/CSS/Style.css" />
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Quản lí sách</h1>
+    </header>
+
+    <div class="content-right">
+        <!-- Các Radio Button để chọn form Thêm, Sửa, Xóa -->
+        <input type="radio" id="radio_btn_them" name="action" class="form-toggle" />
+        <input type="radio" id="radio_btn_sua" name="action" class="form-toggle" />
+        <input type="radio" id="radio_btn_xoa" name="action" class="form-toggle" />
+        <div class="form-container">
+            <!-- Form Thêm Sách -->
+            <div class="them form-section">
+                <h4>Thêm Sách</h4>
+                <form class="SachForm" action="@Url.Action("ThemSach", "Quantrivien")" method="POST">
+                    <div class="form-group">
+                        <label for="Ten">Tên Sách</label>
+                        <input type="text" class="form-control" id="Ten" name="Ten" required />
+                    </div>
+
+                    <!-- Dropdown for selecting Author -->
+                    <div class="form-group">
+                        <label for="TacGiaID">Tác Giả</label>
+                        <select class="form-control" id="TacGiaID" name="TacGiaID" required>
+                            <option value="">Chọn tác giả</option>
+                            @foreach (var item in ViewBag.TacGiaList)
+                            {
+                                <option value="@item.TacGiaID">@item.Ten</option>
+                            }
+                        </select>
+                    </div>
+
+                    <!-- Dropdown for selecting Publisher -->
+                    <div class="form-group">
+                        <label for="NhaXuatBanID">Nhà Xuất Bản</label>
+                        <select class="form-control" id="NhaXuatBanID" name="NhaXuatBanID" required>
+                            <option value="">Chọn nhà xuất bản</option>
+                            @foreach (var item in ViewBag.NhaXuatBanList)
+                            {
+                                <option value="@item.NhaXuatBanID">@item.Ten</option>
+                            }
+                        </select>
+                    </div>
+
+                    <!-- Dropdown for selecting Category -->
+                    <div class="form-group">
+                        <label for="TheLoaiID">Thể Loại</label>
+                        <select class="form-control" id="TheLoaiID" name="TheLoaiID" required>
+                            <option value="">Chọn thể loại</option>
+                            @foreach (var item in ViewBag.TheLoaiList)
+                            {
+                                <option value="@item.TheLoaiID">@item.TenTheLoai</option>
+                            }
+                        </select>
+                    </div>
+
+                    <!-- Additional fields -->
+                    <div class="form-group">
+                        <label for="Sao">Số Sao</label>
+                        <input type="number" class="form-control" id="Sao" name="Sao" step="0.1" min="0" max="5" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Sale">Giảm Giá (%)</label>
+                        <input type="number" class="form-control" id="Sale" name="Sale" min="0" max="100" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Gia">Giá</label>
+                        <input type="number" class="form-control" id="Gia" name="Gia" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="DiemThuong">Điểm Thưởng</label>
+                        <input type="number" class="form-control" id="DiemThuong" name="DiemThuong" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="DaBan">Số Lượng Đã Bán</label>
+                        <input type="number" class="form-control" id="DaBan" name="DaBan" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="SoLuong">Số Lượng Còn Lại</label>
+                        <input type="number" class="form-control" id="SoLuong" name="SoLuong" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="NgayXuatBan">Ngày Xuất Bản</label>
+                        <input type="date" class="form-control" id="NgayXuatBan" name="NgayXuatBan" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="NgayKhoiBan">Ngày Khởi Bán</label>
+                        <input type="date" class="form-control" id="NgayKhoiBan" name="NgayKhoiBan" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="MoTa">Mô Tả</label>
+                        <textarea class="form-control" id="MoTa" name="MoTa"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Anh">Ảnh</label>
+                        <input type="text" class="form-control" id="Anh" name="Anh" />
+                    </div>
+
+                    <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                </form>
+            </div>
+
+            <!-- Form Sửa Sách -->
+            <div class="sua form-section">
+                <h4>Sửa Sách</h4>
+                <!-- Step 1: Choose the book to edit -->
+                <form class="SachForm" action="@Url.Action("QuanLiSach", "Quantrivien")" method="GET">
+                    <div class="form-group">
+                        <label for="SachID">Mã Sách</label>
+                        <select class="form-control" id="SachID" name="SachID" required>
+                            <option value="">Chọn mã sách</option>
+                            @foreach (var item in ViewBag.SachList)
+                            {
+                                <option value="@item.SachID">@item.SachID - @item.Ten</option>
+                            }
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btnok btn-successok">Chọn Sách</button>
+                </form>
+
+                <!-- Step 2: Edit the selected book -->
+                @if (Model != null)
+                {
+                    <br />
+                    <br />
+                    <form class="SachForm" action="@Url.Action("SuaSach", "Quantrivien")" method="POST">
+                        <input type="hidden" name="SachID" value="@Model.SachID" />
+
+                        <!-- Book Name -->
+                        <div class="form-group">
+                            <label for="Ten">Tên Sách</label>
+                            <input type="text" class="form-control" id="Ten" name="Ten" value="@Model.Ten" required />
+                        </div>
+
+                        <!-- Author Dropdown -->
+                        <div class="form-group">
+                            <label for="TacGiaID">Tác Giả</label>
+                            <select class="form-control" id="TacGiaID" name="TacGiaID" required>
+                                <option value="">Chọn tác giả</option>
+                                @foreach (var item in ViewBag.TacGiaList)
+                                {
+                                    <option value="@item.TacGiaID" @(item.TacGiaID == Model.TacGiaID ? "selected" : "")>@item.Ten</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- Publisher Dropdown -->
+                        <div class="form-group">
+                            <label for="NhaXuatBanID">Nhà Xuất Bản</label>
+                            <select class="form-control" id="NhaXuatBanID" name="NhaXuatBanID" required>
+                                <option value="">Chọn nhà xuất bản</option>
+                                @foreach (var item in ViewBag.NhaXuatBanList)
+                                {
+                                    <option value="@item.NhaXuatBanID" @(item.NhaXuatBanID == Model.NhaXuatBanID ? "selected" : "")>@item.Ten</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- Category Dropdown -->
+                        <div class="form-group">
+                            <label for="TheLoaiID">Thể Loại</label>
+                            <select class="form-control" id="TheLoaiID" name="TheLoaiID" required>
+                                <option value="">Chọn thể loại</option>
+                                @foreach (var item in ViewBag.TheLoaiList)
+                                {
+                                    <option value="@item.TheLoaiID" @(item.TheLoaiID == Model.TheLoaiID ? "selected" : "")>@item.TenTheLoai</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- Star Rating -->
+                        <div class="form-group">
+                            <label for="Sao">Số Sao</label>
+                            <input type="number" class="form-control" id="Sao" name="Sao" step="0.1" min="0" max="5" value="@Model.Sao" required />
+                        </div>
+
+                        <!-- Sale Discount -->
+                        <div class="form-group">
+                            <label for="Sale">Giảm Giá (%)</label>
+                            <input type="number" class="form-control" id="Sale" name="Sale" min="0" max="100" value="@Model.Sale" />
+                        </div>
+
+                        <!-- Price -->
+                        <div class="form-group">
+                            <label for="Gia">Giá</label>
+                            <input type="number" class="form-control" id="Gia" name="Gia" value="@Model.Gia" required />
+                        </div>
+
+                        <!-- Reward Points -->
+                        <div class="form-group">
+                            <label for="DiemThuong">Điểm Thưởng</label>
+                            <input type="number" class="form-control" id="DiemThuong" name="DiemThuong" value="@Model.DiemThuong" required />
+                        </div>
+
+                        <!-- Sold Quantity -->
+                        <div class="form-group">
+                            <label for="DaBan">Số Lượng Đã Bán</label>
+                            <input type="number" class="form-control" id="DaBan" name="DaBan" value="@Model.DaBan" required />
+                        </div>
+
+                        <!-- Remaining Quantity -->
+                        <div class="form-group">
+                            <label for="SoLuong">Số Lượng Còn Lại</label>
+                            <input type="number" class="form-control" id="SoLuong" name="SoLuong" value="@Model.SoLuong" required />
+                        </div>
+
+                        <!-- Release Date -->
+                        <div class="form-group">
+                            <label for="NgayXuatBan">Ngày Xuất Bản</label>
+                            <input type="date" class="form-control" id="NgayXuatBan" name="NgayXuatBan" value="@Model.NgayXuatBan.ToString("yyyy-MM-dd")" required />
+                        </div>
+
+                        <!-- Start Sale Date -->
+                        <div class="form-group">
+                            <label for="NgayKhoiBan">Ngày Khởi Bán</label>
+                            <input type="date" class="form-control" id="NgayKhoiBan" name="NgayKhoiBan" value="@Model.NgayKhoiBan?.ToString(" yyyy-MM-dd")" />
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label for="MoTa">Mô Tả</label>
+                            <textarea class="form-control" id="MoTa" name="MoTa">@Model.MoTa</textarea>
+                        </div>
+
+                        <!-- Book Image -->
+                        <div class="form-group">
+                            <label for="Anh">Ảnh</label>
+                            <div class="img">
+                                <img src="~/Images/@(Model.Anh).jpg" alt="Ảnh Sách" width="150" height="220" />
+                            </div>
+                            <input type="text" class="form-control" id="Anh" name="Anh" value="@Model.Anh" />
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                    </form>
+                }
+            </div>
+
+            <!-- Form Xóa Sách -->
+            <div class="xoa form-section">
+                <h4>Xóa Sách</h4>
+                <form class="SachForm" action="@Url.Action("XoaSach", "Quantrivien")" method="POST">
+                    <div class="form-group">
+                        <label for="SachID">Mã Sách</label>
+                        <select class="form-control" id="SachID" name="SachID" required>
+                            <option value="">Chọn mã sách</option>
+                            @foreach (var item in ViewBag.SachList)
+                            {
+                                <option value="@item.SachID">@item.SachID - @item.Ten</option>
+                            }
+                        </select>
+                    </div>
+                    <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Các nút điều khiển -->
+        <div class="form-actions">
+            <label for="radio_btn_them" class="btn btn-success">Thêm</label>
+            <label for="radio_btn_sua" class="btn btn-primary">Sửa</label>
+            <label for="radio_btn_xoa" class="btn btn-danger">Xóa</label>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Left Menu -->
+        <div class="leftmenu">
+            <h4>Danh Mục</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTacGia", "Quantrivien")" class="nav-link">Quản lí tác giả</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTheLoai", "Quantrivien")" class="nav-link">Quản lí thể loại</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiNhaXuatBan", "Quantrivien")" class="nav-link">Quản lí nhà xuất bản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiSach", "Quantrivien")" class="nav-link">Quản lí sách</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTaiKhoan", "Quantrivien")" class="nav-link">Quản lí tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("BanHang", "Quantrivien")" class="nav-link">Bán hàng</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Section for Danh sách Sách -->
+        <div class="content">
+            <h3>Danh sách Sách</h3>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Mã Sách</th>
+                        <th>Tên Sách</th>
+                        <th>Tác Giả</th>
+                        <th>Nhà Xuất Bản</th>
+                        <th>Thể Loại</th>
+                        <th>Số Sao</th>
+                        <th>Giảm Giá (%)</th>
+                        <th>Giá</th>
+                        <th>Điểm Thưởng</th>
+                        <th>Số Lượng Đã Bán</th>
+                        <th>Số Lượng Còn Lại</th>
+                        <th>Ngày Xuất Bản</th>
+                        <th>Ngày Khởi Bán</th>
+                        <th>Mô Tả</th>
+                        <th>Ảnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sach in ViewBag.SachList)
+                    {
+                        <tr>
+                            <td>@sach.SachID</td>
+                            <td>@sach.Ten</td>
+                            <td>@sach.TacGiaID</td> <!-- Tác Giả (Author) -->
+                            <td>@sach.NhaXuatBanID</td> <!-- Nhà Xuất Bản (Publisher) -->
+                            <td>@sach.TheLoaiID</td> <!-- Thể Loại (Category) -->
+                            <td>@sach.Sao</td> <!-- Số Sao (Rating) -->
+                            <td>@sach.Sale</td> <!-- Giảm Giá (Discount) -->
+                            <td>@sach.Gia</td> <!-- Giá (Price) -->
+                            <td>@sach.DiemThuong</td> <!-- Điểm Thưởng (Reward Points) -->
+                            <td>@sach.DaBan</td> <!-- Số Lượng Đã Bán (Sold Quantity) -->
+                            <td>@sach.SoLuong</td> <!-- Số Lượng Còn Lại (Remaining Quantity) -->
+                            <td>@sach.NgayXuatBan.ToString("dd/MM/yyyy")</td> <!-- Ngày Xuất Bản (Publish Date) -->
+                            <td>@sach.NgayKhoiBan.ToString("dd/MM/yyyy")</td> <!-- Ngày Khởi Bán (Launch Date) -->
+                            <td>@sach.MoTa</td> <!-- Mô Tả (Description) -->
+                            <td><img src="~/Images/@(sach.Anh).jpg" alt="Ảnh Sách" width="120" height="150" /></td> <!-- Ảnh (Image) -->
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        </div>
+</body>
+</html>

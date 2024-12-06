@@ -1,0 +1,194 @@
+﻿@model WEBBANSACH.Models.TheLoai
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Quản lí thể loại</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/CSS/Style.css" />
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Quản lí thể loại sách</h1>
+    </header>
+
+    <div class="container-fluid">
+        <!-- Left Menu -->
+        <div class="leftmenu">
+            <h4>Danh Mục</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTacGia", "Quantrivien")" class="nav-link">Quản lí tác giả</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTheLoai", "Quantrivien")" class="nav-link">Quản lí thể loại</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiNhaXuatBan", "Quantrivien")" class="nav-link">Quản lí nhà xuất bản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiSach", "Quantrivien")" class="nav-link">Quản lí sách</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTaiKhoan", "Quantrivien")" class="nav-link">Quản lí tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("BanHang", "Quantrivien")" class="nav-link">Bán hàng</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h3>Danh sách Thể Loại</h3>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Mã Thể Loại</th>
+                        <th>Tên Thể Loại</th>
+                        <th>Số Lượng</th>
+                        <th>Đã Bán</th>
+                        <th>Mô Tả</th>
+                        <th>Ảnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var theLoai in ViewBag.TheLoaiList)
+                    {
+                        <tr>
+                            <td>@theLoai.TheLoaiID</td>
+                            <td>@theLoai.TenTheLoai</td>
+                            <td>@theLoai.SoLuong</td>
+                            <td>@theLoai.DaBan</td>
+                            <td>@theLoai.MoTa</td>
+                            <td><img src="~/Images/@(theLoai.Anh).jpg" alt="Ảnh Thể Loại" width="120" height="150" /></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-right">
+            <!-- Các Radio Button để chọn form Thêm, Sửa, Xóa -->
+            <input type="radio" id="radio_btn_them" name="action" class="form-toggle" />
+            <input type="radio" id="radio_btn_sua" name="action" class="form-toggle" />
+            <input type="radio" id="radio_btn_xoa" name="action" class="form-toggle" />
+
+            <div class="form-container">
+                <!-- Form Thêm Thể Loại -->
+                <div class="them form-section">
+                    <h4>Thêm Thể Loại</h4>
+                    <form class="TheLoaiForm" action="@Url.Action("ThemTheLoai", "Quantrivien")" method="POST">
+                        <div class="form-group">
+                            <label for="TheLoaiID">Mã Thể Loại</label>
+                            <input type="text" class="form-control" id="TheLoaiID" name="TheLoaiID" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="TenTheLoai">Tên Thể Loại</label>
+                            <input type="text" class="form-control" id="TenTheLoai" name="TenTheLoai" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="SoLuong">Số Lượng</label>
+                            <input type="number" class="form-control" id="SoLuong" name="SoLuong" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="DaBan">Đã Bán</label>
+                            <input type="number" class="form-control" id="DaBan" name="DaBan" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="MoTa">Mô Tả</label>
+                            <textarea class="form-control" id="MoTa" name="MoTa"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="Anh">Ảnh</label>
+                            <input type="text" class="form-control" id="Anh" name="Anh" />
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                    </form>
+                </div>
+
+                <!-- Form Sửa Thể Loại -->
+                <div class="sua form-section">
+                    <h4>Sửa Thể Loại</h4>
+                    <form class="TheLoaiForm" action="@Url.Action("QuanLiTheLoai", "Quantrivien")" method="GET">
+                        <div class="form-group">
+                            <label for="TheLoaiID">Mã Thể Loại</label>
+                            <select class="form-control" id="TheLoaiID" name="TheLoaiID" required>
+                                <option value="">Chọn mã thể loại</option>
+                                @foreach (var item in ViewBag.TheLoaiList)
+                                {
+                                    <option value="@item.TheLoaiID">@item.TheLoaiID - @item.TenTheLoai</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Chọn Thể Loại</button>
+                    </form>
+
+                    @if (Model != null)
+                    {
+                        <br />
+                        <br />
+                        <form class="TheLoaiForm" action="@Url.Action("SuaTheLoai", "Quantrivien")" method="POST">
+                            <input type="hidden" name="TheLoaiID" value="@Model.TheLoaiID" />
+                            <div class="form-group">
+                                <label for="TenTheLoai">Tên Thể Loại</label>
+                                <input type="text" class="form-control" id="TenTheLoai" name="TenTheLoai" value="@Model.TenTheLoai" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="SoLuong">Số Lượng</label>
+                                <input type="number" class="form-control" id="SoLuong" name="SoLuong" value="@Model.SoLuong" />
+                            </div>
+                            <div class="form-group">
+                                <label for="DaBan">Đã Bán</label>
+                                <input type="number" class="form-control" id="DaBan" name="DaBan" value="@Model.DaBan" />
+                            </div>
+                            <div class="form-group">
+                                <label for="MoTa">Mô Tả</label>
+                                <textarea class="form-control" id="MoTa" name="MoTa">@Model.MoTa</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Anh">Ảnh</label>
+                                <div class="img">
+                                    <img src="~/Images/@(Model.Anh).jpg" alt="Ảnh Thể Loại" width="150" height="220" />
+                                </div>
+                                <input type="text" class="form-control" id="Anh" name="Anh" value="@Model.Anh" />
+                            </div>
+                            <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                        </form>
+                    }
+                </div>
+
+                <!-- Form Xóa Thể Loại -->
+                <div class="xoa form-section">
+                    <h4>Xóa Thể Loại</h4>
+                    <form class="TheLoaiForm" action="@Url.Action("XoaTheLoai", "Quantrivien")" method="POST">
+                        <div class="form-group">
+                            <label for="TheLoaiID">Mã Thể Loại</label>
+                            <select class="form-control" id="TheLoaiID" name="TheLoaiID" required>
+                                <option value="">Chọn mã thể loại</option>
+                                @foreach (var item in ViewBag.TheLoaiList)
+                                {
+                                    <option value="@item.TheLoaiID">@item.TheLoaiID - @item.TenTheLoai</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Các nút điều khiển -->
+            <div class="form-actions">
+                <label for="radio_btn_them" class="btn btn-success">Thêm</label>
+                <label for="radio_btn_sua" class="btn btn-primary">Sửa</label>
+                <label for="radio_btn_xoa" class="btn btn-danger">Xóa</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

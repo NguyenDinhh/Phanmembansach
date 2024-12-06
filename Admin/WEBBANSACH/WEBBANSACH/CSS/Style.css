@@ -1,0 +1,234 @@
+﻿/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Chọn màu nền cho toàn bộ body */
+}
+
+/* Header */
+header, .header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+}
+
+header {
+    font-size: 2rem;
+}
+/* Content */
+.container-fluid {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.content {
+    width: 60%; /* Chiều rộng cố định cho content */
+    height: max-content;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    -webkit-overflow-scrolling: touch; /* Cuộn mượt mà trên thiết bị di động */
+}
+
+.content-right {
+    width: 25%;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+}
+
+.content h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Left Menu */
+.leftmenu {
+    width: 15%;
+    background-color:black;
+    color: #4371E8;
+    padding: 20px;
+    height: max-content;
+    overflow-y: auto;
+}
+
+.leftmenu h4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.nav-item {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #007bff;
+}
+
+/* Table styling */
+.table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #e9ecef;
+}
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+/* Form styling */
+.KhoaForm {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+
+}
+.form-group .img{
+    margin: 10px;
+    text-align: center;
+}
+/* Input fields */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Button styling */
+button.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 30%;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button.btn-successok {
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+}
+
+    button.btn-successok:hover {
+        background-color: #218838;
+    }
+
+    button.btn-successok:focus {
+        outline: none;
+    }
+
+/* Form actions */
+.form-actions {
+    justify-content: center;
+    margin: 20px;
+}
+
+    .form-actions label {
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 16px;
+        display: inline-block;
+        margin-right: 10px;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .form-actions .btn-success {
+        background-color: #28a745;
+    }
+
+    .form-actions .btn-primary {
+        background-color: #007bff;
+    }
+
+    .form-actions .btn-danger {
+        background-color: #dc3545;
+    }
+
+    .form-actions label:hover {
+        opacity: 0.8;
+    }
+
+/* Form sections */
+.form-container .form-section {
+    display: none;
+}
+
+#radio_btn_them:checked ~ .form-container .them,
+#radio_btn_sua:checked ~ .form-container .sua,
+#radio_btn_xoa:checked ~ .form-container .xoa {
+    display: block;
+}
+
+/* Background for form sections */
+.form-container .form-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    /* Hover effect for form sections */
+    .form-container .form-section:hover {
+        background-color: #f1f1f1;
+    }

@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBPHANMEMBANSACHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChiTietDonHangs">
+    <Key>
+      <PropertyRef Name="ChiTietDonHangID" />
+    </Key>
+    <Property Name="ChiTietDonHangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DonHangID" Type="int" />
+    <Property Name="SachID" Type="int" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="Gia" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DanhGias">
+    <Key>
+      <PropertyRef Name="DanhGiaID" />
+    </Key>
+    <Property Name="DanhGiaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SachID" Type="int" />
+    <Property Name="TenDangNhap" Type="char" MaxLength="255" />
+    <Property Name="Diem" Type="float" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
+    <Property Name="NgayDanhGia" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DiaChiNhanHangs">
+    <Key>
+      <PropertyRef Name="DiaChiNhanHangID" />
+    </Key>
+    <Property Name="DiaChiNhanHangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDangNhap" Type="char" MaxLength="255" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DonHangs">
+    <Key>
+      <PropertyRef Name="DonHangID" />
+    </Key>
+    <Property Name="DonHangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDangNhap" Type="char" MaxLength="255" />
+    <Property Name="DiaChiNhanHangID" Type="int" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NgayDat" Type="datetime" />
+  </EntityType>
+  <EntityType Name="KhachHangs">
+    <Key>
+      <PropertyRef Name="KhachHangID" />
+    </Key>
+    <Property Name="KhachHangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NhanViens">
+    <Key>
+      <PropertyRef Name="NhanVienID" />
+    </Key>
+    <Property Name="NhanVienID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NhaXuatBans">
+    <Key>
+      <PropertyRef Name="NhaXuatBanID" />
+    </Key>
+    <Property Name="NhaXuatBanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Sachs">
+    <Key>
+      <PropertyRef Name="SachID" />
+    </Key>
+    <Property Name="SachID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="TacGiaID" Type="int" />
+    <Property Name="NhaXuatBanID" Type="int" />
+    <Property Name="TheLoaiID" Type="int" />
+    <Property Name="Sao" Type="float" />
+    <Property Name="Sale" Type="float" />
+    <Property Name="Gia" Type="float" />
+    <Property Name="DiemThuong" Type="int" />
+    <Property Name="DaBan" Type="int" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="NgayXuatBan" Type="date" />
+    <Property Name="NgayKhoiBan" Type="date" />
+    <Property Name="Mota" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Anh" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SachYeuThichs">
+    <Key>
+      <PropertyRef Name="TenDangNhap" />
+      <PropertyRef Name="SachID" />
+    </Key>
+    <Property Name="TenDangNhap" Type="char" MaxLength="255" Nullable="false" />
+    <Property Name="SachID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TacGias">
+    <Key>
+      <PropertyRef Name="TacGiaID" />
+    </Key>
+    <Property Name="TacGiaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CongViec" Type="nvarchar" MaxLength="100" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
+    <Property Name="Anh" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TaiKhoans">
+    <Key>
+      <PropertyRef Name="TenDangNhap" />
+    </Key>
+    <Property Name="TenDangNhap" Type="char" MaxLength="255" Nullable="false" />
+    <Property Name="MatKhau" Type="char" MaxLength="255" Nullable="false" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Anh" Type="varchar" MaxLength="50" />
+    <Property Name="KhachHangID" Type="int" />
+    <Property Name="NhanVienID" Type="int" />
+  </EntityType>
+  <EntityType Name="TheLoais">
+    <Key>
+      <PropertyRef Name="TheLoaiID" />
+    </Key>
+    <Property Name="TheLoaiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTheLoai" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DaBan" Type="int" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
+    <Property Name="Anh" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__ChiTietDo__DonHa__571DF1D5">
+    <End Role="DonHangs" Type="Self.DonHangs" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangs" Type="Self.ChiTietDonHangs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHangs">
+        <PropertyRef Name="DonHangID" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangs">
+        <PropertyRef Name="DonHangID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietDo__SachI__5812160E">
+    <End Role="Sachs" Type="Self.Sachs" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangs" Type="Self.ChiTietDonHangs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sachs">
+        <PropertyRef Name="SachID" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangs">
+        <PropertyRef Name="SachID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DanhGias__SachID__5CD6CB2B">
+    <End Role="Sachs" Type="Self.Sachs" Multiplicity="0..1" />
+    <End Role="DanhGias" Type="Self.DanhGias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sachs">
+        <PropertyRef Name="SachID" />
+      </Principal>
+      <Dependent Role="DanhGias">
+        <PropertyRef Name="SachID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DanhGias__TenDan__5DCAEF64">
+    <End Role="TaiKhoans" Type="Self.TaiKhoans" Multiplicity="0..1" />
+    <End Role="DanhGias" Type="Self.DanhGias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoans">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="DanhGias">
+        <PropertyRef Name="TenDangNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DiaChiNha__TenDa__4F7CD00D">
+    <End Role="TaiKhoans" Type="Self.TaiKhoans" Multiplicity="0..1" />
+    <End Role="DiaChiNhanHangs" Type="Self.DiaChiNhanHangs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoans">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="DiaChiNhanHangs">
+        <PropertyRef Name="TenDangNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DonHangs__DiaChi__5441852A">
+    <End Role="DiaChiNhanHangs" Type="Self.DiaChiNhanHangs" Multiplicity="0..1" />
+    <End Role="DonHangs" Type="Self.DonHangs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiaChiNhanHangs">
+        <PropertyRef Name="DiaChiNhanHangID" />
+      </Principal>
+      <Dependent Role="DonHangs">
+        <PropertyRef Name="DiaChiNhanHangID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DonHangs__TenDan__534D60F1">
+    <End Role="TaiKhoans" Type="Self.TaiKhoans" Multiplicity="0..1" />
+    <End Role="DonHangs" Type="Self.DonHangs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoans">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="DonHangs">
+        <PropertyRef Name="TenDangNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sachs__NhaXuatBa__3E52440B">
+    <End Role="NhaXuatBans" Type="Self.NhaXuatBans" Multiplicity="0..1" />
+    <End Role="Sachs" Type="Self.Sachs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaXuatBans">
+        <PropertyRef Name="NhaXuatBanID" />
+      </Principal>
+      <Dependent Role="Sachs">
+        <PropertyRef Name="NhaXuatBanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sachs__TacGiaID__3D5E1FD2">
+    <End Role="TacGias" Type="Self.TacGias" Multiplicity="0..1" />
+    <End Role="Sachs" Type="Self.Sachs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TacGias">
+        <PropertyRef Name="TacGiaID" />
+      </Principal>
+      <Dependent Role="Sachs">
+        <PropertyRef Name="TacGiaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sachs__TheLoaiID__3F466844">
+    <End Role="TheLoais" Type="Self.TheLoais" Multiplicity="0..1" />
+    <End Role="Sachs" Type="Self.Sachs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoais">
+        <PropertyRef Name="TheLoaiID" />
+      </Principal>
+      <Dependent Role="Sachs">
+        <PropertyRef Name="TheLoaiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SachYeuTh__SachI__619B8048">
+    <End Role="Sachs" Type="Self.Sachs" Multiplicity="1" />
+    <End Role="SachYeuThichs" Type="Self.SachYeuThichs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sachs">
+        <PropertyRef Name="SachID" />
+      </Principal>
+      <Dependent Role="SachYeuThichs">
+        <PropertyRef Name="SachID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SachYeuTh__TenDa__60A75C0F">
+    <End Role="TaiKhoans" Type="Self.TaiKhoans" Multiplicity="1" />
+    <End Role="SachYeuThichs" Type="Self.SachYeuThichs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoans">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="SachYeuThichs">
+        <PropertyRef Name="TenDangNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhachHang">
+    <End Role="KhachHangs" Type="Self.KhachHangs" Multiplicity="0..1" />
+    <End Role="TaiKhoans" Type="Self.TaiKhoans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHangs">
+        <PropertyRef Name="KhachHangID" />
+      </Principal>
+      <Dependent Role="TaiKhoans">
+        <PropertyRef Name="KhachHangID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien">
+    <End Role="NhanViens" Type="Self.NhanViens" Multiplicity="0..1" />
+    <End Role="TaiKhoans" Type="Self.TaiKhoans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanViens">
+        <PropertyRef Name="NhanVienID" />
+      </Principal>
+      <Dependent Role="TaiKhoans">
+        <PropertyRef Name="NhanVienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBPHANMEMBANSACHModelStoreContainer">
+    <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHangs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhGias" EntityType="Self.DanhGias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiaChiNhanHangs" EntityType="Self.DiaChiNhanHangs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonHangs" EntityType="Self.DonHangs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHangs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanViens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhaXuatBans" EntityType="Self.NhaXuatBans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sachs" EntityType="Self.Sachs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SachYeuThichs" EntityType="Self.SachYeuThichs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TacGias" EntityType="Self.TacGias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TheLoais" EntityType="Self.TheLoais" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ChiTietDo__DonHa__571DF1D5" Association="Self.FK__ChiTietDo__DonHa__571DF1D5">
+      <End Role="DonHangs" EntitySet="DonHangs" />
+      <End Role="ChiTietDonHangs" EntitySet="ChiTietDonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietDo__SachI__5812160E" Association="Self.FK__ChiTietDo__SachI__5812160E">
+      <End Role="Sachs" EntitySet="Sachs" />
+      <End Role="ChiTietDonHangs" EntitySet="ChiTietDonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DanhGias__SachID__5CD6CB2B" Association="Self.FK__DanhGias__SachID__5CD6CB2B">
+      <End Role="Sachs" EntitySet="Sachs" />
+      <End Role="DanhGias" EntitySet="DanhGias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DanhGias__TenDan__5DCAEF64" Association="Self.FK__DanhGias__TenDan__5DCAEF64">
+      <End Role="TaiKhoans" EntitySet="TaiKhoans" />
+      <End Role="DanhGias" EntitySet="DanhGias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DiaChiNha__TenDa__4F7CD00D" Association="Self.FK__DiaChiNha__TenDa__4F7CD00D">
+      <End Role="TaiKhoans" EntitySet="TaiKhoans" />
+      <End Role="DiaChiNhanHangs" EntitySet="DiaChiNhanHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DonHangs__DiaChi__5441852A" Association="Self.FK__DonHangs__DiaChi__5441852A">
+      <End Role="DiaChiNhanHangs" EntitySet="DiaChiNhanHangs" />
+      <End Role="DonHangs" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DonHangs__TenDan__534D60F1" Association="Self.FK__DonHangs__TenDan__534D60F1">
+      <End Role="TaiKhoans" EntitySet="TaiKhoans" />
+      <End Role="DonHangs" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sachs__NhaXuatBa__3E52440B" Association="Self.FK__Sachs__NhaXuatBa__3E52440B">
+      <End Role="NhaXuatBans" EntitySet="NhaXuatBans" />
+      <End Role="Sachs" EntitySet="Sachs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sachs__TacGiaID__3D5E1FD2" Association="Self.FK__Sachs__TacGiaID__3D5E1FD2">
+      <End Role="TacGias" EntitySet="TacGias" />
+      <End Role="Sachs" EntitySet="Sachs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sachs__TheLoaiID__3F466844" Association="Self.FK__Sachs__TheLoaiID__3F466844">
+      <End Role="TheLoais" EntitySet="TheLoais" />
+      <End Role="Sachs" EntitySet="Sachs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SachYeuTh__SachI__619B8048" Association="Self.FK__SachYeuTh__SachI__619B8048">
+      <End Role="Sachs" EntitySet="Sachs" />
+      <End Role="SachYeuThichs" EntitySet="SachYeuThichs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SachYeuTh__TenDa__60A75C0F" Association="Self.FK__SachYeuTh__TenDa__60A75C0F">
+      <End Role="TaiKhoans" EntitySet="TaiKhoans" />
+      <End Role="SachYeuThichs" EntitySet="SachYeuThichs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhachHang" Association="Self.FK_KhachHang">
+      <End Role="KhachHangs" EntitySet="KhachHangs" />
+      <End Role="TaiKhoans" EntitySet="TaiKhoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien" Association="Self.FK_NhanVien">
+      <End Role="NhanViens" EntitySet="NhanViens" />
+      <End Role="TaiKhoans" EntitySet="TaiKhoans" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

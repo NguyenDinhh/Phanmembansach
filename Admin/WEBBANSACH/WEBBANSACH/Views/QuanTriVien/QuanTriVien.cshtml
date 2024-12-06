@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Quản trị viên</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/CSS/Style.css" />
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Quản trị viên</h1>
+    </header>
+    <div class="container-fluid">
+        <!-- Left Menu -->
+        <div class="leftmenu">
+            <h4>Danh Mục</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="@Url.Action("Quanlikhoa", "Quantrivien")" class="nav-link">Quản lí tác giả</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Quanlinganh", "Quantrivien")" class="nav-link">Quản lí thể loại</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Quanligiangvien", "Quantrivien")" class="nav-link">Quản lí nhà xuất bản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Quanligiangvien", "Quantrivien")" class="nav-link">Quản lí sách</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Quanligiangvien", "Quantrivien")" class="nav-link">Quản lí tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Quanligiangvien", "Quantrivien")" class="nav-link">Bán hàng</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+              
+        </div>
+
+        <div class="content-right">
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>

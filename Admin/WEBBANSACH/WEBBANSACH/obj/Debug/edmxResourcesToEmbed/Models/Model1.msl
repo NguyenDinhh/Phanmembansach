@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBPHANMEMBANSACHModelStoreContainer" CdmEntityContainer="DBPHANMEMBANSACHEntities">
+    <EntitySetMapping Name="ChiTietDonHangs">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.ChiTietDonHangs">
+        <MappingFragment StoreEntitySet="ChiTietDonHangs">
+          <ScalarProperty Name="ChiTietDonHangID" ColumnName="ChiTietDonHangID" />
+          <ScalarProperty Name="DonHangID" ColumnName="DonHangID" />
+          <ScalarProperty Name="SachID" ColumnName="SachID" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhGias">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.DanhGias">
+        <MappingFragment StoreEntitySet="DanhGias">
+          <ScalarProperty Name="DanhGiaID" ColumnName="DanhGiaID" />
+          <ScalarProperty Name="SachID" ColumnName="SachID" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="Diem" ColumnName="Diem" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="NgayDanhGia" ColumnName="NgayDanhGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiaChiNhanHangs">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.DiaChiNhanHangs">
+        <MappingFragment StoreEntitySet="DiaChiNhanHangs">
+          <ScalarProperty Name="DiaChiNhanHangID" ColumnName="DiaChiNhanHangID" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.DonHangs">
+        <MappingFragment StoreEntitySet="DonHangs">
+          <ScalarProperty Name="DonHangID" ColumnName="DonHangID" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="DiaChiNhanHangID" ColumnName="DiaChiNhanHangID" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.KhachHangs">
+        <MappingFragment StoreEntitySet="KhachHangs">
+          <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.NhanViens">
+        <MappingFragment StoreEntitySet="NhanViens">
+          <ScalarProperty Name="NhanVienID" ColumnName="NhanVienID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaXuatBans">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.NhaXuatBans">
+        <MappingFragment StoreEntitySet="NhaXuatBans">
+          <ScalarProperty Name="NhaXuatBanID" ColumnName="NhaXuatBanID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sachs">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.Sachs">
+        <MappingFragment StoreEntitySet="Sachs">
+          <ScalarProperty Name="SachID" ColumnName="SachID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="TacGiaID" ColumnName="TacGiaID" />
+          <ScalarProperty Name="NhaXuatBanID" ColumnName="NhaXuatBanID" />
+          <ScalarProperty Name="TheLoaiID" ColumnName="TheLoaiID" />
+          <ScalarProperty Name="Sao" ColumnName="Sao" />
+          <ScalarProperty Name="Sale" ColumnName="Sale" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="DiemThuong" ColumnName="DiemThuong" />
+          <ScalarProperty Name="DaBan" ColumnName="DaBan" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="NgayXuatBan" ColumnName="NgayXuatBan" />
+          <ScalarProperty Name="NgayKhoiBan" ColumnName="NgayKhoiBan" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TacGias">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.TacGias">
+        <MappingFragment StoreEntitySet="TacGias">
+          <ScalarProperty Name="TacGiaID" ColumnName="TacGiaID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="CongViec" ColumnName="CongViec" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.TaiKhoans">
+        <MappingFragment StoreEntitySet="TaiKhoans">
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
+          <ScalarProperty Name="NhanVienID" ColumnName="NhanVienID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheLoais">
+      <EntityTypeMapping TypeName="DBPHANMEMBANSACHModel.TheLoais">
+        <MappingFragment StoreEntitySet="TheLoais">
+          <ScalarProperty Name="TheLoaiID" ColumnName="TheLoaiID" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DaBan" ColumnName="DaBan" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SachYeuThichs" TypeName="DBPHANMEMBANSACHModel.SachYeuThichs" StoreEntitySet="SachYeuThichs">
+      <EndProperty Name="Sachs">
+        <ScalarProperty Name="SachID" ColumnName="SachID" />
+      </EndProperty>
+      <EndProperty Name="TaiKhoans">
+        <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

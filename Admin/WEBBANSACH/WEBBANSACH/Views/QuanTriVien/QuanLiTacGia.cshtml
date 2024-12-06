@@ -1,0 +1,184 @@
+﻿@model WEBBANSACH.Models.TacGia
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Quản lí tác giả</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/CSS/Style.css" />
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Quản lí tác giả</h1>
+    </header>
+    <div class="container-fluid">
+        <!-- Left Menu -->
+        <div class="leftmenu">
+            <h4>Danh Mục</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTacGia", "Quantrivien")" class="nav-link">Quản lí tác giả</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTheLoai", "Quantrivien")" class="nav-link">Quản lí thể loại</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiNhaXuatBan", "Quantrivien")" class="nav-link">Quản lí nhà xuất bản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiSach", "Quantrivien")" class="nav-link">Quản lí sách</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTaiKhoan", "Quantrivien")" class="nav-link">Quản lí tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("BanHang", "Quantrivien")" class="nav-link">Bán hàng</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h3>Danh sách Tác Giả</h3>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Mã Tác Giả</th>
+                        <th>Tên Tác Giả</th>
+                        <th>Công Việc</th>
+                        <th>Mô Tả</th>
+                        <th>Ảnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var tacGia in ViewBag.TacGiaList)
+                    {
+                        <tr>
+                            <td>@tacGia.TacGiaID</td>
+                            <td>@tacGia.Ten</td>
+                            <td>@tacGia.CongViec</td>
+                            <td>@tacGia.MoTa</td>
+                            <td><img src="~/Images/@(tacGia.Anh).jpg" alt="Ảnh Tác Giả" width="120" height="150" /></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-right">
+            <!-- Các Radio Button để chọn form Thêm, Sửa, Xóa -->
+            <input type="radio" id="radio_btn_them" name="action" class="form-toggle" />
+            <input type="radio" id="radio_btn_sua" name="action" class="form-toggle" />
+            <input type="radio" id="radio_btn_xoa" name="action" class="form-toggle" />
+
+            <div class="form-container">
+                <!-- Form Thêm Tác Giả -->
+                <div class="them form-section">
+                    <h4>Thêm Tác Giả</h4>
+                    <form class="TacGiaForm" action="@Url.Action("ThemTacGia", "Quantrivien")" method="POST">
+                        <div class="form-group">
+                            <label for="TacGiaID">Mã Tác Giả</label>
+                            <input type="text" class="form-control" id="TacGiaID" name="TacGiaID" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Ten">Tên Tác Giả</label>
+                            <input type="text" class="form-control" id="Ten" name="Ten" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="CongViec">Công Việc</label>
+                            <input type="text" class="form-control" id="CongViec" name="CongViec" />
+                        </div>
+                        <div class="form-group">
+                            <label for="MoTa">Mô Tả</label>
+                            <textarea class="form-control" id="MoTa" name="MoTa"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="Anh">Ảnh</label>
+                            <input type="text" class="form-control" id="Anh" name="Anh" />
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                    </form>
+                </div>
+
+                <!-- Form Sửa Tác Giả -->
+                <div class="sua form-section">
+                    <h4>Sửa Tác Giả</h4>
+                    <form class="TacGiaForm" action="@Url.Action("QuanLiTacGia", "Quantrivien")" method="GET">
+                        <div class="form-group">
+                            <label for="TacGiaID">Mã Tác Giả</label>
+                            <select class="form-control" id="TacGiaID" name="TacGiaID" required>
+                                <option value="">Chọn mã tác giả</option>
+                                @foreach (var item in ViewBag.TacGiaList)
+                                {
+                                    <option value="@item.TacGiaID">@item.TacGiaID - @item.Ten </option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Chọn Tác Giả</button>
+                    </form>
+
+                    @if (Model != null)
+                    {
+                        <br />
+                        <br />
+                        <form class="TacGiaForm" action="@Url.Action("SuaTacGia", "Quantrivien")" method="POST">
+                            <input type="hidden" name="TacGiaID" value="@Model.TacGiaID" />
+                            <div class="form-group">
+                                <label for="Ten">Tên Tác Giả</label>
+                                <input type="text" class="form-control" id="Ten" name="Ten" value="@Model.Ten" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="CongViec">Công Việc</label>
+                                <input type="text" class="form-control" id="CongViec" name="CongViec" value="@Model.CongViec" />
+                            </div>
+                            <div class="form-group">
+                                <label for="MoTa">Mô Tả</label>
+                                <textarea class="form-control" id="MoTa" name="MoTa">@Model.MoTa</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Anh">Ảnh</label>
+                                <div class="img">
+                                    <img src="~/Images/@(Model.Anh).jpg" alt="Ảnh Tác Giả" width="150" height="220" />
+                                </div>
+                                <input type="text" class="form-control" id="Anh" name="Anh" value="@Model.Anh" />
+                            </div>
+
+                            <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                        </form>
+                    }
+                </div>
+
+                <!-- Form Xóa Tác Giả -->
+                <div class="xoa form-section">
+                    <h4>Xóa Tác Giả</h4>
+                    <form class="TacGiaForm" action="@Url.Action("XoaTacGia", "Quantrivien")" method="POST">
+                        <div class="form-group">
+                            <label for="TacGiaID">Mã Tác Giả</label>
+                            <select class="form-control" id="TacGiaID" name="TacGiaID" required>
+                                <option value="">Chọn mã tác giả</option>
+                                @foreach (var item in ViewBag.TacGiaList)
+                                {
+                                    <option value="@item.TacGiaID">@item.TacGiaID - @item.Ten</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Các nút điều khiển -->
+            <div class="form-actions">
+                <label for="radio_btn_them" class="btn btn-success">Thêm</label>
+                <label for="radio_btn_sua" class="btn btn-primary">Sửa</label>
+                <label for="radio_btn_xoa" class="btn btn-danger">Xóa</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
