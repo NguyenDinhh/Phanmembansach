@@ -24,10 +24,12 @@
 
     <Button
         android:id="@+id/btn_save"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@drawable/btn"
         android:textSize="15dp"
-        android:text="Lưu" />
+        android:text="Lưu"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
