@@ -66,6 +66,26 @@ public class Detail_book extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     try {
                         Book book = dataSnapshot.getValue(Book.class);
+                        Integer tacgiaID = book.getTacgiaID();
+                        mdata.child("TacGias").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                    try
+                                    {
+                                        Author tacgia = dataSnapshot.getValue(Author.class);
+                                        if(tacgiaID==tacgia.getTacGiaID())
+                                            book.setTenTacGia(tacgia.getTen());
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                // Xử lý khi truy vấn bị lỗi
+                            }
+                        });
                         if (book != null) {
                             arrbook.add(book);
                         }

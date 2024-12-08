@@ -112,6 +112,4 @@ public class Home extends AppCompatActivity {
         // Sau đó, chuyển đến trang i trong ViewPager
         viewPager.setCurrentItem(i);
     }
-
-
 }
