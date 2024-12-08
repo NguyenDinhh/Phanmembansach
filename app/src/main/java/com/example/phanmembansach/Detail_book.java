@@ -110,7 +110,38 @@ public class Detail_book extends AppCompatActivity {
                 Log.e("Firebase", "Error loading data: " + error.getMessage());
             }
         });
+        mdata.child("SachYeuThichs").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren())
+                {
+                    try
+                    {
+                        SachYeuThich sachYeuThich = dataSnapshot.getValue(SachYeuThich.class);
+                        if(app.getUsername().equals( sachYeuThich.getTenDangNhap()) && sachYeuThich.getSachID() == getIntent().getIntExtra("SachID", 0))
+                        {
 
+                            img_favourite.setImageResource(R.drawable.ic_favourite_2);
+                            img_favourite.setTag(R.drawable.ic_favourite_2);
+                            break;
+                        }
+                        else
+                        {
+                            img_favourite.setImageResource(R.drawable.ic_favorite);
+                            img_favourite.setTag(R.drawable.ic_favorite);
+                        }
+                    }catch (Exception e)
+                    {
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         txt_back.setOnClickListener(view -> finish());
 
         img_cart.setOnClickListener(new View.OnClickListener() {
@@ -120,10 +151,9 @@ public class Detail_book extends AppCompatActivity {
                     Toast.makeText(Detail_book.this,"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
                 else
                 {
-                 //   Integer sachid = getIntent().getIntExtra("SachID", 0);
-                  //      GioHang gioHang = new GioHang(app.getUsername(),sachid);
-                      //  mdata.child("GioHangs").push().setValue(gioHang);
-                    startActivity(new Intent(Detail_book.this, Order_Book.class));
+                    Intent intent = new Intent(Detail_book.this, Order_Book.class);;
+                    intent.putExtra("SachID",getIntent().getIntExtra("SachID", 0));
+                    startActivity(intent);// Truyền vị trí qua Intent
                 }
 
             }
@@ -132,12 +162,47 @@ public class Detail_book extends AppCompatActivity {
             if(app.isLoggedIn()==false)
                 Toast.makeText(Detail_book.this,"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
             else
+            {
                 if ((Integer) img_favourite.getTag() == R.drawable.ic_favorite) {
+                    mdata.child("SachYeuThichs").push().setValue(new SachYeuThich(getIntent().getIntExtra("SachID", 0),app.getUsername()));
                     img_favourite.setImageResource(R.drawable.ic_favourite_2);
                     img_favourite.setTag(R.drawable.ic_favourite_2);
                 } else {
+                    mdata.child("SachYeuThichs").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for(DataSnapshot dataSnapshot: snapshot.getChildren())
+                            {
+                                try
+                                {
+                                    SachYeuThich sachYeuThich = dataSnapshot.getValue(SachYeuThich.class);
+                                    if(app.getUsername().equals( sachYeuThich.getTenDangNhap()) && sachYeuThich.getSachID() == getIntent().getIntExtra("SachID", 0))
+                                    {
+                                        mdata.child("SachYeuThichs").child(dataSnapshot.getKey()).removeValue()
+                                                .addOnSuccessListener(aVoid -> {
+                                                    Log.d("Firebase", "Xóa thành công!");
+                                                })
+                                                .addOnFailureListener(e -> {
+                                                    Log.e("Firebase", "Xóa thất bại", e);
+                                                });
+                                        break;
+                                    }
+
+                                }catch (Exception e)
+                                {
+
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                     img_favourite.setImageResource(R.drawable.ic_favorite);
                     img_favourite.setTag(R.drawable.ic_favorite);
+                }
             }
         });
 

@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\views\\quantrivien\\quanlisach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\quantrivien\\quanlisach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\views\\quantrivien\\quanlinhaxuatban.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\quantrivien\\quanlinhaxuatban.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\controllers\\quantriviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\webbansach\\views\\quantrivien\\quanlisach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\quantrivien\\quanlisach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\webbansach\\controllers\\quantriviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\controllers\\quantriviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\firebaseservice_tacgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\webbansach\\firebaseservice_tacgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\firebaseservice_tacgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,33 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "QuanLiNhaXuatBan.cshtml",
               "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\QuanLiNhaXuatBan.cshtml",
               "RelativeDocumentMoniker": "WEBBANSACH\\Views\\QuanTriVien\\QuanLiNhaXuatBan.cshtml",
               "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\QuanLiNhaXuatBan.cshtml",
               "RelativeToolTip": "WEBBANSACH\\Views\\QuanTriVien\\QuanLiNhaXuatBan.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-06T14:11:03.798Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "QuanLiSach.cshtml",
               "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\QuanLiSach.cshtml",
               "RelativeDocumentMoniker": "WEBBANSACH\\Views\\QuanTriVien\\QuanLiSach.cshtml",
               "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\QuanLiSach.cshtml",
               "RelativeToolTip": "WEBBANSACH\\Views\\QuanTriVien\\QuanLiSach.cshtml",
-              "ViewState": "AgIAABUBAAAAAAAAAAAwwDkBAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAAABkBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-06T14:02:25.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:02:25.475Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "WEBBANSACH\\Controllers\\QuanTriVienController.cs",
               "ViewState": "AgIAAHcBAAAAAAAAAAAAwIcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T05:15:42.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T05:15:42.478Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "WEBBANSACH\\FirebaseService_TacGia.cs",
               "ViewState": "AgIAAH4AAAAAAAAAAAAUwIoAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T13:59:02.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T13:59:02.835Z"
             }
           ]
         }

@@ -3,6 +3,7 @@ package com.example.phanmembansach;
 import static android.app.PendingIntent.getActivity;
 
 import android.graphics.Paint;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -94,24 +95,86 @@ public class Adapter_Categories_books extends ArrayAdapter<Book> {
                 }
             });
             App app = (App) context.getApplicationContext();
-                if (viewHolder.img_favourite != null && viewHolder.img_cart != null) {
-                    viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
-                    viewHolder.img_favourite.setOnClickListener(new View.OnClickListener() {
+                if (viewHolder.img_favourite != null && viewHolder.img_cart != null)
+                {
+                    mdata.child("SachYeuThichs").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onClick(View view) {
-                            if(app.isLoggedIn()==false)
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for(DataSnapshot dataSnapshot : snapshot.getChildren())
                             {
-                                Toast.makeText(getContext(),"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
-                            }
-                            else
-                            // Đổi trạng thái yêu thích
-                                if ((Integer) viewHolder.img_favourite.getTag() == R.drawable.ic_favorite) {
-                                    viewHolder.img_favourite.setImageResource(R.drawable.ic_favourite_2);
-                                    viewHolder.img_favourite.setTag(R.drawable.ic_favourite_2);
-                                } else {
-                                    viewHolder.img_favourite.setImageResource(R.drawable.ic_favorite);
-                                    viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
+                                try
+                                {
+                                    SachYeuThich sachYeuThich = dataSnapshot.getValue(SachYeuThich.class);
+                                    if(app.getUsername().equals( sachYeuThich.getTenDangNhap()) && sachYeuThich.getSachID() == arrBook.get(position).getSachID())
+                                    {
+
+                                        viewHolder.img_favourite.setImageResource(R.drawable.ic_favourite_2);
+                                        viewHolder.img_favourite.setTag(R.drawable.ic_favourite_2);
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        viewHolder.img_favourite.setImageResource(R.drawable.ic_favorite);
+                                        viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
+                                    }
+                                }catch (Exception e)
+                                {
+
                                 }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                    // su kien click them hoac huy sach yeu thich
+                   viewHolder.img_favourite.setOnClickListener(view -> {
+                        if(app.isLoggedIn()==false)
+                            Toast.makeText(context,"Bạn cần đăng nhập",Toast.LENGTH_SHORT).show();
+                        else
+                        {
+                            if ((Integer) viewHolder.img_favourite.getTag() == R.drawable.ic_favorite) {
+                                mdata.child("SachYeuThichs").push().setValue(new SachYeuThich(arrBook.get(position).getSachID() ,app.getUsername()));
+                                viewHolder.img_favourite.setImageResource(R.drawable.ic_favourite_2);
+                                viewHolder.img_favourite.setTag(R.drawable.ic_favourite_2);
+                            } else {
+                                mdata.child("SachYeuThichs").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        for(DataSnapshot dataSnapshot: snapshot.getChildren())
+                                        {
+                                            try
+                                            {
+                                                SachYeuThich sachYeuThich = dataSnapshot.getValue(SachYeuThich.class);
+                                                if(app.getUsername().equals( sachYeuThich.getTenDangNhap()) && sachYeuThich.getSachID() == arrBook.get(position).getSachID())
+                                                {
+                                                    mdata.child("SachYeuThichs").child(dataSnapshot.getKey()).removeValue()
+                                                            .addOnSuccessListener(aVoid -> {
+                                                                Log.d("Firebase", "Xóa thành công!");
+                                                            })
+                                                            .addOnFailureListener(e -> {
+                                                                Log.e("Firebase", "Xóa thất bại", e);
+                                                            });
+                                                    break;
+                                                }
+
+                                            }catch (Exception e)
+                                            {
+
+                                            }
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+                                viewHolder.img_favourite.setImageResource(R.drawable.ic_favorite);
+                                viewHolder.img_favourite.setTag(R.drawable.ic_favorite);
+                            }
                         }
                     });
                 viewHolder.img_cart.setOnClickListener(new View.OnClickListener() {
