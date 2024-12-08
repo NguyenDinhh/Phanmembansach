@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using WEBBANSACH.Repositories;
 
 namespace WEBBANSACH.Controllers
 {
     public class HomeController : Controller
     {
-        private TaiKhoanRepository TaiKhoanRepository = new TaiKhoanRepository();
-        public ActionResult Index()
+        FirebaseService_TaiKhoan FirebaseService_TaiKhoan = new FirebaseService_TaiKhoan();
+    
+        public ActionResult Index(string a)
         {
+            ViewBag.a = a;
             return View();
         }
 
@@ -34,10 +36,10 @@ namespace WEBBANSACH.Controllers
             return View();
 
         }
-        public ActionResult Login(string username, string password)
+        public async Task<ActionResult> Login(string username, string password)
         {
             // Lấy danh sách tài khoản admin từ cơ sở dữ liệu
-            var adminList = TaiKhoanRepository.GetAdmin();
+            var adminList = await FirebaseService_TaiKhoan.GetAllTaiKhoanAsync();
             ViewBag.ErrorMessage = null;
 
             // Kiểm tra nếu danh sách admin trống

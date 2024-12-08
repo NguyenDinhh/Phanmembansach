@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -14,6 +15,9 @@ namespace WEBBANSACH.Controllers
         private readonly FirebaseService_TheLoai _firebaseServiceTheLoai;
         private readonly FirebaseService_Sach _firebaseServiceSach ;
         private readonly FirebaseService_TaiKhoan _firebaseServiceTaiKhoan;
+        private readonly FirebaseService_DonHang _firebaseServiceDonHang;
+        private readonly FirebaseService_ChiTietDonHang _firebaseServiceChiTietDonHang;
+        private readonly FirebaseService_DiaChiNhanHang _firebaseServiceDiaChiNhanHang;
 
         // Constructor: Initialize FirebaseService
         public QuanTriVienController()
@@ -23,6 +27,9 @@ namespace WEBBANSACH.Controllers
             _firebaseServiceTheLoai = new FirebaseService_TheLoai();
             _firebaseServiceSach = new FirebaseService_Sach();
             _firebaseServiceTaiKhoan = new FirebaseService_TaiKhoan();
+            _firebaseServiceDonHang = new FirebaseService_DonHang();
+            _firebaseServiceChiTietDonHang = new FirebaseService_ChiTietDonHang();
+            _firebaseServiceDiaChiNhanHang = new FirebaseService_DiaChiNhanHang();
         }
 
         public ActionResult Index()
@@ -426,10 +433,10 @@ namespace WEBBANSACH.Controllers
             {
                 // Tạo ID cho sách, bạn có thể dùng GUID hoặc cách tạo ID tự động khác
                 var key = Guid.NewGuid().ToString();  // Sử dụng GUID làm ID duy nhất
-
+                sach.Sao = 0;
+                sach.DaBan = 0;
                 // Thêm sách vào Firebase
                 bool result = await _firebaseServiceSach.AddSachAsync(key, sach);
-
                 if (result)
                 {
                     // Nếu thêm thành công, chuyển hướng về trang danh sách sách
@@ -443,7 +450,7 @@ namespace WEBBANSACH.Controllers
             }
 
             // Nếu dữ liệu không hợp lệ hoặc thêm không thành công, trả về form với lỗi
-            return View(sach); // Trả về form để người dùng nhập lại
+            return RedirectToAction("QuanLiSach");  // Trả về form để người dùng nhập lại
         }
 
         // Action để cập nhật sách
@@ -618,10 +625,114 @@ namespace WEBBANSACH.Controllers
             // Nếu Model không hợp lệ, trả về lại view để người dùng chỉnh sửa
             return View("QuanLiTaiKhoan");
         }
-        public async Task<ActionResult> BanHang()
+        [HttpGet]
+        public async Task<ActionResult> BanHang(int? DonHangID)
         {
+            // Lấy danh sách tất cả tài khoản từ Firebase
+            var taiKhoanList = await _firebaseServiceTaiKhoan.GetAllTaiKhoanAsync();
+            var donHangList = await _firebaseServiceDonHang.GetAllDonHangAsync();
+            var diaChiNhanHangList = await _firebaseServiceDiaChiNhanHang.GetAllDiaChiNhanHangAsync();
+            var chiTietDonHangList = await _firebaseServiceChiTietDonHang.GetAllChiTietDonHangAsync();
+            var sachList = await _firebaseServiceSach.GetAllSachAsync();
+            var banHangList = new List<BanHang>();
+            foreach (var donHang in donHangList)
+            {
+                BanHang banHang = new BanHang();
+                if (donHang.TinhTrang.Equals("Đang xử lý"))
+                {
+                    banHang.DonHangID = donHang.DonHangID;
+                    banHang.TenDangNhap = donHang.TenDangNhap;
+                    banHang.TongTien = donHang.TongTien;
+                    foreach (var diachi in diaChiNhanHangList)
+                    {
+                        if (donHang.DiaChiNhanHangID == diachi.DiaChiNhanHangID)
+                        {
+                            banHang.DiaChiNhanHang = diachi.DiaChi;
+                            banHang.Ten = diachi.Ten;
+                            banHang.DienThoai = diachi.DienThoai;
+                            break;
+                        }    
+                    }
+                    banHangList.Add(banHang);
+                }
+
+            }
+            ViewBag.donHangList = banHangList;
+            if(DonHangID != null)
+            {
+                foreach (var donHang in donHangList)
+                {
+                    BanHang banHang = new BanHang();
+                    if (donHang.TinhTrang.Equals("Đang xử lý"))
+                    {
+                        banHang.DonHangID = donHang.DonHangID;
+                        banHang.TenDangNhap = donHang.TenDangNhap;
+                        banHang.TongTien = donHang.TongTien;
+                        foreach (var diachi in diaChiNhanHangList)
+                        {
+                            if (donHang.DiaChiNhanHangID == diachi.DiaChiNhanHangID)
+                            {
+                                banHang.DiaChiNhanHang = diachi.DiaChi;
+                                banHang.Ten = diachi.Ten;
+                                banHang.DienThoai = diachi.DienThoai;
+                                break;
+                            }
+                        }
+                        ViewBag.banHang = banHang;
+                    }
+
+                }
+                List<ChiTietDonHang> ds = new List<ChiTietDonHang>();
+                foreach(var chiTietDonHang in chiTietDonHangList)
+                    if(chiTietDonHang.DonHangID==DonHangID)
+                    {
+                        foreach(var sach in sachList)
+                        {
+                            if(sach.SachID==chiTietDonHang.SachID)
+                            {
+                                chiTietDonHang.TenSach = sach.Ten;
+                                chiTietDonHang.Anh = sach.Anh;
+                                break;
+                            }    
+                        }
+                        ds.Add(chiTietDonHang);
+                    }                  
+                return View(ds);
+            }    
             return View();
         }
-
+        public async Task<ActionResult> XacNhan(int DonHangID)
+        {
+            DonHang donHang = await _firebaseServiceDonHang.GetDonHangAsync(DonHangID);
+            donHang.TinhTrang = "Đã xác nhận";
+            bool result = await _firebaseServiceDonHang.DonHangAsync(donHang);
+            List<Sach> sachList = await _firebaseServiceSach.GetAllSachAsync();
+            var chiTietDonHangList = await _firebaseServiceChiTietDonHang.GetAllChiTietDonHangAsync();
+            foreach(var ct in chiTietDonHangList)
+            {
+                if(ct.DonHangID==DonHangID)
+                {
+                    foreach(var sach in sachList)
+                    {
+                        if(sach.SachID==ct.SachID)
+                        {
+                            sach.SoLuong = sach.SoLuong- ct.SoLuong;
+                            sach.DaBan = sach.DaBan + ct.SoLuong;
+                            bool resultsach = await _firebaseServiceSach.UpdateSachAsync(sach);
+                            break;
+                        }    
+                    }    
+                }    
+            }    
+            
+            return RedirectToAction("BanHang","QuanTriVien");
+        }
+        public async Task<ActionResult> Huy(int DonHangID)
+        {
+            DonHang donHang = await _firebaseServiceDonHang.GetDonHangAsync(DonHangID);
+            donHang.TinhTrang = "Hủy";
+            bool result = await _firebaseServiceDonHang.DonHangAsync(donHang);
+            return RedirectToAction("BanHang", "QuanTriVien");
+        }
     }
 }

@@ -89,13 +89,13 @@
 </head>
 <body>
     @{
-        var connectionStatus = ViewBag.ConnectionStatus;
+        var kiemtra = ViewBag.ConnectionStatus;
     }
 
     <div>
-        @if (connectionStatus != null)
+        @if (kiemtra != null)
         {
-            <p>@connectionStatus</p>
+            <p>@kiemtra</p>
         }
     </div>
     <div class="login-container">
@@ -112,12 +112,12 @@
 
             <div class="form-group">
                 <label for="UsernameOrEmail">Nhập tên đăng nhập</label>
-                <input type="text" class="form-control" id="UsernameOrEmail" name="username" placeholder="Username / Email address" required />
+                <input type="text" class="form-control" id="UsernameOrEmail" name="username" placeholder="Tên đăng nhập" required />
             </div>
 
             <div class="form-group">
                 <label for="Password">Nhập mật khẩu</label>
-                <input type="password" class="form-control" id="Password" name="password" placeholder="Enter Password" required />
+                <input type="password" class="form-control" id="Password" name="password" placeholder="Mật khẩu" required />
             </div>
 
             <div class="form-check">
@@ -129,7 +129,6 @@
 
             <div class="login-footer">
                 <a href="#">Quên mật khẩu</a> |
-                <a href="#">Chưa có tài khoản. Đăng kí ở đây!!</a>
             </div>
         </form>
     </div>

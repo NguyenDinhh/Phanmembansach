@@ -1,23 +1,23 @@
-﻿@model WEBBANSACH.Models.DonHang
+﻿
+@model List<WEBBANSACH.Models.ChiTietDonHang>
 @{
     Layout = null;
 }
 
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Bán hàng</title>
+    <title>Quản lý Đơn Hàng</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/CSS/Style.css" />
 </head>
 <body>
     <header class="bg-primary text-white text-center py-3">
-        <h1>Bán Hàng</h1>
+        <h1>Quản lý Đơn Hàng</h1>
     </header>
+
     <div class="container-fluid">
         <!-- Left Menu -->
         <div class="leftmenu">
@@ -46,127 +46,113 @@
 
         <!-- Content Section -->
         <div class="content">
-            <h3>Thông tin đơn hàng</h3>
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Mã đơn hàng</th>
-                        <th>Tên khách hàng</th>
-                        <th>Địa Chỉ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var banhang in ViewBag.BanHangList)
-                    {
+            @{
+                <h1>@ViewBag.mess</h1>
+            }
+            <h3>Thông tin Đơn Hàng</h3>
+            @if (Model == null)
+            {
+                <table class="table table-bordered table-striped">
+                    <thead>
                         <tr>
-                            <td>@nhaxuatban.NhaXuatBanID</td>
-                            <td>@nhaxuatban.Ten</td>
-                            <td>@nhaxuatban.DiaChi</td>
-                            <td>@nhaxuatban.DienThoai</td>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Tên Đăng Nhập</th>
+                            <th>Tên Người Mua</th>
+                            <th>Địa Chỉ Nhận Hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Tổng Tiền</th>
+                            <th>Thao tác</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var donHang in ViewBag.donHangList)
+                        {
+                            <tr>
+                                <td>@donHang.DonHangID</td>
+                                <td>@donHang.TenDangNhap</td>
+                                <td>@donHang.Ten</td>
+                                <td>@donHang.DiaChiNhanHang</td>
+                                <td>@donHang.DienThoai</td>
+                                <td>@donHang.TongTien</td>
+                                <td>
+                                    <!-- Xem chi tiết -->
+                                    <a href="@Url.Action("BanHang", "Quantrivien", new { DonHangID = donHang.DonHangID })" class="btn btn-info">Xem Chi Tiết</a>
+
+                                    <!-- Xác nhận -->
+                                    <a href="@Url.Action("XacNhan", "Quantrivien", new { DonHangID = donHang.DonHangID })" class="btn btn-success">Xác Nhận</a>
+
+                                    <!-- Hủy -->
+                                    <a href="@Url.Action("Huy", "Quantrivien", new { DonHangID = donHang.DonHangID })" class="btn btn-danger">Hủy</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Tên Đăng Nhập</th>
+                            <th>Tên Người Mua</th>
+                            <th>Địa Chỉ Nhận Hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Tổng Tiền</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            <tr>
+                                <td>@ViewBag.banHang.DonHangID</td>
+                                <td>@ViewBag.banHang.TenDangNhap</td>
+                                <td>@ViewBag.banhang.Ten</td>
+                                <td>@ViewBag.banHang.DiaChiNhanHang</td>
+                                <td>@ViewBag.banHang.DienThoai</td>
+                                <td>@ViewBag.banHang.TongTien</td>
+                                <td>          
+                                    <!-- Xác nhận -->
+                                    <a href="@Url.Action("XacNhan", "Quantrivien", new { DonHangID = @ViewBag.banHang.DonHangID })" class="btn btn-success">Xác Nhận</a>
+
+                                    <!-- Hủy -->
+                                    <a href="@Url.Action("Huy", "Quantrivien", new { DonHangID = @ViewBag.banHang.DonHangID })" class="btn btn-danger">Hủy</a>
+                                </td>
+                            </tr>
+                            if (Model != null)
+                            {
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã</th>
+                                            <th>Tên Sách</th>
+                                            <th>Số lượng</th>
+                                            <th>Giá</th>
+                                            <th>Ảnh</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var ct in Model)
+                                        {
+                                            <tr>
+                                                <td>@ct.ChiTietDonHangID</td>
+                                                <td>@ct.TenSach</td>
+                                                <td>@ct.SoLuong</td>
+                                                <td>@ct.Gia</td>
+                                                <td><img src="~/Images/@(ct.Anh).jpg" alt="Ảnh Tác Giả" width="120" height="150" /></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            }
+
+                        }
+                    </tbody>
+                </table>
+            }
+
         </div>
-        <div class="content-right">
-            <!-- Các Radio Button để chọn form Thêm, Sửa, Xóa -->
-            <input type="radio" id="radio_btn_them" name="action" class="form-toggle" />
-            <input type="radio" id="radio_btn_sua" name="action" class="form-toggle" />
-            <input type="radio" id="radio_btn_xoa" name="action" class="form-toggle" />
-            <div class="form-container">
-                <!-- Form Thêm Nhà Xuất Bản -->
-                <div class="them form-section">
-                    <h4>Thêm Nhà Xuất Bản</h4>
-                    <form class="NhaXuatBanForm" action="~/Quantrivien/ThemNhaXuatBan" method="POST">
-                        <div class="form-group">
-                            <label for="Ten">Mã Nhà Xuất Bản</label>
-                            <input type="text" class="form-control" id="NhaXuatBanID" name="NhaXuatBanID" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="Ten">Tên Nhà Xuất Bản</label>
-                            <input type="text" class="form-control" id="Ten" name="Ten" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="DiaChi">Địa Chỉ</label>
-                            <input type="text" class="form-control" id="DiaChi" name="DiaChi" />
-                        </div>
-                        <div class="form-group">
-                            <label for="DienThoai">Điện Thoại</label>
-                            <input type="text" class="form-control" id="DienThoai" name="DienThoai" />
-                        </div>
-                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
-                    </form>
-                </div>
-
-                <!-- Form Sửa Nhà Xuất Bản -->
-                <div class="sua form-section">
-                    <h4>Sửa Nhà Xuất Bản</h4>
-                    <form class="NhaXuatBanForm" action="~/Quantrivien/QuanLiNhaXuatBan" method="GET">
-                        <div class="form-group">
-                            <label for="NhaXuatBanID">Mã Nhà Xuất Bản</label>
-                            <select class="form-control" id="NhaXuatBanID" name="NhaXuatBanID" required>
-                                <option value="">Chọn nhà xuất bản</option>
-                                @foreach (var item in ViewBag.NhaXuatBanList)
-                                {
-                                    <option value="@item.NhaXuatBanID">@item.NhaXuatBanID: @item.Ten </option>
-                                }
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btnok btn-successok">Chọn Nhà Xuất Bản</button>
-                    </form>
-
-                    @if (Model != null)
-                    {<br />
-
-                        <br />
-                        <form class="NhaXuatBanForm" action="~/Quantrivien/SuaNhaXuatBan" method="POST">
-                            <input type="hidden" name="NhaXuatBanID" value="@Model.NhaXuatBanID" />
-                            <div class="form-group">
-                                <label for="Ten">Tên Nhà Xuất Bản</label>
-                                <input type="text" class="form-control" id="Ten" name="Ten" value="@Model.Ten" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="DiaChi">Địa Chỉ</label>
-                                <input type="text" class="form-control" id="DiaChi" name="DiaChi" value="@Model.DiaChi" />
-                            </div>
-                            <div class="form-group">
-                                <label for="DienThoai">Điện Thoại</label>
-                                <input type="text" class="form-control" id="DienThoai" name="DienThoai" value="@Model.DienThoai" />
-                            </div>
-
-                            <button type="submit" class="btnok btn-successok">Đồng ý</button>
-                        </form>
-                    }
-                </div>
-
-
-                <!-- Form Xóa Nhà Xuất Bản -->
-                <div class="xoa form-section">
-                    <h4>Xóa Nhà Xuất Bản</h4>
-                    <form class="NhaXuatBanForm" action="~/Quantrivien/XoaNhaXuatBan" method="POST">
-                        <div class="form-group">
-                            <label for="NhaXuatBanID">Mã Nhà Xuất Bản</label>
-                            <select class="form-control" id="NhaXuatBanID" name="NhaXuatBanID" required>
-                                <option value="">Chọn nhà xuất bản</option>
-                                @foreach (var item in ViewBag.NhaXuatBanList)
-                                {
-                                    <option value="@item.NhaXuatBanID">@item.NhaXuatBanID: @item.Ten </option>
-                                }
-                            </select>
-                        </div>
-                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
-                    </form>
-                </div>
-            </div>
-            <!-- Các nút điều khiển -->
-            <div class="form-actions">
-                <label for="radio_btn_them" class="btn btn-success">Thêm</label>
-                <label for="radio_btn_sua" class="btn btn-primary">Sửa</label>
-                <label for="radio_btn_xoa" class="btn btn-danger">Xóa</label>
-            </div>
-        </div>
-    </div>
     </div>
 </body>
 </html>

@@ -5,12 +5,14 @@ using System.Web;
 
 namespace WEBBANSACH.Models
 {
-    public class DonHang
+    public class BanHang
     {
         public int DonHangID { get; set; }
-        public int DiaChiNhanHangID { get; set; } 
-        public String TenDangNhap { get; set; }
-        public String TinhTrang { get; set; } 
+        public String DiaChiNhanHang { get; set; } 
+        public String TenDangNhap { get; set; } 
+        public String Ten { get; set; }
+        public String DienThoai { get; set; }
         public Double TongTien { get; set; }
+       
     }
 }

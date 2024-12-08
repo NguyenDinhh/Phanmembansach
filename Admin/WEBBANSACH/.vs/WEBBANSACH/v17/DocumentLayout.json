@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\firebaseservice_nhaxuatban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\firebaseservice_nhaxuatban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\views\\home\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\home\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\firebaseservice_banhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\firebaseservice_banhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\views\\quantrivien\\banhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\quantrivien\\banhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\views\\quantrivien\\quanlinhaxuatban.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\quantrivien\\quanlinhaxuatban.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\webbansach\\controllers\\quantriviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\controllers\\quantriviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\controllers\\quantriviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,79 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FirebaseService_NhaXuatBan.cs",
-              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\FirebaseService_NhaXuatBan.cs",
-              "RelativeDocumentMoniker": "WEBBANSACH\\FirebaseService_NhaXuatBan.cs",
-              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\FirebaseService_NhaXuatBan.cs",
-              "RelativeToolTip": "WEBBANSACH\\FirebaseService_NhaXuatBan.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwDIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T12:55:36.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "QuanLiNhaXuatBan.cshtml",
-              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\QuanLiNhaXuatBan.cshtml",
-              "RelativeDocumentMoniker": "WEBBANSACH\\Views\\QuanTriVien\\QuanLiNhaXuatBan.cshtml",
-              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\QuanLiNhaXuatBan.cshtml",
-              "RelativeToolTip": "WEBBANSACH\\Views\\QuanTriVien\\QuanLiNhaXuatBan.cshtml",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAcwK0AAAAAAAAAAAAAAA==",
+              "Title": "DangNhap.cshtml",
+              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\Home\\DangNhap.cshtml",
+              "RelativeDocumentMoniker": "WEBBANSACH\\Views\\Home\\DangNhap.cshtml",
+              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\Home\\DangNhap.cshtml",
+              "RelativeToolTip": "WEBBANSACH\\Views\\Home\\DangNhap.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T12:52:47.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FirebaseService_BanHang.cs",
-              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\FirebaseService_BanHang.cs",
-              "RelativeDocumentMoniker": "WEBBANSACH\\FirebaseService_BanHang.cs",
-              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\FirebaseService_BanHang.cs",
-              "RelativeToolTip": "WEBBANSACH\\FirebaseService_BanHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T12:52:11.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DonHang.cs",
-              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Models\\DonHang.cs",
-              "RelativeDocumentMoniker": "WEBBANSACH\\Models\\DonHang.cs",
-              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Models\\DonHang.cs",
-              "RelativeToolTip": "WEBBANSACH\\Models\\DonHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T12:49:14.056Z",
+              "WhenOpened": "2024-12-08T18:55:12.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BanHang.cshtml",
-              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\BanHang.cshtml",
-              "RelativeDocumentMoniker": "WEBBANSACH\\Views\\QuanTriVien\\BanHang.cshtml",
-              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\BanHang.cshtml",
-              "RelativeToolTip": "WEBBANSACH\\Views\\QuanTriVien\\BanHang.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T12:48:07.633Z",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WEBBANSACH\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WEBBANSACH\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowC8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T18:49:45.791Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "QuanTriVienController.cs",
               "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Controllers\\QuanTriVienController.cs",
               "RelativeDocumentMoniker": "WEBBANSACH\\Controllers\\QuanTriVienController.cs",
               "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Controllers\\QuanTriVienController.cs",
               "RelativeToolTip": "WEBBANSACH\\Controllers\\QuanTriVienController.cs",
-              "ViewState": "AgIAAFMCAAAAAAAAAAAAAGwCAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAALICAAAAAAAAAAAqwM8CAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T05:15:42.478Z",
+              "WhenOpened": "2024-12-08T18:40:15.456Z",
               "EditorCaption": ""
             }
           ]

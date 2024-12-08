@@ -71,17 +71,17 @@
                         <tr>
                             <td>@sach.SachID</td>
                             <td>@sach.Ten</td>
-                            <td>@sach.TacGiaID</td> <!-- Tác Giả (Author) -->
-                            <td>@sach.NhaXuatBanID</td> <!-- Nhà Xuất Bản (Publisher) -->
-                            <td>@sach.TheLoaiID</td> <!-- Thể Loại (Category) -->
-                            <td>@sach.Sao</td> <!-- Số Sao (Rating) -->
-                            <td>@sach.Sale</td> <!-- Giảm Giá (Discount) -->
-                            <td>@sach.Gia</td> <!-- Giá (Price) -->
-                            <td>@sach.DiemThuong</td> <!-- Điểm Thưởng (Reward Points) -->
-                            <td>@sach.DaBan</td> <!-- Số Lượng Đã Bán (Sold Quantity) -->
-                            <td>@sach.SoLuong</td> <!-- Số Lượng Còn Lại (Remaining Quantity) -->
+                            <td>@sach.TacGiaID</td>
+                            <td>@sach.NhaXuatBanID</td>
+                            <td>@sach.TheLoaiID</td> 
+                            <td>@sach.Sao</td>
+                            <td>@sach.Sale</td>
+                            <td>@sach.Gia</td>
+                            <td>@sach.DiemThuong</td>
+                            <td>@sach.DaBan</td>
+                            <td>@sach.SoLuong</td>
                             
-                            <td><img src="~/Images/@(sach.Anh).jpg" alt="Ảnh Sách" width="120" height="150" /></td> <!-- Ảnh (Image) -->
+                            <td><img src="~/Images/@(sach.Anh).jpg" alt="Ảnh Sách" width="120" height="150" /></td>
                         </tr>
                     }
                 </tbody>
@@ -97,6 +97,10 @@
                 <div class="them form-section">
                     <h4>Thêm Sách</h4>
                     <form class="SachForm" action="@Url.Action("ThemSach", "Quantrivien")" method="POST">
+                        <div class="form-group">
+                            <label for="SachID">Mã sách</label>
+                            <input type="text" class="form-control" id="SachID" name="SachID" required />
+                        </div>
                         <div class="form-group">
                             <label for="Ten">Tên Sách</label>
                             <input type="text" class="form-control" id="Ten" name="Ten" required />
@@ -138,30 +142,19 @@
                             </select>
                         </div>
 
-                        <!-- Additional fields -->
                         <div class="form-group">
-                            <label for="Sao">Số Sao</label>
-                            <input type="number" class="form-control" id="Sao" name="Sao" step="0.1" min="0" max="5" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Sale">Giảm Giá (%)</label>
-                            <input type="number" class="form-control" id="Sale" name="Sale" min="0" max="100" />
+                            <label for="Sale">Giảm Giá</label>
+                            <input type="text" class="form-control" id="Sale" name="Sale" />
                         </div>
 
                         <div class="form-group">
                             <label for="Gia">Giá</label>
-                            <input type="number" class="form-control" id="Gia" name="Gia" required />
+                            <input type="text" class="form-control" id="Gia" name="Gia" required />
                         </div>
 
                         <div class="form-group">
                             <label for="DiemThuong">Điểm Thưởng</label>
                             <input type="number" class="form-control" id="DiemThuong" name="DiemThuong" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="DaBan">Số Lượng Đã Bán</label>
-                            <input type="number" class="form-control" id="DaBan" name="DaBan" required />
                         </div>
 
                         <div class="form-group">
@@ -265,13 +258,13 @@
                             <!-- Star Rating -->
                             <div class="form-group">
                                 <label for="Sao">Số Sao</label>
-                                <input type="number" class="form-control" id="Sao" name="Sao" step="0.1" min="0" max="5" value="@Model.Sao" required />
+                                <input type="text" class="form-control" id="Sao" name="Sao" step="0.1" min="0" max="5" value="@Model.Sao" required />
                             </div>
 
                             <!-- Sale Discount -->
                             <div class="form-group">
-                                <label for="Sale">Giảm Giá (%)</label>
-                                <input type="number" class="form-control" id="Sale" name="Sale" min="0" max="100" value="@Model.Sale" />
+                                <label for="Sale">Giảm Giá</label>
+                                <input type="text" class="form-control" id="Sale" name="Sale" value="@Model.Sale" />
                             </div>
 
                             <!-- Price -->
@@ -304,10 +297,9 @@
                                 <input type="date" class="form-control" id="NgayXuatBan" name="NgayXuatBan" value="@Model.NgayXuatBan.ToString("yyyy-MM-dd")" required />
                             </div>
 
-                            <!-- Start Sale Date -->
                             <div class="form-group">
                                 <label for="NgayKhoiBan">Ngày Khởi Bán</label>
-                                <input type="date" class="form-control" id="NgayKhoiBan" name="NgayKhoiBan" value="@Model.NgayKhoiBan?.ToString(" yyyy-MM-dd")" />
+                                <input type="date" class="form-control" id="NgayKhoiBan" name="NgayKhoiBan" value="@Model.NgayKhoiBan.ToString("yyyy-MM-dd")" required />
                             </div>
 
                             <!-- Description -->

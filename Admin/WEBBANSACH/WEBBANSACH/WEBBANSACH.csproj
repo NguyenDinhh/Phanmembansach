@@ -121,7 +121,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="FirebaseService_BanHang.cs" />
+    <Compile Include="FirebaseService_ChiTietDonHang.cs" />
+    <Compile Include="FirebaseService_DonHang.cs" />
+    <Compile Include="FirebaseService_DiaChiNhanHang.cs" />
     <Compile Include="FirebaseService_TaiKhoan.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuanTriVienController.cs" />
@@ -132,6 +134,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BanHang.cs" />
+    <Compile Include="Models\ChiTietDonHang.cs" />
+    <Compile Include="Models\DiaChiNhanHang.cs" />
     <Compile Include="Models\DonHang.cs" />
     <Compile Include="Models\NhaXuatBan.cs" />
     <Compile Include="Models\Sach.cs" />
@@ -139,11 +144,6 @@
     <Compile Include="Models\TaiKhoan.cs" />
     <Compile Include="Models\TheLoai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\NhaXuatBanRepository.cs" />
-    <Compile Include="Repositories\SachRepository.cs" />
-    <Compile Include="Repositories\TacGiaRepository.cs" />
-    <Compile Include="Repositories\TaiKhoanRepository.cs" />
-    <Compile Include="Repositories\TheLoaiRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />

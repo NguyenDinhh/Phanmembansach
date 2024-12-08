@@ -16,7 +16,7 @@ namespace WEBBANSACH
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "QuanTriVien", action = "QuanLiTacGia", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "DangNhap", id = UrlParameter.Optional }
             );
         }
     }
