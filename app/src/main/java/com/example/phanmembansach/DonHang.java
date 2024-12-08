@@ -5,15 +5,16 @@ public class DonHang {
     private  Integer DonHangID;
     private  String TenDangNhap;
     private  String TinhTrang;
-
+    private  Double TongTien;
     public DonHang() {
     }
 
-    public DonHang(Integer diaChiNhanHangID, Integer donHangID, String tenDangNhap, String tinhTrang) {
+    public DonHang(Integer diaChiNhanHangID, Integer donHangID, String tenDangNhap, String tinhTrang, Double tongTien) {
         DiaChiNhanHangID = diaChiNhanHangID;
         DonHangID = donHangID;
         TenDangNhap = tenDangNhap;
         TinhTrang = tinhTrang;
+        TongTien = tongTien;
     }
 
     public Integer getDiaChiNhanHangID() {
@@ -46,5 +47,13 @@ public class DonHang {
 
     public void setTinhTrang(String tinhTrang) {
         TinhTrang = tinhTrang;
+    }
+
+    public Double getTongTien() {
+        return TongTien;
+    }
+
+    public void setTongTien(Double tongTien) {
+        TongTien = tongTien;
     }
 }

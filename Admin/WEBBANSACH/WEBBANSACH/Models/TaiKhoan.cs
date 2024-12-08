@@ -11,6 +11,10 @@ namespace WEBBANSACH.Models
         public string MatKhau { get; set; }
         public string TinhTrang { get; set; }
         public string Anh { get; set; }
+        public int? KhachHangID { get; set; }
+        public int? NhanVienID { get; set; }
+
+
 
     }
 }

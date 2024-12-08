@@ -1,0 +1,209 @@
+﻿@model WEBBANSACH.Models.TaiKhoan
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Quản lý tài khoản</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/CSS/Style.css" />
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Quản lý tài khoản</h1>
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div class="alert alert-info">
+                @ViewBag.Message
+            </div>
+        }
+    </header>
+    <div class="container-fluid">
+        <!-- Left Menu -->
+        <div class="leftmenu">
+            <h4>Danh Mục</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTacGia", "Quantrivien")" class="nav-link">Quản lý tác giả</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTheLoai", "Quantrivien")" class="nav-link">Quản lý thể loại</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiNhaXuatBan", "Quantrivien")" class="nav-link">Quản lý nhà xuất bản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiSach", "Quantrivien")" class="nav-link">Quản lý sách</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("QuanLiTaiKhoan", "Quantrivien")" class="nav-link">Quản lý tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("BanHang", "Quantrivien")" class="nav-link">Bán hàng</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h3>Danh sách Tài Khoản</h3>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Tên Đăng Nhập</th>
+                        <th>Mật Khẩu</th>
+                        <th>Tình Trạng</th>
+                        <th>Vai Trò</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var taiKhoan in ViewBag.TaiKhoanList)
+                    {
+                        <tr>
+                            <td>@taiKhoan.TenDangNhap</td>
+                            <td>@taiKhoan.MatKhau</td>
+                            <td>@taiKhoan.TinhTrang</td>
+                            <td>
+                                @if (taiKhoan.KhachHangID != null)
+                                {
+                                    @:Khách Hàng
+                                }
+                                else
+                                {
+                                    @:Nhân Viên
+                                }
+                            </td>
+                            <td>
+                                @if (taiKhoan.KhachHangID != null)
+                                {
+                                    @taiKhoan.KhachHangID
+                                }
+                                else
+                                {
+                                    @taiKhoan.NhanVienID
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- Right Menu (Form Section for Add, Edit, Delete) -->
+        <div class="content-right">
+            <!-- Các Radio Button để chọn form Thêm, Sửa, Xóa -->
+            <input type="radio" id="radio_btn_them" name="action" class="form-toggle" />
+            <input type="radio" id="radio_btn_sua" name="action" class="form-toggle" />
+            <input type="radio" id="radio_btn_xoa" name="action" class="form-toggle" />
+            <div class="form-container">
+
+                <!-- Form Thêm Tài Khoản -->
+                <div class="them form-section">
+                    <h4>Thêm Tài Khoản</h4>
+                    <form class="TaiKhoanForm" action="~/Quantrivien/ThemTaiKhoan" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="TenDangNhap">Tên Đăng Nhập</label>
+                            <input type="text" class="form-control" id="TenDangNhap" name="TenDangNhap" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="MatKhau">Mật Khẩu</label>
+                            <input type="password" class="form-control" id="MatKhau" name="MatKhau" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Vaitro">Vai trò</label>
+                            <div>
+                                <!-- Radio Button cho Khách Hàng -->
+                                <input type="radio" id="vaiTroKhachHang" name="Vaitro" value="Khách hàng" checked />
+                                <label for="vaiTroKhachHang">Khách Hàng</label>
+
+                                <!-- Radio Button cho Nhân Viên -->
+                                <input type="radio" id="vaiTroNhanVien" name="Vaitro" value="Nhân viên" />
+                                <label for="vaiTroNhanVien">Nhân Viên</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ID">ID</label>
+                            <input type="text" class="form-control" id="ID" name="ID" required />
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                    </form>
+                </div>
+
+                <!-- Form Sửa Tài Khoản -->
+                <div class="sua form-section">
+                    <h4>Sửa Tài Khoản</h4>
+                    <form class="TaiKhoanForm" action="~/Quantrivien/QuanLiTaiKhoan" method="GET">
+                        <div class="form-group">
+                            <label for="TenDangNhap">Tên Đăng Nhập</label>
+                            <select class="form-control" id="TenDangNhap" name="TenDangNhap" required>
+                                <option value="">Chọn tài khoản</option>
+                                @foreach (var item in ViewBag.TaiKhoanList)
+                                {
+                                    <option value="@item.TenDangNhap">@item.TenDangNhap</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Chọn Tài Khoản</button>
+                    </form>
+
+                    @if (Model != null)
+                    {
+                        <br />
+                        <form class="TaiKhoanForm" action="~/Quantrivien/SuaTaiKhoan" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="TenDangNhap" value="@Model.TenDangNhap" />
+                            <div class="form-group">
+                                <label for="MatKhau">Mật Khẩu</label>
+                                <input type="text" class="form-control" id="MatKhau" name="MatKhau" value="@Model.MatKhau" required />
+                            </div>
+                            <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                        </form>
+                    }
+                </div>
+                <!-- Form Khóa, Mớ khóa Tài Khoản -->
+                <div class="xoa form-section">
+                    <h4>Khóa/Mở khóa Tài Khoản</h4>
+                    <form class="TaiKhoanForm" action="~/Quantrivien/KhoaTaiKhoan" method="POST">
+                        <div class="form-group">
+                            <label for="TenDangNhap">Tên Đăng Nhập</label>
+                            <select class="form-control" id="TenDangNhap" name="TenDangNhap" required>
+                                <option value="">Chọn tài khoản</option>
+                                @foreach (var item in ViewBag.TaiKhoanList)
+                                {
+                                    <option value="@item.TenDangNhap">@item.TenDangNhap</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="khoa">Khóa/ Mớ khóa</label>
+                            <div>
+                                <!-- Radio Button cho Khách Hàng -->
+                                <input type="radio" id="vaiTroKhachHang" name="khoa" value="0" checked />
+                                <label for="vaiTroKhachHang">Khóa</label>
+
+                                <!-- Radio Button cho Nhân Viên -->
+                                <input type="radio" id="vaiTroNhanVien" name="khoa" value="1" />
+                                <label for="vaiTroNhanVien">Mở khóa</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btnok btn-successok">Đồng ý</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Các nút điều khiển -->
+            <div class="form-actions">
+                <label for="radio_btn_them" class="btn btn-success">Thêm</label>
+                <label for="radio_btn_sua" class="btn btn-primary">Sửa</label>
+                <label for="radio_btn_xoa" class="btn btn-danger">Khóa</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

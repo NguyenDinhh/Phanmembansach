@@ -36,7 +36,7 @@ header {
 
 .content {
     width: 60%; /* Chiều rộng cố định cho content */
-    height: max-content;
+    height: 800px;
     flex-grow: 1;
     padding: 20px;
     background-color: #fff;

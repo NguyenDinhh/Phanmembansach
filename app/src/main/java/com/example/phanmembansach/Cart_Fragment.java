@@ -143,7 +143,7 @@ public class Cart_Fragment extends Fragment {
                     }
                 }
                 adapterCartItem.notifyDataSetChanged();
-                tongtien.setText(String.format("%.0f",tien)+" VND");
+                tongtien.setText(String.format("%.0f",tien));
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

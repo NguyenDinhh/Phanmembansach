@@ -1,4 +1,4 @@
-﻿@model WEBBANSACH.Models.NhaXuatBan
+﻿@model WEBBANSACH.Models.DonHang
 @{
     Layout = null;
 }
@@ -9,14 +9,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Quản lí nhà xuất bản</title>
+    <title>Bán hàng</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/CSS/Style.css" />
 </head>
 <body>
     <header class="bg-primary text-white text-center py-3">
-        <h1>Quản lí nhà xuất bản</h1>
+        <h1>Bán Hàng</h1>
     </header>
     <div class="container-fluid">
         <!-- Left Menu -->
@@ -46,18 +46,17 @@
 
         <!-- Content Section -->
         <div class="content">
-            <h3>Thông tin Nhà Xuất Bản</h3>
+            <h3>Thông tin đơn hàng</h3>
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Mã Nhà Xuất Bản</th>
-                        <th>Tên Nhà Xuất Bản</th>
+                        <th>Mã đơn hàng</th>
+                        <th>Tên khách hàng</th>
                         <th>Địa Chỉ</th>
-                        <th>Điện Thoại</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var nhaxuatban in ViewBag.NhaXuatBanList)
+                    @foreach (var banhang in ViewBag.BanHangList)
                     {
                         <tr>
                             <td>@nhaxuatban.NhaXuatBanID</td>
@@ -116,10 +115,10 @@
 
                         <button type="submit" class="btnok btn-successok">Chọn Nhà Xuất Bản</button>
                     </form>
-              
+
                     @if (Model != null)
                     {<br />
-                    
+
                         <br />
                         <form class="NhaXuatBanForm" action="~/Quantrivien/SuaNhaXuatBan" method="POST">
                             <input type="hidden" name="NhaXuatBanID" value="@Model.NhaXuatBanID" />

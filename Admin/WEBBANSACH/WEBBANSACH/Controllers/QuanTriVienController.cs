@@ -13,6 +13,7 @@ namespace WEBBANSACH.Controllers
         private readonly FirebaseService_TacGia _firebaseServiceTacGia;
         private readonly FirebaseService_TheLoai _firebaseServiceTheLoai;
         private readonly FirebaseService_Sach _firebaseServiceSach ;
+        private readonly FirebaseService_TaiKhoan _firebaseServiceTaiKhoan;
 
         // Constructor: Initialize FirebaseService
         public QuanTriVienController()
@@ -21,6 +22,7 @@ namespace WEBBANSACH.Controllers
             _firebaseServiceTacGia = new FirebaseService_TacGia();
             _firebaseServiceTheLoai = new FirebaseService_TheLoai();
             _firebaseServiceSach = new FirebaseService_Sach();
+            _firebaseServiceTaiKhoan = new FirebaseService_TaiKhoan();
         }
 
         public ActionResult Index()
@@ -495,5 +497,131 @@ namespace WEBBANSACH.Controllers
 
             return RedirectToAction("QuanLiSach");
         }
+
+        [HttpGet]
+        public async Task<ActionResult> QuanLiTaiKhoan(string tenDangNhap)
+        {
+            // Lấy danh sách tất cả tài khoản từ Firebase
+            var taiKhoanList = await _firebaseServiceTaiKhoan.GetAllTaiKhoanAsync();
+
+            // Gán danh sách tài khoản vào ViewBag
+            ViewBag.TaiKhoanList = taiKhoanList;
+
+            // Kiểm tra xem có chọn tài khoản nào hay không
+            if (string.IsNullOrEmpty(tenDangNhap))
+            {
+                // Kiểm tra nếu danh sách không có dữ liệu
+                if (taiKhoanList == null || !taiKhoanList.Any())
+                {
+                    // Nếu không có tài khoản, trả về thông báo hoặc xử lý thích hợp
+                    ViewBag.Message = "Không có tài khoản nào trong hệ thống.";
+                }
+                return View();
+            }
+
+            // Nếu có tenDangNhap, lấy tài khoản cụ thể
+            var taiKhoan = await _firebaseServiceTaiKhoan.GetTaiKhoanAsync(tenDangNhap);
+
+            // Kiểm tra xem có tài khoản nào với tên đăng nhập này không
+            if (taiKhoan == null)
+            {
+                // Nếu không tìm thấy tài khoản, trả về thông báo lỗi
+                return HttpNotFound("Tài khoản không tồn tại.");
+            }
+
+            // Trả về View với Model là tài khoản cần sửa
+            return View(taiKhoan);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> ThemTaiKhoan(TaiKhoan taiKhoan,String Vaitro,int ID)
+        {
+            // Kiểm tra ModelState để đảm bảo dữ liệu hợp lệ
+            if (ModelState.IsValid)
+            {
+                // Tạo ID cho tài khoản, bạn có thể sử dụng GUID hoặc cách tạo ID tự động khác
+                var key = Guid.NewGuid().ToString();  // Sử dụng GUID làm ID duy nhất
+                if (Vaitro.Equals("Nhân viên")==true)
+                {
+                    taiKhoan.NhanVienID = ID;
+                    taiKhoan.KhachHangID = null; 
+                }
+                else
+                {
+                    taiKhoan.KhachHangID = ID;
+                    taiKhoan.NhanVienID = null;
+                }
+                taiKhoan.Anh = null;
+                taiKhoan.TinhTrang = "Đang hoạt động";
+                // Thêm tài khoản vào Firebase
+                bool result = await _firebaseServiceTaiKhoan.AddTaiKhoanAsync(key, taiKhoan);
+
+                if (result)
+                {
+                    // Nếu thêm thành công, chuyển hướng về trang danh sách tài khoản
+                    return RedirectToAction("QuanLiTaiKhoan");
+                }
+                else
+                {
+                    // Nếu thêm thất bại, hiển thị thông báo lỗi
+                    ModelState.AddModelError("", "Không thể thêm tài khoản. Vui lòng thử lại.");
+                }
+            }
+
+            // Nếu dữ liệu không hợp lệ hoặc thêm không thành công, trả về form với lỗi
+            return View(taiKhoan); // Trả về form để người dùng nhập lại
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> SuaTaiKhoan(TaiKhoan taiKhoan)
+        {
+            if (ModelState.IsValid)
+            {
+                // Gọi FirebaseService để cập nhật tài khoản
+                bool result = await _firebaseServiceTaiKhoan.UpdateTaiKhoanAsync(taiKhoan);
+                if (result)
+                {
+                    // Nếu cập nhật thành công, chuyển hướng về trang danh sách tài khoản
+                    return RedirectToAction("QuanLiTaiKhoan");
+                }
+                else
+                {
+                    // Nếu thất bại, thông báo lỗi
+                    ModelState.AddModelError("", "Không thể cập nhật tài khoản. Vui lòng thử lại.");
+                }
+            }
+
+            // Nếu Model không hợp lệ, trả về lại view để người dùng chỉnh sửa
+            return View(taiKhoan);
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> KhoaTaiKhoan(TaiKhoan taiKhoan,int khoa)
+        {
+            if (ModelState.IsValid)
+            {
+                if(khoa==0)
+                {
+                    // Gọi FirebaseService để cập nhật tài khoản
+                    bool result = await _firebaseServiceTaiKhoan.KhoaTaiKhoanAsync(taiKhoan);
+                    return RedirectToAction("QuanLiTaiKhoan");
+                }    
+                else
+                {
+                    bool result = await _firebaseServiceTaiKhoan.MoKhoaTaiKhoanAsync(taiKhoan);
+                    return RedirectToAction("QuanLiTaiKhoan");
+                }
+            }
+
+            // Nếu Model không hợp lệ, trả về lại view để người dùng chỉnh sửa
+            return View("QuanLiTaiKhoan");
+        }
+        public async Task<ActionResult> BanHang()
+        {
+            return View();
+        }
+
     }
 }

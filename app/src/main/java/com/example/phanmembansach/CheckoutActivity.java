@@ -76,7 +76,7 @@ public class CheckoutActivity extends AppCompatActivity {
                                     }
                                 }
                              // Tạo đối tượng DonHang
-                                DonHang donHang = new DonHang(madiachi[0], madonhang[0] + 1, app.getUsername(), "Đang xử lý");
+                                DonHang donHang = new DonHang(madiachi[0], madonhang[0] + 1, app.getUsername(), "Đang xử lý",Double.valueOf(tien.getText().toString()));
                                 mdata.child("DonHangs").push().setValue(donHang);
 
                                 // Tiếp tục lấy ChiTietDonHangs
