@@ -5,11 +5,11 @@ import android.app.Application;
 public class App extends Application {
     private boolean isLoggedIn = false;
     private String username = "";
+    private  int DiemThuong;
+    private  int KhachHangID;
     @Override
     public void onCreate() {
         super.onCreate();
-        // Khởi tạo trạng thái đăng nhập khi ứng dụng bắt đầu
-        // Bạn có thể kiểm tra từ SharedPreferences hoặc Firebase ở đây
     }
 
     public boolean isLoggedIn() {
@@ -29,5 +29,21 @@ public class App extends Application {
     public void setUsername(String username) {
         this.username = username;
 
+    }
+
+    public int getDiemThuong() {
+        return DiemThuong;
+    }
+
+    public void setDiemThuong(int diemThuong) {
+        DiemThuong = diemThuong;
+    }
+
+    public int getKhachHangID() {
+        return KhachHangID;
+    }
+
+    public void setKhachHangID(int khachHangID) {
+        KhachHangID = khachHangID;
     }
 }

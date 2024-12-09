@@ -17,6 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,11 +34,12 @@ public class Cart_Fragment extends Fragment {
 
     private ImageView back;
     private Button btn_checkout;
-    private TextView select_voucher,select_address,tongtien;
-    private  Button btn_cancel;
+    private TextView select_voucher,select_address,tongtien,txt_diemthuong,txt_hiendiemthuong;
+    private  Button btn_cancel,use_diemthuong;
     private FrameLayout frame_voucher;
     private DatabaseReference mdata;
     private ListView lv;
+    private SeekBar diemthuong;
     public Cart_Fragment() {
         // Required empty public constructor
     }
@@ -54,8 +56,29 @@ public class Cart_Fragment extends Fragment {
         select_voucher = mView.findViewById(R.id.select_voucher);
         select_address = mView.findViewById(R.id.select_address);
         frame_voucher = mView.findViewById(R.id.frame_vouchers);
+        diemthuong = mView.findViewById(R.id.diemthuong);
         tongtien = mView.findViewById(R.id.tongtien);
+        txt_diemthuong = mView.findViewById(R.id.txt_diemthuong);
+        txt_hiendiemthuong = mView.findViewById(R.id.txt_hiendiemthuong);
+        use_diemthuong = mView.findViewById(R.id.use_diemthuong);
         App app = (App) getActivity().getApplicationContext();
+        diemthuong.setMax(app.getDiemThuong());
+        diemthuong.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                txt_hiendiemthuong.setText(String.valueOf(i));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         ArrayList<GioHang> arrgiohang = new ArrayList<>();
         Adapter_Cart_Item adapterCartItem = new Adapter_Cart_Item(getActivity(), R.layout.row_cart_item, arrgiohang);
         lv.setAdapter(adapterCartItem);
@@ -95,21 +118,25 @@ public class Cart_Fragment extends Fragment {
                 getActivity().finish();
             }
         });
+        Intent intent = new Intent(getContext(), CheckoutActivity.class);
+        intent.putExtra("tien", tongtien.getText().toString()); // Truyền tổng tiền vào Intent
         btn_checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), CheckoutActivity.class);
-                intent.putExtra("tien",tongtien.getText().toString());
                 mdata.child("GioHangs").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren())
-                        {
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                             try {
-                                if( dataSnapshot.getValue(GioHang.class).getDiaChiNhanHangID()==0)
-                                    Toast.makeText(getContext(),"Vui long chon dia chi nhan hang",Toast.LENGTH_SHORT).show();
+                                if (dataSnapshot.getValue(GioHang.class).getDiaChiNhanHangID() == 0)
+                                    Toast.makeText(getContext(), "Vui lòng chọn địa chỉ nhận hàng", Toast.LENGTH_SHORT).show();
                                 else
-                                    getContext().startActivity(intent);
+                                {
+                                    intent.putExtra("diemthuong", txt_diemthuong.getText());
+                                    intent.putExtra("tien", tongtien.getText().toString());
+                                    getContext().startActivity(intent);// Truyền tổng tiền vào Intent
+                                }
+
                                 break;
                             } catch (Exception e) {
 
@@ -150,7 +177,36 @@ public class Cart_Fragment extends Fragment {
 
             }
         });
+        use_diemthuong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mdata.child("GioHangs").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Double tien = 0.0;
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                            try {
+                                GioHang gioHang = dataSnapshot.getValue(GioHang.class);
+                                if (gioHang.getTenDangNhap().equals(app.getUsername())) {
+                                    tien = tien + gioHang.getSoLuongMua() * gioHang.getGia();
+                                }
+                            } catch (Exception e) {
 
+                            }
+                        }
+                        txt_diemthuong.setText(txt_hiendiemthuong.getText().toString());  // Cập nhật điểm thưởng
+                        intent.putExtra("diemthuong", txt_diemthuong.getText()); // Truyền điểm thưởng vào Intent
+                        tongtien.setText(String.format("%.0f", tien)); // Cập nhật lại tổng tiền
+                        tongtien.setText(String.valueOf(Integer.valueOf(tongtien.getText().toString()) - Integer.valueOf(txt_diemthuong.getText().toString()))); // Trừ điểm thưởng từ tổng tiền
+                        intent.putExtra("tien", tongtien.getText().toString()); // Truyền tổng tiền vào Intent
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
         return mView;
     }
 }

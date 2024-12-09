@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     private  TextView txt_register;
     private EditText username;
     private  EditText password;
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     if(username.getText().toString().equals(taiKhoan.getTenDangNhap()))
                     {
-                        if(password.getText().toString().equals(taiKhoan.getMatKhau()))
+                        if(password.getText().toString().equals(taiKhoan.getMatKhau()) && taiKhoan.getTinhTrang().equals("Đang hoạt động"))
                         {
                             Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             m=1;
@@ -92,6 +91,29 @@ public class LoginActivity extends AppCompatActivity {
                             App app = (App) getApplicationContext();
                             app.setLoggedIn(true);
                             app.setUsername(taiKhoan.getTenDangNhap());
+                            app.setKhachHangID(taiKhoan.getKhachHangID());
+                            mdata.child("KhachHangs").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for(DataSnapshot dataSnapshot : snapshot.getChildren())
+                                    {
+                                        try
+                                        {
+                                            if(taiKhoan.getKhachHangID().equals(dataSnapshot.getValue(KhachHang.class).getKhachHangID()))
+                                            {
+                                                app.setDiemThuong(dataSnapshot.getValue(KhachHang.class).getDiemThuong());
+                                                break;
+                                            }
+                                        }catch (Exception e)
+                                        {
+                                        }
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
                             startActivity(intent);
                         }else
                         {

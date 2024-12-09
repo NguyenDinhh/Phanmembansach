@@ -33,6 +33,7 @@ public class CheckoutActivity extends AppCompatActivity {
         img_exit = findViewById(R.id.img);
         btn_order = findViewById(R.id.btn_order);
         tien = findViewById(R.id.tien);
+
         mdata = FirebaseDatabase.getInstance().getReference();
         Intent intent = getIntent();
         tien.setText(intent.getStringExtra("tien"));
@@ -46,12 +47,14 @@ public class CheckoutActivity extends AppCompatActivity {
         btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final Integer[] diemthuongnhan = {0};
                 mdata.child("DonHangs").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         final Integer[] madonhang = {0};
                         final Integer[] madiachi = {0};
                         final Integer[] machitietdonhang = {0};
+
 
                         // Lấy madonhang
                         for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -102,6 +105,7 @@ public class CheckoutActivity extends AppCompatActivity {
                                                         if (gioHang.getTenDangNhap().equals(app.getUsername())) {
                                                             // Tạo ChiTietDonHang
                                                             Chi_Tiet_Don_Hang chiTietDonHang = new Chi_Tiet_Don_Hang(machitietdonhang[0] + 1, madonhang[0] + 1, gioHang.getGia(), gioHang.getSoLuongMua(), gioHang.getSachID());
+                                                            diemthuongnhan[0] = diemthuongnhan[0] + 100* gioHang.getSoLuongMua();
                                                             mdata.child("ChiTietDonHangs").push().setValue(chiTietDonHang);
                                                             machitietdonhang[0]++;
                                                             // Xóa mục trong GioHangs
@@ -117,6 +121,10 @@ public class CheckoutActivity extends AppCompatActivity {
                                                         // Handle exception
                                                     }
                                                 }
+                                                app.setDiemThuong(app.getDiemThuong()+diemthuongnhan[0]  - Integer.valueOf(getIntent().getStringExtra("diemthuong")));
+                                                Intent intent = new Intent(CheckoutActivity.this, Successful_Order.class);
+                                                intent.putExtra("diemthuongnhan",diemthuongnhan[0]);
+                                                startActivity(intent);
                                             }
 
                                             @Override
@@ -145,9 +153,7 @@ public class CheckoutActivity extends AppCompatActivity {
                         Log.e("Firebase", "Lỗi khi đọc DonHangs", error.toException());
                     }
                 });
-        startActivity(new Intent(CheckoutActivity.this, Successful_Order.class));
             }
         });
-
 }
 }
