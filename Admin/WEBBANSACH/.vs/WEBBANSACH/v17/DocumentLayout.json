@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\views\\home\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\home\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\controllers\\quantriviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\controllers\\quantriviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\views\\quantrivien\\banhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\quantrivien\\banhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|d:\\hockyinamiii\\laptrinhtrendidong\\phanmembansach\\phanmembansach\\admin\\webbansach\\webbansach\\views\\quantrivien\\quanlitaikhoan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63E52DBE-1995-42BF-BC24-28128FAC3628}|WEBBANSACH\\WEBBANSACH.csproj|solutionrelative:webbansach\\views\\quantrivien\\quanlitaikhoan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DangNhap.cshtml",
-              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\Home\\DangNhap.cshtml",
-              "RelativeDocumentMoniker": "WEBBANSACH\\Views\\Home\\DangNhap.cshtml",
-              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\Home\\DangNhap.cshtml",
-              "RelativeToolTip": "WEBBANSACH\\Views\\Home\\DangNhap.cshtml",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T18:55:12.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WEBBANSACH\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "WEBBANSACH\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowC8AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T18:49:45.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BanHang.cshtml",
+              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\BanHang.cshtml",
+              "RelativeDocumentMoniker": "WEBBANSACH\\Views\\QuanTriVien\\BanHang.cshtml",
+              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\BanHang.cshtml",
+              "RelativeToolTip": "WEBBANSACH\\Views\\QuanTriVien\\BanHang.cshtml",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAIwJ4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-09T08:01:06.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "QuanTriVienController.cs",
               "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Controllers\\QuanTriVienController.cs",
               "RelativeDocumentMoniker": "WEBBANSACH\\Controllers\\QuanTriVienController.cs",
               "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Controllers\\QuanTriVienController.cs",
               "RelativeToolTip": "WEBBANSACH\\Controllers\\QuanTriVienController.cs",
-              "ViewState": "AgIAALICAAAAAAAAAAAqwM8CAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAIsCAAAAAAAAAAAiwL0CAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T18:40:15.456Z",
+              "WhenOpened": "2024-12-09T07:18:58.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QuanLiTaiKhoan.cshtml",
+              "DocumentMoniker": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\QuanLiTaiKhoan.cshtml",
+              "RelativeDocumentMoniker": "WEBBANSACH\\Views\\QuanTriVien\\QuanLiTaiKhoan.cshtml",
+              "ToolTip": "D:\\HocKyINamIII\\Laptrinhtrendidong\\Phanmembansach\\Phanmembansach\\Admin\\WEBBANSACH\\WEBBANSACH\\Views\\QuanTriVien\\QuanLiTaiKhoan.cshtml",
+              "RelativeToolTip": "WEBBANSACH\\Views\\QuanTriVien\\QuanLiTaiKhoan.cshtml",
+              "ViewState": "AgIAALMAAAAAAAAAAADwv84AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-09T07:02:52.451Z",
               "EditorCaption": ""
             }
           ]

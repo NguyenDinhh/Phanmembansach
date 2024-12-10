@@ -37,74 +37,62 @@ public class ForgetpasswordActivity extends AppCompatActivity {
         password2 =findViewById(R.id.repeatnewpassword_input);
         Intent intent = getIntent();
         mdata = FirebaseDatabase.getInstance().getReference();
-        ArrayList<KhachHang> arrkhachhang = new ArrayList<>();
-        ArrayList<TaiKhoan> arrtaikhoan = new ArrayList<>();
-        mdata.child("KhachHangs").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot snapshot1 : snapshot.getChildren())
-                {
-                    try
-                    {
-                        KhachHang khachHang = snapshot1.getValue(KhachHang.class);
-                        arrkhachhang.add(khachHang);
-                    }catch (Exception e)
-                    {
-                        e.printStackTrace();
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-        mdata.child("TaiKhoans").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot: snapshot.getChildren())
-                {
-                    try {
-                        TaiKhoan taiKhoan = dataSnapshot.getValue(TaiKhoan.class);
-                        arrtaikhoan.add(taiKhoan);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer key =0;
                 if(password1.getText().toString().equals(password2.getText().toString()))
                 {
-                    for (KhachHang khachHang: arrkhachhang)
-                    {
-                        if(khachHang.getDienThoai().equals(intent.getStringExtra("sdt")))
-                        {
-                            for (TaiKhoan taiKhoan: arrtaikhoan)
+                    mdata.child("KhachHangs").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot snapshot1 : snapshot.getChildren())
                             {
-                                if(taiKhoan.getKhachHangID().equals(khachHang.getKhachHangID()))
+                                try
                                 {
-                                    mdata.child("TaiKhoans").child(String.valueOf(key)).child("MatKhau").setValue(password1.getText().toString())
-                                            .addOnSuccessListener(aVoid -> {
-                                                Log.d("Firebase", "Mật khẩu đã được cập nhật thành công!");
-                                            })
-                                            .addOnFailureListener(e -> {
-                                                Log.e("Firebase", "Cập nhật mật khẩu thất bại", e);
-                                            });
+                                    KhachHang khachHang = snapshot1.getValue(KhachHang.class);
+                                    if(khachHang.getDienThoai().equals(intent.getStringExtra("sdt")))
+                                    {
+                                        mdata.child("TaiKhoans").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                for (DataSnapshot dataSnapshot: snapshot.getChildren())
+                                                {
+                                                    try {
+                                                        TaiKhoan taiKhoan = dataSnapshot.getValue(TaiKhoan.class);
+                                                        if(taiKhoan.getKhachHangID().equals(khachHang.getKhachHangID()))
+                                                        {
+                                                            mdata.child("TaiKhoans").child(dataSnapshot.getKey()).child("MatKhau").setValue(password1.getText().toString())
+                                                                    .addOnSuccessListener(aVoid -> {
+                                                                        Log.d("Firebase", "Mật khẩu đã được cập nhật thành công!");
+                                                                    })
+                                                                    .addOnFailureListener(e -> {
+                                                                        Log.e("Firebase", "Cập nhật mật khẩu thất bại", e);
+                                                                    });
 
-                                    startActivity(new Intent(ForgetpasswordActivity.this, LoginActivity.class));
+                                                            startActivity(new Intent(ForgetpasswordActivity.this, LoginActivity.class));
+                                                        }
+                                                    } catch (Exception e) {
+                                                        e.printStackTrace();
+                                                    }
+                                                }
+                                            }
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError error) {
+
+                                            }
+                                        });
+                                    }
+                                }catch (Exception e)
+                                {
+                                    e.printStackTrace();
                                 }
-                                key++;
                             }
                         }
-                    }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
                 else
                 {
